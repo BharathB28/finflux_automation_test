@@ -510,3 +510,120 @@ Scenario: 4928-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-DistEqualyToAllInst
   Then I "MakeRepayment" and verified the following tabs
 	 | 4928-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-DistEqualyToAllInst-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Modify Transaction3|Modify Transaction4|Modify Transaction5|Modify Transaction6|Modify Transaction7|Summary|Repayment Schedule|Transactions|
  
+@RunnerClass2
+Scenario: 4931-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest-Recal-MultiTranche
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4931-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest-Recal-MultiTranche.xlsx |
+  And I "MakeRepayment" and verified the following tabs
+	 | 4931-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest-Recal-MultiTranche.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
+  Then I "Disburse2ndTranche" and verified the following tabs
+	 | 4931-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest-Recal-MultiTranche-Disburse2ndTranche.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+  Then I "MakeRepayment" and verified the following tabs
+	 | 4931-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest-Recal-MultiTranche-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+
+
+@RunnerClass2
+Scenario: 4932-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-Recal-MultiTranche
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4932-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-Recal-MultiTranche.xlsx |
+  And I "MakeRepayment" and verified the following tabs
+	 | 4932-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-Recal-MultiTranche.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
+  Then I "Disburse2ndTranche" and verified the following tabs
+	 | 4932-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-Recal-MultiTranche-Disburse2ndTranche.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+  Then I "MakeRepayment" and verified the following tabs
+	 | 4932-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-Recal-MultiTranche-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass2
+Scenario: 4933-EI-DB-SAR-PartialPeriod-RECAL-COMP-MultiTranche
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4933-EI-DB-SAR-PartialPeriod-RECAL-COMP-MultiTranche.xlsx |
+  Then I verified the following Tabs details successfully
+	 | 4933-EI-DB-SAR-PartialPeriod-RECAL-COMP-MultiTranche.xlsx |Summary|Repayment Schedule|Transactions|
+  And I "MakeRepayment" and verified the following tabs
+	 | 4933-EI-DB-SAR-PartialPeriod-RECAL-COMP-MultiTranche-MakeRepayment1.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+  Then I "Disburse2ndTranche" and verified the following tabs
+	 | 4933-EI-DB-SAR-PartialPeriod-RECAL-COMP-MultiTranche-Disburse2ndTranche.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+  Then I "MakeRepayment" and verified the following tabs
+	 | 4933-EI-DB-SAR-PartialPeriod-RECAL-COMP-MultiTranche-MakeRepayment2.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass2
+Scenario: 4934-EI-DB-SAR-PartialPeriod-RECAL-COMP-MultiTranche
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4934-EI-DB-SAR-PartialPeriod-RECAL-COMP-MultiTranche.xlsx |
+  And I "WaiveInterest&MakeRepayment" and verified the following tabs
+	 | 4934-EI-DB-SAR-PartialPeriod-RECAL-COMP-MultiTranche.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+  And I "Writeoff" and verified the following tabs
+	 | 4934-EI-DB-SAR-PartialPeriod-RECAL-COMP-MultiTranche-writeoff.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass2
+Scenario: 4935-RBI-EI-DB-DL-RECAL-COMP-DL-1
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4935-RBI-EI-DB-DL-RECAL-COMP-DL-1.xlsx |
+  Then I verified the following Tabs details successfully
+	 | 4935-RBI-EI-DB-DL-RECAL-COMP-DL-1.xlsx |Summary|Repayment Schedule|Transactions|
+  And I "MakeRepayment&waiveInterest" and verified the following tabs
+	 | 4935-RBI-EI-DB-DL-RECAL-COMP-DL-1-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+  And I "MakeRepayment&preclose" and verified the following tabs
+	 | 4935-RBI-EI-DB-DL-RECAL-COMP-DL-1-preclose.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass2
+Scenario: 4936-Mifos-EI-FL-SAR-Charges
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4936-Mifos-EI-FL-SAR-Charges.xlsx |
+  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+  Then I verified the following Tabs details successfully
+	 | 4936-Mifos-EI-FL-SAR-Charges.xlsx |Summary|Repayment Schedule|Transactions|
+  And I "MakeRepayment&waiveInterest" and verified the following tabs
+	 | 4936-Mifos-EI-FL-SAR-Charges-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+  And I "MakeRepayment&preclose" and verified the following tabs
+	 | 4936-Mifos-EI-FL-SAR-Charges-preclose.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass2
+Scenario: 4937-Mifos-EI-DB-SAR-Charges
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4937-Mifos-EI-DB-SAR-Charges.xlsx |
+  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+  Then I verified the following Tabs details successfully
+	 | 4937-Mifos-EI-DB-SAR-Charges.xlsx |Summary|Repayment Schedule|Transactions|
+  And I "MakeRepayment&waiveInterest" and verified the following tabs
+	 | 4937-Mifos-EI-DB-SAR-Charges-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+  And I "MakeRepayment&preclose" and verified the following tabs
+	 | 4937-Mifos-EI-DB-SAR-Charges-preclose.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+ 
+ @RunnerClass2
+Scenario: 4938-Mifos-EI-DB-SAR-Charges
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4938-Mifos-EI-DB-SAR-Charges.xlsx |
+  Then I "MakeRepayment&waiveInterest" and verified the following tabs
+	 | 4938-Mifos-EI-DB-SAR-Charges.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+  Then I verified the following Tabs details successfully
+	 | 4938-Mifos-EI-DB-SAR-Charges-MakeRepayment.xlsx |Summary|Repayment Schedule|Transactions|
+  And I "writeoff" and verified the following tabs
+	 | 4938-Mifos-EI-DB-SAR-Charges-writeoff.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+
+ 

@@ -34,7 +34,7 @@ Background:
 	  When I set up the new create loan from "NewLoanInput" sheet
 	  			|4616-NonWorkSatandSun-DISB03JAN2013.xlsx|
 	  Then i validate and Verify from "error" sheet	
-	  |4616-NonWorkSatandSun-DISB03JAN2013.xlsx|		
+	            |4616-NonWorkSatandSun-DISB03JAN2013.xlsx|		
 	  			
 @RunnerClass8
 	  Scenario: 4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013
@@ -88,7 +88,7 @@ Background:
 	 When I set up the new create loan from "NewLoanInput" sheet
 	  	|4620-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013.xlsx|	
 	 And I verified the "Repayment Schedule" details successfully 
-	  |4620-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013.xlsx|
+	    |4620-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013.xlsx|
 	 	
 @RunnerClass8
 	  Scenario: 4621-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013-MAKEREPAYon5th

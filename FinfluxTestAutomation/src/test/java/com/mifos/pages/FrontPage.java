@@ -351,6 +351,16 @@ public class FrontPage extends MifosWebPage {
 			ioe.printStackTrace();
 		}
 	}
+	
+	public void VillageNavigation() throws Throwable {
+		try {
+			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"createvillage");
+			Thread.sleep(getResourceKey("mediumWait"));
+
+		} catch (Exception ioe) {
+			ioe.printStackTrace();
+		}
+	}
 
 	/**
 	 * Method enters values from target excel sheet into Client page
@@ -2235,7 +2245,7 @@ rowMatchSuccess=true;
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
 			Thread.sleep(getResourceKey("largeWait"));
-		} else if (sheetName.equals("Charges")) {
+		} else if (sheetName.contains("Charges")) {
 			getWebDriver().findElement(By.xpath(".//*[@heading='Charges']/a")).click();
 			Thread.sleep(getResourceKey("largeWait"));
 			Map<String, String> tabDetails = parseExcelSheet(

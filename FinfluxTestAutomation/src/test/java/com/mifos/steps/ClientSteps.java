@@ -50,11 +50,24 @@ public class ClientSteps {
 		System.out.println("group Created");
 	}
 	
+	@Given("^I setup the village$")
+	public void I_setup_the_village() throws Throwable {
+		varFrontPage.VillageNavigation();
+	}
+	
 	@Given("^I setup the center$")
 	public void I_setup_the_center() throws Throwable {
 		varFrontPage.centerNavigation();
 	}
 
+	@When("^I entered the values into village from \"([^\"]*)\" sheet$")
+	public void I_entered_the_values_into_village_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupGroup(ExcelSheetPath, excelSheetName, sheetName);
+		
+	}
+	
 	@When("^I entered the values into center from \"([^\"]*)\" sheet$")
 	public void I_entered_the_values_into_center_from_sheet(String sheetName,
 			List<String> excelSheet) throws Throwable {

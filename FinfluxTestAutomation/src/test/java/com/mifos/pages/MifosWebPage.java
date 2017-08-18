@@ -676,7 +676,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					Thread.sleep(getResourceKey("wait"));
 					locatorElement.sendKeys(value);
 					if(key.equals("GuarantorName")||key.equals("SavingTranferToClient")
-							||key.equals("AddClientMember"))
+							||key.equals("GrouptoTransferClients") ||key.equals("AddClientMember"))
 					{
 						Thread.sleep(1000);
 						locatorElement.sendKeys(Keys.TAB);
