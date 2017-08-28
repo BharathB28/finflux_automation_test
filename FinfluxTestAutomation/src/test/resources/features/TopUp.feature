@@ -1324,4 +1324,28 @@ Background:
 	  			|4886-DISBLOAN01JAN2015-Make1stPMNT-3000-on15JANUARY2015-(earlyRepayement).xlsx|	
 	  Then I make repayment and read the transaction Id
       			|4886-DISBLOAN01JAN2015-Make1stPMNT-3000-on15JANUARY2015-(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass8
+	  Scenario: 4622-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon08JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13
+	 Given I create "move to next repayment meeting day" As Payments due on non working days
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4622-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon08JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4622-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon08JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13.xlsx|	
+	 Then i validate and Verify from "error" sheet
+	    |4622-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon08JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13.xlsx|
+
+@RunnerClass8
+	  Scenario: 4623-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBWeeklyLOANon01JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13
+	 Given I create "move to next repayment meeting day" As Payments due on non working days
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4623-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBWeeklyLOANon01JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4623-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBWeeklyLOANon01JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13.xlsx|	
 	 			

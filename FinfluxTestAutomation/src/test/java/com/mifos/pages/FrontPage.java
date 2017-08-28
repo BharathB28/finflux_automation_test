@@ -2528,14 +2528,40 @@ rowMatchSuccess=true;
 				excelSheetPath, excelSheetName, sheetName);
 		insertValues(collectionDetailsMap);
 	}
-	public void createWorkingDays(String value) throws InterruptedException {
-		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"workingdays");
+
+	public void createWorkingDays(String clientExcelSheetPath,
+			String excelSheetName, String sheetName) throws Throwable {
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl() + "workingdays");
 		Thread.sleep(getResourceKey("largeWait"));
-		insertValues("Paymentsdueonnonworkingdays", value);
+		if (sheetName.contains("week Day")) {
+
+			Map<String, String> newLoanDetailsMap = parseExcelSheet(
+					clientExcelSheetPath, excelSheetName, sheetName);
+			insertValues(newLoanDetailsMap);
+		} else {
+			insertValues("Paymentsdueonnonworkingdays", sheetName);
+			Thread.sleep(getResourceKey("smallWait"));
+			clickButton(getResource("clickOnSubmitWorkingDayButton"));
+			Thread.sleep(getResourceKey("largeWait"));
+		}
+
+	}
+
+	public void createnonWorkingDays(String value) throws InterruptedException {
+		String checked = "checked";
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl() + "workingdays");
+		if (value.equals("non working")) {
+			checked = "unchecked";
+			clickButton(getResource("NonWorkingDayAdvanceButton"));
+			clickButton(getResource("DeletePreviousRescheduleDetail"));
+		}
+		Thread.sleep(getResourceKey("largeWait"));
+		clickButton(getResource("Saturdaynonworkingdays"));
+		Thread.sleep(getResourceKey("smallWait"));
+		clickButton(getResource("Sundaynonworkingdays"));
 		Thread.sleep(getResourceKey("smallWait"));
 		clickButton(getResource("clickOnSubmitWorkingDayButton"));
 		Thread.sleep(getResourceKey("largeWait"));
-		
 	}
 
 	public void verifyElementNotVisible(String element) {
