@@ -1862,3 +1862,184 @@ Scenario: 4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-close
 	  			|4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|
    
 
+@RunnerClass8
+Scenario: 4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE
+     
+	  Given I setup the "Saving" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductSavingInput" Sheet
+				|4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE.xlsx|
+	  Then I entered the values into product from "EditSavingProduct" Sheet
+				|4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE.xlsx|
+	  Then I "Do Transaction" and verified the following tabs
+	  			|4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE.xlsx| SavingsDeposit | SavingsWdraw |
+	  Then I "PostInterest&Close" and verified the following tabs
+	  			|4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE.xlsx| Modify Transaction|Modify Transaction1|
+	  And I verified the "Saving Transaction & TransID" details successfully 
+	  			|4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE.xlsx|
+	  And I Navigate to Accounting web page
+	  Then I search with transaction id & verified the accounting entries
+	   			|4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE.xlsx| Deposit1 |  Withdrawal | Interst_Posting1 |  Interst_Posting2 |Withdrawal1|
+
+Scenario: 4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT
+     
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT.xlsx|
+	  Then I "Do Transaction" and verified the following tabs
+	  			|4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT.xlsx| SavingsDeposit |
+	  Then I "Transfer Fund to another account" and verified the following tabs
+	  			|4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT.xlsx| Modify Transaction |
+	   And I verified the "Saving Transaction & TransID" details successfully 
+	  			|4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT.xlsx|
+	   And I Navigate to Accounting web page
+	   Then I search with transaction id & verified the accounting entries
+	   			|4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT.xlsx| Deposit | Withdrawal |
+	   Then I navigate To Saving Account Page
+	   And I verified the "Saving Transaction & TransID" details successfully 
+	  			|4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT-2nd.xlsx|
+	   And I Navigate to Accounting web page
+	   Then I search with transaction id & verified the accounting entries
+	   			|4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT-2nd.xlsx| Deposit1 | 
+
+Scenario: 4976-ACTIVATESAVINGS-DEPOSIT-WITHDRAW-POSTINTEREST
+     
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4976-ACTIVATESAVINGS-DEPOSIT-WITHDRAW-POSTINTEREST.xlsx|
+	  Then I "Do Transaction" and verified the following tabs
+	  			|4976-ACTIVATESAVINGS-DEPOSIT-WITHDRAW-POSTINTEREST.xlsx| SavingsDeposit |
+	  Then I "POST INTEREST" and verified the following tabs
+	  			|4976-ACTIVATESAVINGS-DEPOSIT-WITHDRAW-POSTINTEREST.xlsx| Modify Transaction |
+	   And I verified the "Saving Transaction & TransID" details successfully 
+	  			|4976-ACTIVATESAVINGS-DEPOSIT-WITHDRAW-POSTINTEREST.xlsx|
+	   And I Navigate to Accounting web page
+	   Then I search with transaction id & verified the accounting entries
+	   			|4976-ACTIVATESAVINGS-DEPOSIT-WITHDRAW-POSTINTEREST.xlsx| Deposit | Interst_Posting1 |
+
+Scenario: 4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-Withdraw
+	 Given I setup the "RecurringDeposit" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductRDInput" Sheet
+				|4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-MATURE.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-MATURE.xlsx|
+	  Then I "Do Deposit Transaction" and verified the following tabs 
+	            |4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-MATURE.xlsx| RecurringDeposit |RecurringDeposit1 |RecurringDeposit2 |
+	  Then I navigate to scheduler job & execute "Update Deposit Accounts Maturity details"
+	  Then I navigate To Saving Account Page
+	  Then I "Close Recurring Deposit Account" and verified the following tabs
+	  			|4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-MATURE.xlsx|Modify Transaction|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-MATURE.xlsx|	
+	  And I verified the "RD Transaction & TransID" details successfully 
+	  			|4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-MATURE.xlsx|
+	  And I Navigate to Accounting web page
+	  Then I search with transaction id & verified the accounting entries
+	   			|4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-MATURE.xlsx| Deposit1|Deposit2|Deposit3|Interst_Posting1 |Withdrawal|
+
+@RunnerClass2 
+Scenario: 4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest
+	 Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest.xlsx|
+	  Then I "Do Deposit Transaction" and verified the following tabs 
+	            |4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest.xlsx| RecurringDeposit |RecurringDeposit1 |RecurringDeposit2 |
+	  Then I navigate to scheduler job & execute "Update Deposit Accounts Maturity details"
+	  Then I navigate To Saving Account Page
+	  Then I "Close Recurring Deposit Account" and verified the following tabs
+	  			|4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest.xlsx|Modify Transaction|
+	  And I verified the "RD Transaction & TransID" details successfully 
+	  			|4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest.xlsx|
+	  And I Navigate to Accounting web page
+	  Then I search with transaction id & verified the accounting entries
+	   			|4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest.xlsx| Deposit1|Deposit2|Deposit3|Interst_Posting1 |Withdrawal|
+      Then I navigate To Saving Account Page
+      Then I "Verify New RD is Created" and verified the following tabs
+	  			|4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest-newRD.xlsx|Modify Transaction|
+	  And I verified the "RD Transaction & TransID" details successfully 
+	  			|4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest-newRD.xlsx|
+	  And I Navigate to Accounting web page
+	  Then I search with transaction id & verified the accounting entries
+	   			|4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest-newRD.xlsx| Deposit1|
+ 
+ @RunnerClass2 
+Scenario: 4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx|
+	  Then I "Do Deposit Transaction" and verified the following tabs 
+	            |4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx| RecurringDeposit |RecurringDeposit1 |RecurringDeposit2 |
+	  Then I navigate to scheduler job & execute "Update Deposit Accounts Maturity details"
+	  Then I "Navigate to RD account" and verified the following tabs 
+	            |4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx| Recurring Navigate |
+	  Then I "Close Recurring Deposit Account" and verified the following tabs
+	  			|4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx|Modify Transaction|
+	  And I verified the "RD Transaction & TransID" details successfully 
+	  			|4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx|
+	  And I Navigate to Accounting web page
+	  Then I search with transaction id & verified the accounting entries
+	   			|4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx| Deposit1|Deposit2|Deposit3|Interst_Posting1 |Withdrawal|
+      Then I navigate To Saving Account Page
+      And I verified the "Saving Transaction & TransID" details successfully 
+	  			|4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx|
+	  And I Navigate to Accounting web page
+	  Then I search with transaction id & verified the accounting entries
+	   			|4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx| Deposit4 | 
+ 
+ @RunnerClass2 
+Scenario: 4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw.xlsx|
+	  Then I "Do Deposit Transaction" and verified the following tabs 
+	            |4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw.xlsx| RecurringDeposit |RecurringDeposit1 |
+	  Then I "PreMature Close Recurring Deposit Account" and verified the following tabs
+	  			|4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw.xlsx|Modify Transaction|
+	  And I verified the "RD Transaction & TransID" details successfully 
+	  			|4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw.xlsx|
+	  And I Navigate to Accounting web page
+	  Then I search with transaction id & verified the accounting entries
+	   			|4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw.xlsx| Deposit1|Deposit2|Interst_Posting1 |Withdrawal|
+
+Scenario: 4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw
+	  Given I setup the "RecurringDeposit" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductRDInput" Sheet
+				|4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
+	  Then I entered the values into product from "EditRDProduct" Sheet
+				|4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
+	  Then I "Do Deposit Transaction" and verified the following tabs 
+	            |4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx| RecurringDeposit |RecurringDeposit1 |
+	  Then I "PreMature Close Recurring Deposit Account" and verified the following tabs
+	  			|4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|Modify Transaction|
+	  And I verified the "RD Transaction & TransID" details successfully 
+	  			|4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
+      	

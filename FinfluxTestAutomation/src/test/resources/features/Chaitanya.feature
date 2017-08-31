@@ -75,6 +75,7 @@ Scenario: 4942-Validate-Actual-Disbursement-Date-Against-Expected-DisbursementDa
   
 
 @RunnerClass2
+Scenario: 4943-DisburseLoan-ChangeMeetingDate-MakeRepayment
   Given I setup the center
   When I entered the values into center from "Center" sheet
 	 | 4943-DisburseLoan-ChangeMeetingDate-MakeRepayment.xlsx|

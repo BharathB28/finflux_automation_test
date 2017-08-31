@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -74,6 +75,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public String CurrentSavingAccounturl;
 	public String currentShareUrl;
 	public String CheckforAccounting = "";
+	Set<String> SavingLoanAccountID = new LinkedHashSet<String>();
 	/**
 	 * Gets the resource.
 	 *
@@ -776,7 +778,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 						        ExpectedConditions.invisibilityOfElementLocated(locator));*/						
 					}
 					if(key.equals("SubmitActivate")){
-						CurrentSavingAccounturl = getWebDriver().getCurrentUrl();				
+						CurrentSavingAccounturl = getWebDriver().getCurrentUrl();
+						SavingLoanAccountID.add(getWebDriver().getCurrentUrl());
 					}
 					if(key.equals("submitdisburse")){
 						currentNewLoanUrl = getWebDriver().getCurrentUrl();				
@@ -818,6 +821,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			}
 			if (key.equals("NavigateToCurrentSavingPage")){
 				value = CurrentSavingAccounturl.split("#/")[1];
+			}
+			if (key.equals("NavigateToSavingPage1")){
+				value = SavingLoanAccountID.toArray()[0].toString().split("#/")[1];
 			}
 			if (key.equals("NavigateToCurrentSharePage")){
 				value = currentShareUrl.split("#/")[1];
@@ -992,7 +998,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);
 					if(key.equals("ChooseLoanToClose")||key.equals("GuarantorAccount")
-					|| key.equals("SavingTranferToAccountNum")|| key.equals("FdTranferToAccountNumber")
+					|| key.contains("SavingTranferToAccountNum")|| key.equals("FdTranferToAccountNumber")
 					|| key.equals("ShareLinkToSavingAccount")|| key.equals("GroupLoanLinkingSavingAccount"))
 					{
 						statusselect.selectByValue(value);

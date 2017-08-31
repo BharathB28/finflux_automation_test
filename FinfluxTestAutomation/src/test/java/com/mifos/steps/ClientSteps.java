@@ -287,6 +287,10 @@ public class ClientSteps {
 		{
 			varFrontPage.verifyProvisionData(ExcelSheetPath, excelSheetName, sheetName);
 		}
+		if(sheetName.contains("TransferDetails"))
+		{
+			varFrontPage.verifyTransferData(ExcelSheetPath, excelSheetName, sheetName);
+		}
 		else if(sheetName.contains("Saving")||sheetName.contains("FixedDeposit")||sheetName.contains("RecurringDeposit")
 				||sheetName.contains("RD") ||sheetName.contains("FD"))
 		{

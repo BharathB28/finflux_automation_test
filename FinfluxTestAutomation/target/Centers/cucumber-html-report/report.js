@@ -46,7 +46,7 @@ formatter.match({
   "location": "LoginSteps.I_navigate_to_mifos_using(String)"
 });
 formatter.result({
-  "duration": 1458057227,
+  "duration": 1765244034,
   "status": "passed"
 });
 formatter.match({
@@ -59,104 +59,109 @@ formatter.match({
   "location": "LoginSteps.I_login_into_mifos_site_using_excel_sheet(String,String\u003e)"
 });
 formatter.result({
-  "duration": 5353180562,
+  "duration": 5353337574,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.I_should_see_login_successfully()"
 });
 formatter.result({
-  "duration": 901993512,
+  "duration": 691853622,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 9,
-  "name": "4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013",
-  "description": "",
-  "id": "rbi;4619-nonworksatandsun-repaydue-movetopreviousworkingday-disbdailyloanon02jan2013",
-  "type": "scenario",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "line": 10,
-  "name": "I create \"move to previous working day\" As Payments due on non working days",
-  "keyword": "Given "
-});
-formatter.step({
   "line": 11,
+  "name": "4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw",
+  "description": "",
+  "id": "rbi;4982-createrdproduct-editinterestchart-activaterd-deposit-withdraw",
+  "type": "scenario",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "line": 10,
+      "name": "@RunnerClass2"
+    }
+  ]
+});
+formatter.step({
+  "line": 12,
   "name": "I setup the clients",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 12,
+  "line": 13,
   "name": "I entered the values into client from \"Input\" sheet",
   "rows": [
     {
       "cells": [
         "Createclient.xlsx"
       ],
-      "line": 13
+      "line": 14
     }
   ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 14,
-  "name": "I should see client created successfully from \"Output\" sheet",
+  "line": 15,
+  "name": "I set up the new create RD account from \"NewRDInput\" sheet",
   "rows": [
     {
       "cells": [
-        "Createclient.xlsx"
+        "4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx"
       ],
-      "line": 15
+      "line": 16
+    }
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 17,
+  "name": "I \"Do Deposit Transaction\" and verified the following tabs",
+  "rows": [
+    {
+      "cells": [
+        "4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx",
+        "RecurringDeposit",
+        "RecurringDeposit1"
+      ],
+      "line": 18
     }
   ],
   "keyword": "Then "
 });
 formatter.step({
-  "line": 16,
-  "name": "I set up the new create loan from \"NewLoanInput\" sheet",
+  "line": 19,
+  "name": "I \"Post Interest And withraw Amount\" and verified the following tabs",
   "rows": [
     {
       "cells": [
-        "4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx"
+        "4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx",
+        "Modify Transaction",
+        "Modify Transaction1"
       ],
-      "line": 17
+      "line": 20
     }
   ],
-  "keyword": "When "
+  "keyword": "Then "
 });
 formatter.step({
-  "line": 18,
-  "name": "I verified the \"Repayment Schedule\" details successfully",
+  "line": 21,
+  "name": "I verified the \"RD Transaction \u0026 TransID\" details successfully",
   "rows": [
     {
       "cells": [
-        "4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx"
+        "4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx"
       ],
-      "line": 19
+      "line": 22
     }
   ],
   "keyword": "And "
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "move to previous working day",
-      "offset": 10
-    }
-  ],
-  "location": "ClientSteps.I_create_As_Payments_due_on_non_working_days(String)"
-});
-formatter.result({
-  "duration": 11473778594,
-  "status": "passed"
-});
-formatter.match({
   "location": "ClientSteps.I_setup_the_clients()"
 });
 formatter.result({
-  "duration": 1986022844,
+  "duration": 1984938686,
   "status": "passed"
 });
 formatter.match({
@@ -169,46 +174,59 @@ formatter.match({
   "location": "ClientSteps.I_entered_the_values_into_client_from_sheet_Verified(String,String\u003e)"
 });
 formatter.result({
-  "duration": 10550764948,
+  "duration": 9634746921,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Output",
-      "offset": 47
+      "val": "NewRDInput",
+      "offset": 41
     }
   ],
-  "location": "ClientSteps.I_should_see_client_created_successfully_from_sheet(String,String\u003e)"
+  "location": "ClientSteps.I_set_up_the_new_create_RD_account_from_sheet(String,String\u003e)"
 });
 formatter.result({
-  "duration": 6167072213,
+  "duration": 33074845344,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "NewLoanInput",
-      "offset": 35
+      "val": "Do Deposit Transaction",
+      "offset": 3
     }
   ],
-  "location": "ClientSteps.I_set_up_the_new_create_loan_from_sheet(String,String\u003e)"
+  "location": "ClientSteps.I_and_verified_the_following_tabs(String,String\u003e\u003e)"
 });
 formatter.result({
-  "duration": 40449581931,
+  "duration": 25458128907,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Repayment Schedule",
+      "val": "Post Interest And withraw Amount",
+      "offset": 3
+    }
+  ],
+  "location": "ClientSteps.I_and_verified_the_following_tabs(String,String\u003e\u003e)"
+});
+formatter.result({
+  "duration": 26034212650,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "RD Transaction \u0026 TransID",
       "offset": 16
     }
   ],
   "location": "ClientSteps.I_verified_the_details_successfully(String,String\u003e)"
 });
 formatter.result({
-  "duration": 5370863312,
+  "duration": 838011087,
   "status": "passed"
 });
 });

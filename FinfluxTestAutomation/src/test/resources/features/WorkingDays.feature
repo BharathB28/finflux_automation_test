@@ -1,7 +1,7 @@
 Feature:WorkingDaysAndHolidays
 
 Background:
-	Given I navigate to mifos using "default8#/"
+	Given I navigate to mifos using "default10#/"
 	And I login into mifos site using "Login" excel sheet
 		|Login.xlsx|
 	Then I should see logged in successfully
@@ -149,7 +149,8 @@ Scenario: 4950-NonWorkSatandSun-AdvanceSettings-MOVEtoNEXTWEEKDAY-CENTER-DISBDAI
 	  	|4950-NonWorkSatandSun-AdvanceSettings-MOVEtoNEXTWEEKDAY-CENTER-DISBDAILYLOANon01JAN2015.xlsx|
 	 Then I verified the following Tabs details successfully 
 	    |4950-NonWorkSatandSun-AdvanceSettings-MOVEtoNEXTWEEKDAY-CENTER-DISBDAILYLOANon01JAN2015.xlsx|Summary|Repayment Schedule|Transactions|
- 
+
+@RunnerClass2  
 Scenario: 4951-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWEEKDAY-CENTER-DISBDAILYLOANon01JAN2015
 	 Given I create "week Day" As Payments due on non working days
 	 	|4951-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWEEKDAY-CENTER-DISBDAILYLOANon01JAN2015.xlsx|

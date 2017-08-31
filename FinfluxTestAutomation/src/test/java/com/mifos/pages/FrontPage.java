@@ -550,7 +550,7 @@ public class FrontPage extends MifosWebPage {
 					.executeScript("scroll(500,0);");
 			if(!(sheetName.equals("ProductMixInput")||sheetName.equals("DataTable Input")))
 			{
-			if (sheetName.equals("ProductSavingInput")) {
+			if (sheetName.equals("ProductSavingInput")||sheetName.equals("EditSavingProduct")) {
 				verifySuccessMessage("editSavingproduct", "Edit");
 				ProductCreatedURL = getWebDriver().getCurrentUrl();
 			} else if(sheetName.equals("ProductFDInput"))
@@ -558,7 +558,7 @@ public class FrontPage extends MifosWebPage {
 			verifySuccessMessage("editFDproduct", "Edit");
 			ProductCreatedURL = getWebDriver().getCurrentUrl();
 			}
-			else if(sheetName.equals("ProductRDInput"))
+			else if(sheetName.equals("ProductRDInput")||sheetName.equals("EditRDProduct"))
 			{
 			verifySuccessMessage("editRDproduct", "Edit");
 			ProductCreatedURL = getWebDriver().getCurrentUrl();
@@ -886,6 +886,7 @@ public class FrontPage extends MifosWebPage {
 						|| sheetname.equals("Acc_RepaymentDisbursement")
 						|| sheetname.equals("Acc_Repayment")
 						|| sheetname.equals("Acc_Repayment1")
+						|| sheetname.equals("Acc_Repayment2")
 						|| sheetname.equals("Acc_Upfront1")
 						|| sheetname.equals("Acc_Upfront2")
 						|| sheetname.equals("Acc_Upfront3")
@@ -1067,6 +1068,42 @@ public class FrontPage extends MifosWebPage {
 		}
 	}
 
+	public void verifyTransferData(String clientExcelSheetPath,
+			String excelSheetName, String sheetname)throws InterruptedException, IOException, ParseException 
+	{
+		int rowCount=0;
+	
+		try {
+			new WebDriverWait(getWebDriver(), 120).until(
+			        ExpectedConditions.elementToBeClickable(
+			            By.xpath("//*[@class='pointer-main ng-scope']/td[2]")))
+			                .click();
+			FileInputStream file = new FileInputStream(new File(
+					clientExcelSheetPath + "/" + excelSheetName));
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+			XSSFSheet sheet = workbook.getSheet(sheetname);
+			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
+			
+			int xlColumnPointer=0;
+			List<WebElement> applicationCol = null;
+			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
+				applicationCol=getWebDriver()
+						.findElements(
+								By.xpath("//strong[contains(.,'Transaction Details')]/following-sibling::table[1]//tr["+xlRowCount+"]/td"));
+		verifyColumnDetails(xlColumnPointer, xlRowCount,
+				applicationCol, sheet, sheetname);
+	}
+			new WebDriverWait(getWebDriver(), 120).until(
+			        ExpectedConditions.elementToBeClickable(
+			            By.xpath("//a[contains(.,'View Saving Account')]")))
+			                .click();
+		}catch (FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		} catch (NoSuchElementException e) {
+			Assert.fail(" Unable to click \n");
+		}
+	}
+	
 	public void verifySavingData(String clientExcelSheetPath,
 			String excelSheetName, String sheetname)throws InterruptedException, IOException, ParseException 
 	{
@@ -1126,8 +1163,18 @@ public class FrontPage extends MifosWebPage {
 						}
 				if(sheetname.contains("Transaction"))
 				{
+					if(sheetname.contains("Transaction R"))
+					{
+						 xlColumnPointer=1;
+						 Xpath1 = "//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope strikeoff'][";
+						 String FullXpath=Xpath1+xlRowCount+Xpath2;
+						 applicationCol=getWebDriver().findElements(By.xpath(FullXpath));
+						 xlRow = getColumnDetails(
+									xlColumnPointer, xlRowCount,
+									applicationCol, sheet, sheetname);
+					}
 					
-					if(sheetname.contains("FixedDeposit") || sheetname.contains("RecurringDeposit") 
+					else if(sheetname.contains("FixedDeposit") || sheetname.contains("RecurringDeposit") 
 							|| sheetname.contains("RD") || sheetname.contains("FD"))
 					{
 						 xlColumnPointer=1;
@@ -1151,7 +1198,8 @@ public class FrontPage extends MifosWebPage {
 				 xlRow = getColumnDetails(
 							xlColumnPointer, xlRowCount,
 							applicationCol, sheet, sheetname);
-					}}
+					}
+					}
 				else if(sheetname.contains("Charges"))
 				{
 					if(sheetname.contains("FixedDeposit") || sheetname.contains("RecurringDeposit"))
