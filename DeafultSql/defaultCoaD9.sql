@@ -480,6 +480,9 @@ INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product
 INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`, `code_value_cv_id`) VALUES (246, 11, 19, 1, NULL, NULL, 12, NULL);
 INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`, `code_value_cv_id`) VALUES (247, 12, 19, 1, NULL, NULL, 6, NULL);
 INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`, `code_value_cv_id`) VALUES (248, 13, 19, 1, NULL, NULL, 11, NULL);
+INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`, `code_value_cv_id`) VALUES (296, 29, 19, 1, 1, NULL, 1, NULL);
+INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`, `code_value_cv_id`) VALUES (297, 30, 19, 1, 2, NULL, 1, NULL);
+INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`, `code_value_cv_id`) VALUES (298, 31, 19, 1, NULL, 52, 4, NULL);
 INSERT IGNORE INTO `f_taluka` (`district_id`, `iso_taluka_code`, `taluka_name`) VALUES
 ((SELECT ds.id from f_district ds where ds.district_name = 'Bagalkot'), 'BK', 'Bagalkot'),
 ((SELECT ds.id from f_district ds where ds.district_name = 'Bagalkot'), 'JK', 'Jamkhandi'),

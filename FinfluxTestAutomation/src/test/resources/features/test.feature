@@ -8,26 +8,21 @@ Background:
 
 
 @RunnerClass8 
-Scenario: 4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1
-	 Given I setup the center
+Scenario: 4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013
+	 Given I create "move to next repayment day" As Payments due on non working days
+	 	|4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|
+     Given I setup the center
 	 When I entered the values into center from "Input" sheet
-	 			|4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1.xlsx|
+	 	|4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|
 	 Then I entered the values into group from "Group" sheet
-                |4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input1" sheet
-	 	        |4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1.xlsx|
-	 Then I entered the values into client from "Input2" sheet
-	 	        |4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1.xlsx|
-	 Then I entered the values into client from "Input3" sheet
-	 	        |4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1.xlsx|
-	 When I set up the new create loan from "BulkJLGLoanInput" sheet
-	  			|4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1.xlsx|
-	 Then I disburse loan from "ToClient1" sheet
-	  			|4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1.xlsx|
+     	|4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|	
+	 Then I navigate to collection Sheet
+	 Then I Make Repayment Through "Collection" sheet
+	    |4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|
+	  And I navigate To Loan Account Page
 	 Then I verified the following Tabs details successfully 
-	    		|4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1.xlsx|Summary|Repayment Schedule|Transactions|
-	 Then I disburse loan from "ToClient2" sheet
-	  			|4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1-2ndClient.xlsx|
-	 Then I verified the following Tabs details successfully 
-	    		|4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1-2ndClient.xlsx|Summary|Repayment Schedule|
-	 
+	    |4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|Summary|Repayment Schedule|Transactions|

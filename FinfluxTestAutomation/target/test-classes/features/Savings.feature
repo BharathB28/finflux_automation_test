@@ -2007,7 +2007,7 @@ Scenario: 4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-Transfe
 	  Then I search with transaction id & verified the accounting entries
 	   			|4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx| Deposit4 | 
  
- @RunnerClass2 
+@RunnerClass2 
 Scenario: 4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw
 	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -2023,7 +2023,7 @@ Scenario: 4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw
 	  And I Navigate to Accounting web page
 	  Then I search with transaction id & verified the accounting entries
 	   			|4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw.xlsx| Deposit1|Deposit2|Interst_Posting1 |Withdrawal|
-
+@RunnerClass2 
 Scenario: 4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw
 	  Given I setup the "RecurringDeposit" product
 				| Productloannavigation.xlsx |
@@ -2038,8 +2038,37 @@ Scenario: 4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw
 	  			|4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
 	  Then I "Do Deposit Transaction" and verified the following tabs 
 	            |4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx| RecurringDeposit |RecurringDeposit1 |
-	  Then I "PreMature Close Recurring Deposit Account" and verified the following tabs
-	  			|4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|Modify Transaction|
+	  Then I "Post Interest And withraw Amount" and verified the following tabs
+	  			|4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|Modify Transaction|Modify Transaction1|
 	  And I verified the "RD Transaction & TransID" details successfully 
 	  			|4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
-      	
+
+@RunnerClass2 
+Scenario: 4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
+	  Then I "Do Deposit Transaction" and verified the following tabs 
+	            |4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx| RecurringDeposit |RecurringDeposit1 |
+	  Then I "Post Interest And withraw Amount" and verified the following tabs
+	  			|4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|Modify Transaction|Modify Transaction1|
+	  And I verified the "RD Transaction & TransID" details successfully 
+	  			|4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
+ 
+ @RunnerClass8 
+Scenario: 4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction
+      Given I Navigate to System Configuration web page & "enable" "savings-interest-posting-current-period-end"
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewSavingInput" sheet
+	  			|4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction.xlsx|
+	  Then I "Do Deposit Transaction" and verified the following tabs 
+	            |4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction.xlsx| SavingsDeposit|
+	  Then I "Post Interest " and verified the following tabs
+	  			|4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction.xlsx|Modify Transaction|
+	  And I verified the "Saving Transaction & TransID" details successfully 
+	  			|4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction.xlsx|
+  	

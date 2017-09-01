@@ -2594,6 +2594,59 @@ rowMatchSuccess=true;
 		}
 
 	}
+	
+	public void EnableDisableConfiguration(String Status, String ConfigurationName)
+			throws InterruptedException {
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl() + "global");
+
+		switch (ConfigurationName) {
+
+		case "paymenttype-applicable-for-disbursement-charges":
+			WebElement DisbursementCharges = getElement(getResource("paymenttypeApplicableForDisbursementCharges"));
+			if (DisbursementCharges.getText().equalsIgnoreCase(Status)) {
+				getElement(getResource("paymenttypeApplicableForDisbursementCharges.click")).click();
+				Thread.sleep(getResourceKey("smallWait"));
+			}else {
+				System.out.println("Already Status is "+Status);
+			}
+			break;
+		
+		case "savings-interest-posting-current-period-end":
+			WebElement InterestPostingCurrentPeriodEnd = getElement(getResource("savingsInterestPostingCurrentPeriodEnd"));
+			if (InterestPostingCurrentPeriodEnd.getText().equalsIgnoreCase(Status)) {
+				getElement(getResource("savingsInterestPostingCurrentPeriodEnd.click")).click();
+				Thread.sleep(getResourceKey("smallWait"));
+			}else {
+				System.out.println("Already Status is "+Status);
+			}
+			break;
+			
+		case "savings_account_included_in_collection_sheet":
+			WebElement savingsIncludedInCollectionSheet = getElement(getResource("savingsAccountIncludedInCollectionSheet"));
+			if (savingsIncludedInCollectionSheet.getText().equalsIgnoreCase(Status)) {
+				getElement(getResource("savingsIncludedInCollectionSheet.click")).click();
+				Thread.sleep(getResourceKey("smallWait"));
+			}else {
+				System.out.println("Already Status is "+Status);
+			}
+			break;
+	
+		case "savings_withdraw_included_in_collection_sheet":
+			WebElement savingsWithdrawInCollectionSheet = getElement(getResource("savingsWithdrawIncludedInCollectionSheet"));
+			if (savingsWithdrawInCollectionSheet.getText().equalsIgnoreCase(Status)) {
+				getElement(getResource("savingsIncludedInCollectionSheet.click")).click();
+				Thread.sleep(getResourceKey("smallWait"));
+			}else {
+				System.out.println("Already Status is "+Status);
+			}
+			break;
+			
+		default:
+			System.out.println("Invalid Configuartion name");
+			break;
+
+		}
+	}
 
 	public void createnonWorkingDays(String value) throws InterruptedException {
 		String checked = "checked";

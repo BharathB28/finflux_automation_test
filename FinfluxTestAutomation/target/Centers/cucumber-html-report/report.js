@@ -46,7 +46,7 @@ formatter.match({
   "location": "LoginSteps.I_navigate_to_mifos_using(String)"
 });
 formatter.result({
-  "duration": 1765244034,
+  "duration": 1550357482,
   "status": "passed"
 });
 formatter.match({
@@ -59,55 +59,55 @@ formatter.match({
   "location": "LoginSteps.I_login_into_mifos_site_using_excel_sheet(String,String\u003e)"
 });
 formatter.result({
-  "duration": 5353337574,
+  "duration": 5576320115,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.I_should_see_login_successfully()"
 });
 formatter.result({
-  "duration": 691853622,
+  "duration": 660042676,
   "status": "passed"
 });
 formatter.scenario({
   "line": 11,
-  "name": "4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw",
+  "name": "4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013",
   "description": "",
-  "id": "rbi;4982-createrdproduct-editinterestchart-activaterd-deposit-withdraw",
+  "id": "rbi;4624-nonworksatandsun-repaydue-movetonextrepaymentmeetingday-center-disbweeklyloanon01jan2013-collectionsheeton08jan2013",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
       "line": 10,
-      "name": "@RunnerClass2"
+      "name": "@RunnerClass8"
     }
   ]
 });
 formatter.step({
   "line": 12,
-  "name": "I setup the clients",
+  "name": "I create \"move to next repayment day\" As Payments due on non working days",
+  "rows": [
+    {
+      "cells": [
+        "4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx"
+      ],
+      "line": 13
+    }
+  ],
   "keyword": "Given "
 });
 formatter.step({
-  "line": 13,
-  "name": "I entered the values into client from \"Input\" sheet",
-  "rows": [
-    {
-      "cells": [
-        "Createclient.xlsx"
-      ],
-      "line": 14
-    }
-  ],
-  "keyword": "When "
+  "line": 14,
+  "name": "I setup the center",
+  "keyword": "Given "
 });
 formatter.step({
   "line": 15,
-  "name": "I set up the new create RD account from \"NewRDInput\" sheet",
+  "name": "I entered the values into center from \"Input\" sheet",
   "rows": [
     {
       "cells": [
-        "4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx"
+        "4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx"
       ],
       "line": 16
     }
@@ -116,13 +116,11 @@ formatter.step({
 });
 formatter.step({
   "line": 17,
-  "name": "I \"Do Deposit Transaction\" and verified the following tabs",
+  "name": "I entered the values into group from \"Group\" sheet",
   "rows": [
     {
       "cells": [
-        "4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx",
-        "RecurringDeposit",
-        "RecurringDeposit1"
+        "4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx"
       ],
       "line": 18
     }
@@ -131,13 +129,11 @@ formatter.step({
 });
 formatter.step({
   "line": 19,
-  "name": "I \"Post Interest And withraw Amount\" and verified the following tabs",
+  "name": "I entered the values into client from \"Input\" sheet",
   "rows": [
     {
       "cells": [
-        "4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx",
-        "Modify Transaction",
-        "Modify Transaction1"
+        "Createclient.xlsx"
       ],
       "line": 20
     }
@@ -146,22 +142,100 @@ formatter.step({
 });
 formatter.step({
   "line": 21,
-  "name": "I verified the \"RD Transaction \u0026 TransID\" details successfully",
+  "name": "I set up the new create loan from \"NewLoanInput\" sheet",
   "rows": [
     {
       "cells": [
-        "4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx"
+        "4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx"
       ],
       "line": 22
     }
   ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 23,
+  "name": "I navigate to collection Sheet",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 24,
+  "name": "I Make Repayment Through \"Collection\" sheet",
+  "rows": [
+    {
+      "cells": [
+        "4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx"
+      ],
+      "line": 25
+    }
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 26,
+  "name": "I navigate To Loan Account Page",
   "keyword": "And "
 });
+formatter.step({
+  "line": 27,
+  "name": "I verified the following Tabs details successfully",
+  "rows": [
+    {
+      "cells": [
+        "4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx",
+        "Summary",
+        "Repayment Schedule",
+        "Transactions"
+      ],
+      "line": 28
+    }
+  ],
+  "keyword": "Then "
+});
 formatter.match({
-  "location": "ClientSteps.I_setup_the_clients()"
+  "arguments": [
+    {
+      "val": "move to next repayment day",
+      "offset": 10
+    }
+  ],
+  "location": "ClientSteps.I_create_As_Payments_due_on_non_working_days(String,String\u003e)"
 });
 formatter.result({
-  "duration": 1984938686,
+  "duration": 11705091791,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ClientSteps.I_setup_the_center()"
+});
+formatter.result({
+  "duration": 4298505004,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Input",
+      "offset": 39
+    }
+  ],
+  "location": "ClientSteps.I_entered_the_values_into_center_from_sheet(String,String\u003e)"
+});
+formatter.result({
+  "duration": 37764595501,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Group",
+      "offset": 38
+    }
+  ],
+  "location": "ClientSteps.I_entered_the_values_into_group_from_sheet(String,String\u003e)"
+});
+formatter.result({
+  "duration": 21605270692,
   "status": "passed"
 });
 formatter.match({
@@ -174,59 +248,56 @@ formatter.match({
   "location": "ClientSteps.I_entered_the_values_into_client_from_sheet_Verified(String,String\u003e)"
 });
 formatter.result({
-  "duration": 9634746921,
+  "duration": 9485287912,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "NewRDInput",
-      "offset": 41
+      "val": "NewLoanInput",
+      "offset": 35
     }
   ],
-  "location": "ClientSteps.I_set_up_the_new_create_RD_account_from_sheet(String,String\u003e)"
+  "location": "ClientSteps.I_set_up_the_new_create_loan_from_sheet(String,String\u003e)"
 });
 formatter.result({
-  "duration": 33074845344,
+  "duration": 45751694825,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ClientSteps.I_navigate_to_collection_Sheet()"
+});
+formatter.result({
+  "duration": 3621544165,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Do Deposit Transaction",
-      "offset": 3
+      "val": "Collection",
+      "offset": 26
     }
   ],
-  "location": "ClientSteps.I_and_verified_the_following_tabs(String,String\u003e\u003e)"
+  "location": "ClientSteps.I_Make_Repayment_Through_sheet(String,String\u003e)"
 });
 formatter.result({
-  "duration": 25458128907,
+  "duration": 25020761573,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "Post Interest And withraw Amount",
-      "offset": 3
-    }
-  ],
-  "location": "ClientSteps.I_and_verified_the_following_tabs(String,String\u003e\u003e)"
+  "location": "ClientSteps.I_navigate_To_Loan_Account_Page()"
 });
 formatter.result({
-  "duration": 26034212650,
+  "duration": 3500939306,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "RD Transaction \u0026 TransID",
-      "offset": 16
-    }
-  ],
-  "location": "ClientSteps.I_verified_the_details_successfully(String,String\u003e)"
+  "location": "ClientSteps.I_verified_the_following_Tabs_details_successfully(String\u003e\u003e)"
 });
 formatter.result({
-  "duration": 838011087,
-  "status": "passed"
+  "duration": 1407237025,
+  "error_message": "java.lang.AssertionError: Tab Name:Summary Row number:1 Column number:1 Expected result:3337.19 Actual result:3327.32\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat com.mifos.pages.FrontPage.verifyColumnDetails(FrontPage.java:1776)\r\n\tat com.mifos.pages.FrontPage.verifyLoanTabData(FrontPage.java:880)\r\n\tat com.mifos.steps.ClientSteps.I_verified_the_following_Tabs_details_successfully(ClientSteps.java:342)\r\n\tat ✽.Then I verified the following Tabs details successfully(src\\test\\resources\\features\\test.feature:27)\r\n",
+  "status": "failed"
 });
+formatter.embedding("image/png", "embedded0.png");
 });

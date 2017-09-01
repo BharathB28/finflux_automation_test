@@ -360,6 +360,11 @@ public class ClientSteps {
 	public void I_Navigate_to_Accounting() throws Throwable {
 		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ MifosWebPage.getResource("AccountingSearchJournalEntries"));
 	}
+	
+	@Then("^I Navigate to System Configuration web page & \"([^\"]*)\" \"([^\"]*)\"$")
+	public void I_Navigate_to_System_Configuration (String status,String configurationName) throws Throwable {
+		varFrontPage.EnableDisableConfiguration(status, configurationName);
+	}
 
 	@Then("^I search with transaction id & verified the accounting entries$")
 	public void I_search_with_transaction_id_verified_the_accounting_entries(

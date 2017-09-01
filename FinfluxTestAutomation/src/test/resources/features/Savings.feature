@@ -2056,4 +2056,19 @@ Scenario: 4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw
 	  			|4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|Modify Transaction|Modify Transaction1|
 	  And I verified the "RD Transaction & TransID" details successfully 
 	  			|4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
-      	
+ 
+ @RunnerClass8 
+Scenario: 4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction
+      Given I Navigate to System Configuration web page & "enable" "savings-interest-posting-current-period-end"
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewSavingInput" sheet
+	  			|4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction.xlsx|
+	  Then I "Do Deposit Transaction" and verified the following tabs 
+	            |4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction.xlsx| SavingsDeposit|
+	  Then I "Post Interest " and verified the following tabs
+	  			|4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction.xlsx|Modify Transaction|
+	  And I verified the "Saving Transaction & TransID" details successfully 
+	  			|4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction.xlsx|
+  	

@@ -197,8 +197,8 @@ Scenario: 4908-DISB-1st&2ndRepaymentWithMoreAmount-Preclose
      |4908-DISB-1st&2ndRepaymentWithMoreAmount-Preclose.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
  Then I "undo transaction from transaction tab" and verified the following tabs
 	 |4908-DISB-1st&2ndRepaymentWithMoreAmount-Preclose.xlsx|Modify Transaction1|
- Then i validate and Verify from "error" sheet
-	 |4908-DISB-1st&2ndRepaymentWithMoreAmount-Preclose.xlsx|
+ Then I verified the following Tabs details successfully
+	 |4908-DISB-1st&2ndRepaymentWithMoreAmount.xlsx|Summary|Repayment Schedule|Transactions|
 
 @RunnerClass2	 
 Scenario: 4909-DISB-WaiveInterest-Writeoff  
@@ -263,8 +263,8 @@ Scenario: 4912-DISB2ndTranche-1st&2ndRepaymentWithMoreAmount-Writeoff
      | 4913-DISB2ndTranche-1st&2ndRepaymentWithMoreAmount-Preclose.xlsx|Modify Transaction1|Modify Transaction2|Modify Transaction3|Modify Transaction|Modify Transaction4|Modify Transaction5|Summary|Repayment Schedule|
  Then I "undo transaction from transaction tab" and verified the following tabs
 	 |4908-DISB-1st&2ndRepaymentWithMoreAmount-Preclose.xlsx|Modify Transaction1|
- Then i validate and Verify from "error" sheet
-	 |4908-DISB-1st&2ndRepaymentWithMoreAmount-Preclose.xlsx|
+ Then I verified the following Tabs details successfully
+	 |4913-DISB2ndTranche-1st&2ndRepaymentWithMoreAmount-Preclose-verify.xlsx|Summary|Repayment Schedule|Transactions|
  
  @RunnerClass2
  Scenario: 4914-DISB2ndTranche-1st&2ndRepaymentWithMoreAmount-Undo
@@ -451,7 +451,7 @@ Scenario: 4924-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-f
   When I set up the new create loan from "NewLoanInput" sheet
 	 | 4924-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-foreclose.xlsx |
   Then I "MakeRepayment&waive&foreclose" and verified the following tabs
-	 | 4924-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-foreclose.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
+	 | 4924-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-foreclose.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Modify Transaction3|Summary|Repayment Schedule|Transactions|
 
 @RunnerClass2
 Scenario: 4925-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest
@@ -890,4 +890,24 @@ Scenario: 4973-DISBLOAN-MakeRepayment-JouranlEntries
 	  And I Navigate to Accounting web page
 	  Then I search with transaction id & verified the accounting entries
 	   			|4973-DISBLOAN-MakeRepayment-JouranlEntries.xlsx| Deposit1|
- 
+
+ @RunnerClass8 
+Scenario: 4983-DISBLOAN-VerifyTransaction-JouranlEntries
+      Given I Navigate to System Configuration web page & "enable" "paymenttype-applicable-for-disbursement-charges"
+      Given I setup the center
+      When I entered the values into center from "Input" sheet
+	 			|4983-DISBLOAN-VerifyTransaction-JouranlEntries.xlsx|
+	  Then I entered the values into group from "Group" sheet
+                |4983-DISBLOAN-VerifyTransaction-JouranlEntries.xlsx|
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4983-DISBLOAN-VerifyTransaction-JouranlEntries.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	 			|4983-DISBLOAN-VerifyTransaction-JouranlEntries.xlsx |
+	  Then I verified the "Transactions" details and read the transaction Id
+	  			|4983-DISBLOAN-VerifyTransaction-JouranlEntries.xlsx|			
+	  And I Navigate to Accounting web page
+	  Then I search with transaction id & verified the accounting entries
+	   			|4983-DISBLOAN-VerifyTransaction-JouranlEntries.xlsx|Acc_Disbursement|Acc_Disbursement1|Acc_RepaymentDisbursement|Acc_Repayment|Acc_Repayment1|Acc_Repayment2|
+   

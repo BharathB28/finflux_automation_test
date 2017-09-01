@@ -120,7 +120,7 @@ Background:
 
 @RunnerClass2 	
 Scenario: 4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013
-	 Given I create "move to next repayment meeting day" As Payments due on non working days
+	 Given I create "move to next repayment day" As Payments due on non working days
 	 	|4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|
      Given I setup the center
 	 When I entered the values into center from "Input" sheet

@@ -9,6 +9,9 @@ Background:
 
 @RunnerClass2
 Scenario: 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date
+  Given I setup the village
+  When I entered the values into village from "village" sheet
+  	 | 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date.xlsx|
   Given I setup the center
   When I entered the values into center from "Center" sheet
 	 | 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date.xlsx|
