@@ -1348,4 +1348,412 @@ Background:
 	 	|Createclient.xlsx|
 	 When I set up the new create loan from "NewLoanInput" sheet
 	  	|4623-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBWeeklyLOANon01JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13.xlsx|	
+	
+@RunnerClass8
+Scenario:4787-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-APRACT01JAN2015
+  
+  Given I setup the "Share" product
+		        | Productloannavigation.xlsx |
+  Then I entered the values into product from "ProductShareInput" Sheet
+		        |4787-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-APRACT01JAN2015.xlsx|
+   Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4787-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-APRACT01JAN2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4787-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-APRACT01JAN2015.xlsx|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4787-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-APRACT01JAN2015.xlsx|
+  And I verified the "Share Other Details2" details successfully 
+	  			|4787-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-APRACT01JAN2015.xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4787-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-APRACT01JAN2015.xlsx|
+				
+@RunnerClass8
+Scenario: 4788-SUBMITSA(ACTPRD-30DAYS&LKINPRD-15DAYS)-Modify(ACTPRD-15DAYS&LCKINPRD-3ODAYS)-ACT01JAN2015
+  
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4788-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-ModifyApp(MINACTPRD-15DAYS&LCKINPRD-3ODAYS)-APRACT01JAN2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4788-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-ModifyApp(MINACTPRD-15DAYS&LCKINPRD-3ODAYS)-APRACT01JAN2015.xlsx|
+  Then I "Modify Share Account Application" and verified the following tabs
+	  			|4788-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-ModifyApp(MINACTPRD-15DAYS&LCKINPRD-3ODAYS)-APRACT01JAN2015.xlsx|Modify Transaction|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4788-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-ModifyApp(MINACTPRD-15DAYS&LCKINPRD-3ODAYS)-APRACT01JAN2015.xlsx|
+ And I verified the "Share Other Details2" details successfully 
+	  			|4788-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-ModifyApp(MINACTPRD-15DAYS&LCKINPRD-3ODAYS)-APRACT01JAN2015.xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4788-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-ModifyApp(MINACTPRD-15DAYS&LCKINPRD-3ODAYS)-APRACT01JAN2015.xlsx|
+				
+				
+@RunnerClass8
+Scenario: 4789-SUBMITSA(ACTPRD-30DAY&LCKINPRD-15DAY)-APR01JAN2015-UNDOAPR-APR04JAN2015-ACT05JAN2015
+  
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4789-SUBMITSA(ACTPRD-30DAY&LCKINPRD-15DAY)-APR01JAN2015-UNDOAPR-APR04JAN2015-ACT05JAN2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4789-SUBMITSA(ACTPRD-30DAY&LCKINPRD-15DAY)-APR01JAN2015-UNDOAPR-APR04JAN2015-ACT05JAN2015.xlsx|
+  Then I "UndoApprove and Activate" and verified the following tabs
+	  			|4789-SUBMITSA(ACTPRD-30DAY&LCKINPRD-15DAY)-APR01JAN2015-UNDOAPR-APR04JAN2015-ACT05JAN2015.xlsx|Modify Transaction|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4789-SUBMITSA(ACTPRD-30DAY&LCKINPRD-15DAY)-APR01JAN2015-UNDOAPR-APR04JAN2015-ACT05JAN2015.xlsx|
+ And I verified the "Share Other Details2" details successfully 
+	  			|4789-SUBMITSA(ACTPRD-30DAY&LCKINPRD-15DAY)-APR01JAN2015-UNDOAPR-APR04JAN2015-ACT05JAN2015.xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4789-SUBMITSA(ACTPRD-30DAY&LCKINPRD-15DAY)-APR01JAN2015-UNDOAPR-APR04JAN2015-ACT05JAN2015.xlsx|
+  
+
+@RunnerClass8
+Scenario: 4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015
+  
+   
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
+ And I verified the "Share Other Details2" details successfully 
+	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
+  #And I verified the "Share Transaction" details successfully 
+#	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
+  And I verified the "Share Charge" details successfully 
+	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
+  
+  
+@RunnerClass8
+Scenario: 4791-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-RJCTon01JAN2015
+  
+   
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4791-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-RJCTon01JAN2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4791-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-RJCTon01JAN2015.xlsx|
+  Then I "Reject Application" and verified the following tabs
+	  			|4791-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-RJCTon01JAN2015.xlsx|Modify Transaction|	  				  			
+  And I verified the "Share Other Details1" details successfully 
+	  			|4791-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-RJCTon01JAN2015.xlsx|
+ And I verified the "Share Other Details2" details successfully 
+	  			|4791-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-RJCTon01JAN2015.xlsx|
+				
+				
+@RunnerClass8
+Scenario: 4792-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-DELETEIT
+  
+   
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4792-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-DELETEIT.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4792-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-DELETEIT.xlsx|
+  Then I "Reject Application" and verified the following tabs
+	  			|4792-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS)-DELETEIT.xlsx|Modify Transaction|	  				  			
+ 
+  
+@RunnerClass8
+Scenario: 4793-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015(checkPending)
+  
+   
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4793-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015(checkPending).xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4793-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015(checkPending).xlsx|
+  Then I "Apply Additional Share" and verified the following tabs
+	  			|4793-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015(checkPending).xlsx|Modify Transaction|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4793-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015(checkPending).xlsx|
+  And I verified the "Share Other Details2" details successfully 
+	  			|4793-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015(checkPending).xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4793-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015(checkPending).xlsx|	 
+
+
+@RunnerClass8
+Scenario: 4794-SUBMITSA01JAN2015(ACTPRD-30D&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVEADDSHARES
+  
+   
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4794-SUBMITSA01JAN2015(ACTPRD-30D&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVEADDSHARES.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4794-SUBMITSA01JAN2015(ACTPRD-30D&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVEADDSHARES.xlsx|
+  Then I "Apply Additional Share" and verified the following tabs
+	  			|4794-SUBMITSA01JAN2015(ACTPRD-30D&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVEADDSHARES.xlsx|Modify Transaction|
+  Then I "Approve Additional Share" and verified the following tabs
+	  			|4794-SUBMITSA01JAN2015(ACTPRD-30D&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVEADDSHARES.xlsx|Modify Transaction1|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4794-SUBMITSA01JAN2015(ACTPRD-30D&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVEADDSHARES.xlsx|
+  And I verified the "Share Other Details2" details successfully 
+	  			|4794-SUBMITSA01JAN2015(ACTPRD-30D&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVEADDSHARES.xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4794-SUBMITSA01JAN2015(ACTPRD-30D&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVEADDSHARES.xlsx|	  				  			
+ 
+
+@RunnerClass8
+Scenario: 4795-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-ADDSHARES5on02FEB2015-APPROVE
+  
+   
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4795-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-ADDSHARES5on02FEB2015-APPROVE.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4795-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-ADDSHARES5on02FEB2015-APPROVE.xlsx|
+  Then I "Apply Additional Share" and verified the following tabs
+	  			|4795-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-ADDSHARES5on02FEB2015-APPROVE.xlsx|Modify Transaction|
+  Then I "Apply Additional Share" and verified the following tabs
+	  			|4795-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-ADDSHARES5on02FEB2015-APPROVE.xlsx|Modify Transaction1|
+  Then I "Approve Additional Share" and verified the following tabs
+	  			|4795-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-ADDSHARES5on02FEB2015-APPROVE.xlsx|Modify Transaction2|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4795-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-ADDSHARES5on02FEB2015-APPROVE.xlsx|
+  And I verified the "Share Other Details2" details successfully 
+	  			|4795-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-ADDSHARES5on02FEB2015-APPROVE.xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4795-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-ADDSHARES5on02FEB2015-APPROVE.xlsx|	  				  			
+ 
+@RunnerClass8
+Scenario: 4796-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVESHARES-APPLYADDSHARES30JAN2015
+  
+   
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4796-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVESHARES-APPLYADDSHARES30JAN2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4796-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVESHARES-APPLYADDSHARES30JAN2015.xlsx|
+  Then I "Apply Additional Share" and verified the following tabs
+	  			|4796-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVESHARES-APPLYADDSHARES30JAN2015.xlsx|Modify Transaction|
+  Then I "Approve Additional Share" and verified the following tabs
+	  			|4796-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVESHARES-APPLYADDSHARES30JAN2015.xlsx|Modify Transaction2|
+ Then I "Apply Additional Share" and verified the following tabs
+	  			|4796-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVESHARES-APPLYADDSHARES30JAN2015.xlsx|Modify Transaction1|
+  Then i validate and Verify from "error" sheet
+	 			|4796-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-APPROVESHARES-APPLYADDSHARES30JAN2015.xlsx|
+  
+ 
+@RunnerClass8
+Scenario: 4797-SUBMITSA01JAN2015(ACTPRD-30DAYS&LCKINPRD-15DAYS)-ACT01JAN2015-REDEEMSHARES5on01MARCH2015
+  
+   
+   Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4797-SUBMITSA01JAN2015(ACTPRD-30DAYS&LCKINPRD-15DAYS)-ACT01JAN2015-REDEEMSHARES5on01MARCH2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4797-SUBMITSA01JAN2015(ACTPRD-30DAYS&LCKINPRD-15DAYS)-ACT01JAN2015-REDEEMSHARES5on01MARCH2015.xlsx|
+  Then I "REDEEM Share" and verified the following tabs
+	  			|4797-SUBMITSA01JAN2015(ACTPRD-30DAYS&LCKINPRD-15DAYS)-ACT01JAN2015-REDEEMSHARES5on01MARCH2015.xlsx|Modify Transaction|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4797-SUBMITSA01JAN2015(ACTPRD-30DAYS&LCKINPRD-15DAYS)-ACT01JAN2015-REDEEMSHARES5on01MARCH2015.xlsx|
+  And I verified the "Share Other Details2" details successfully 
+	  			|4797-SUBMITSA01JAN2015(ACTPRD-30DAYS&LCKINPRD-15DAYS)-ACT01JAN2015-REDEEMSHARES5on01MARCH2015.xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4797-SUBMITSA01JAN2015(ACTPRD-30DAYS&LCKINPRD-15DAYS)-ACT01JAN2015-REDEEMSHARES5on01MARCH2015.xlsx|	
+				
+@RunnerClass8
+Scenario: 4798-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-REDEEMSHARES15on01APR2015
+  
+   
+   Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4798-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-REDEEMSHARES15on01APR2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4798-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-REDEEMSHARES15on01APR2015.xlsx|
+  Then I "REDEEM Share" and verified the following tabs
+	  			|4798-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-REDEEMSHARES15on01APR2015.xlsx|Modify Transaction|
+  Then i validate and Verify from "error" sheet 
+	  			|4798-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-REDEEMSHARES15on01APR2015.xlsx|
+  
+  
+@RunnerClass8
+Scenario: 4799-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-ADDSHARES5on01FEB2015-REDEEMSHARES15on30JAN2015
+  
+   
+   Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4799-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-ADDSHARES5on01FEB2015-REDEEMSHARES15on30JAN2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4799-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-ADDSHARES5on01FEB2015-REDEEMSHARES15on30JAN2015.xlsx|
+  Then I "Apply Additional Share" and verified the following tabs
+	  			|4799-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-ADDSHARES5on01FEB2015-REDEEMSHARES15on30JAN2015.xlsx|Modify Transaction|
+  Then I "REDEEM Share" and verified the following tabs
+	  			|4799-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-ADDSHARES5on01FEB2015-REDEEMSHARES15on30JAN2015.xlsx|Modify Transaction1|
+  Then i validate and Verify from "error" sheet 
+	  			|4799-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-ADDSHARES5on01FEB2015-REDEEMSHARES15on30JAN2015.xlsx|
+
+@RunnerClass8
+Scenario: 4800-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&CHG'share-purchase-flat')-ACT01JAN2015
+  
+   
+   Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4800-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&CHG'share-purchase-flat')-ACT01JAN2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4800-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&CHG'share-purchase-flat')-ACT01JAN2015.xlsx|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4800-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&CHG'share-purchase-flat')-ACT01JAN2015.xlsx|
+  And I verified the "Share Other Details2" details successfully 
+	  			|4800-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&CHG'share-purchase-flat')-ACT01JAN2015.xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4800-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&CHG'share-purchase-flat')-ACT01JAN2015.xlsx|
+  And I verified the "Share Charge" details successfully 
+	  			|4800-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&CHG'share-purchase-flat')-ACT01JAN2015.xlsx|
+  
+  
+@RunnerClass8
+Scenario: 4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015
+  
+   
+   Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015.xlsx|
+  Then I "REDEEM Share" and verified the following tabs
+	  			|4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015.xlsx|Modify Transaction|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015.xlsx|
+  And I verified the "Share Other Details2" details successfully 
+	  			|4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015.xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015.xlsx|
+  And I verified the "Share Charge" details successfully 
+	  			|4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015.xlsx|
+	  			
+@RunnerClass8
+Scenario: 4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES
+  
+   
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|
+  Then I "Apply Additional Share" and verified the following tabs
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|Modify Transaction|
+  Then I "Reject Additional Share" and verified the following tabs
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|Modify Transaction1|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|
+  And I verified the "Share Other Details2" details successfully 
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|
+ 
+@RunnerClass8
+Scenario: 4803-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015-CloseSAon15January2015
+  
+   
+   Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4803-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015-CloseSAon15January2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4803-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015-CloseSAon15January2015.xlsx|
+  Then I "Close Share Account" and verified the following tabs
+	  			|4803-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015-CloseSAon15January2015.xlsx|Modify Transaction|
+  Then i validate and Verify from "error" sheet 
+	  			|4803-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015-CloseSAon15January2015.xlsx|
+  
+ 
+@RunnerClass8
+Scenario: 4804-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015
+  
+   
+   Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4804-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4804-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015.xlsx|
+  Then i validate and Verify from "error" sheet 
+	  			|4804-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015.xlsx|
+  
+@RunnerClass8
+Scenario: 4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD
+  
+  Given I setup the "Share" product
+		        | Productloannavigation.xlsx |
+  Then I entered the values into product from "ProductShareInput" Sheet
+		        |4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|
+  Then I "Apply Dividend to Product" and verified the following tabs
+	  			|4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Post Dividends For Shares"
+  Then I "Navigate to Share account" and verified the following tabs 
+	            |4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx| Modify Transaction1 |
+  And I verified the "Share dividend" details successfully 
+	  			|4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|
+  Then I "Navigate to Saving account" and verified the following tabs
+                |4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx| Modify Transaction2 |
+  And I verified the "Saving Transaction" details successfully
+	 			|4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|
+
+				
+@RunnerClass8
+Scenario: 4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA
+  
+  Given I setup the "Share" product
+		        | Productloannavigation.xlsx |
+  Then I entered the values into product from "ProductShareInput" Sheet
+		        |4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|
+  Then I "Apply Dividend to Product" and verified the following tabs
+	  			|4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|Modify Transaction|
+ 
+  Then I "Navigate to Share account" and verified the following tabs 
+	            |4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx| Modify Transaction1 |
+  
+  Then I "Close Share account" and verified the following tabs
+                |4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx| Modify Transaction2 |
+  And I verified the "Share Transaction" details successfully 
+	  			|4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|
 	 			

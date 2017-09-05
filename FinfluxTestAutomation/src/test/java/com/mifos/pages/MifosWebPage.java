@@ -725,7 +725,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				if (AsList(arr, key)) {
 					Thread.sleep(2000);
 				}
-			if (FrontPage.sheetName.equals("NewSavingInput") && key.equals("Submitbutton")) {
+			/*if (FrontPage.sheetName.equals("NewSavingInput") && key.equals("Submitbutton")) {
 				LazyWebElement check = getElement(getResource("isOverdraftAmountEnabled"));
 				if (check.isSelected()) {
 					LazyWebElement check1 = getElement(getResource("isDplimitEnabled"));
@@ -737,7 +737,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				{
 				FrontPage.sheetName = "";
 				}
-			}
+			}*/
 			if (key.equals("ClickOnADD")) {
 				By loc = null;
 				loc = getLocator(getResource(key));

@@ -2363,18 +2363,18 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  Then I make repayment and verified the following tabs
        			|4608-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY20JAN.xlsx|Input|Repayment Schedule|
 
-@RunnerClass1
-	  Scenario: 4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN  
-      Given I setup the clients
-	  When I entered the values into client from "Input" sheet
-	  			|Createclient.xlsx|
-	  When I set up the new create loan from "NewLoanInput" sheet
-	  			|4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|
-	  Then I "Delete" holiday
-	  |4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|
-	  And I navigate To Loan Account Page
-	  Then I make repayment and verified the following tabs
-      |4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|Input|Repayment Schedule|
+#@RunnerClass1
+#	  Scenario: 4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN  
+#      Given I setup the clients
+#	  When I entered the values into client from "Input" sheet
+#	  			|Createclient.xlsx|
+#	  When I set up the new create loan from "NewLoanInput" sheet
+#	  			|4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|
+#	  Then I "Delete" holiday
+#	  |4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|
+#	  And I navigate To Loan Account Page
+#	  Then I make repayment and verified the following tabs
+#      |4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|Input|Repayment Schedule|
 
 #@RunnerClass1
 #	  Scenario: 4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN  

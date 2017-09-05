@@ -558,9 +558,13 @@ public class FrontPage extends MifosWebPage {
 			verifySuccessMessage("editFDproduct", "Edit");
 			ProductCreatedURL = getWebDriver().getCurrentUrl();
 			}
-			else if(sheetName.equals("ProductRDInput")||sheetName.equals("EditRDProduct"))
+			else if(sheetName.equals("ProductRDInput"))
 			{
 			verifySuccessMessage("editRDproduct", "Edit");
+			ProductCreatedURL = getWebDriver().getCurrentUrl();
+			}
+			else if(sheetName.equals("EditRDProduct"))
+			{
 			ProductCreatedURL = getWebDriver().getCurrentUrl();
 			}else if(sheetName.equals("ProductShareInput"))
 				{
@@ -2624,7 +2628,7 @@ rowMatchSuccess=true;
 		case "savings_account_included_in_collection_sheet":
 			WebElement savingsIncludedInCollectionSheet = getElement(getResource("savingsAccountIncludedInCollectionSheet"));
 			if (savingsIncludedInCollectionSheet.getText().equalsIgnoreCase(Status)) {
-				getElement(getResource("savingsIncludedInCollectionSheet.click")).click();
+				getElement(getResource("savingsAccountIncludedInCollectionSheet.click")).click();
 				Thread.sleep(getResourceKey("smallWait"));
 			}else {
 				System.out.println("Already Status is "+Status);
@@ -2634,7 +2638,7 @@ rowMatchSuccess=true;
 		case "savings_withdraw_included_in_collection_sheet":
 			WebElement savingsWithdrawInCollectionSheet = getElement(getResource("savingsWithdrawIncludedInCollectionSheet"));
 			if (savingsWithdrawInCollectionSheet.getText().equalsIgnoreCase(Status)) {
-				getElement(getResource("savingsIncludedInCollectionSheet.click")).click();
+				getElement(getResource("savingsWithdrawIncludedInCollectionSheet.click")).click();
 				Thread.sleep(getResourceKey("smallWait"));
 			}else {
 				System.out.println("Already Status is "+Status);
