@@ -7,7 +7,7 @@ Background:
 	Then I should see logged in successfully
 
 
-@RunnerClass2
+@RunnerClassClientsSpecific
 Scenario: 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date
   Given I setup the village
   When I entered the values into village from "village" sheet
@@ -28,7 +28,7 @@ Scenario: 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date
   And I "Disburse2ndTranche&ReschRepayDate" and verified the following tabs
 	 | 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date-Disb2ndTranche.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass2
+@RunnerClassClientsSpecific
 Scenario: 4940-DisburseLoan-With-FixedEMI
   Given I setup the center
   When I entered the values into center from "Center" sheet
@@ -46,7 +46,7 @@ Scenario: 4940-DisburseLoan-With-FixedEMI
   And I "Disburse2ndTranche&ReschRepayDate" and verified the following tabs
 	 | 4940-DisburseLoan-With-FixedEMI-Disb2ndTranche.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
  
- @RunnerClass2
+ @RunnerClassClientsSpecific
 Scenario: 4941-Disbursement-Date-Repayment-Date-Onsameday
   Given I setup the center
   When I entered the values into center from "Center" sheet
@@ -60,7 +60,7 @@ Scenario: 4941-Disbursement-Date-Repayment-Date-Onsameday
   And I "Disburse2ndTranche" and verified the following tabs
 	 | 4941-Disbursement-Date-Repayment-Date-Onsameday.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
   
-  @RunnerClass2
+  @RunnerClassClientsSpecific
 Scenario: 4942-Validate-Actual-Disbursement-Date-Against-Expected-DisbursementDate
   Given I setup the center
   When I entered the values into center from "Center" sheet
@@ -77,7 +77,7 @@ Scenario: 4942-Validate-Actual-Disbursement-Date-Against-Expected-DisbursementDa
 	 | 4942-Validate-Actual-Disbursement-Date-Against-Expected-DisbursementDate.xlsx|
   
 
-@RunnerClass2
+@RunnerClassClientsSpecific
 Scenario: 4943-DisburseLoan-ChangeMeetingDate-MakeRepayment
   Given I setup the center
   When I entered the values into center from "Center" sheet
@@ -94,7 +94,7 @@ Scenario: 4943-DisburseLoan-ChangeMeetingDate-MakeRepayment
   Then I verified the following Tabs details successfully 
 	 |4943-DisburseLoan-ChangeMeetingDate-MakeRepayment.xlsx|Summary|Repayment Schedule|
   
- @RunnerClass2
+ @RunnerClassClientsSpecific
 Scenario: 4944-Arrears-Recognition-Based-On-the-Original-Schedule
   Given I setup the center
   When I entered the values into center from "Center" sheet
@@ -112,7 +112,7 @@ Scenario: 4944-Arrears-Recognition-Based-On-the-Original-Schedule
   And I "Disburse2ndTranche&ReschRepayDate" and verified the following tabs
 	 | 4944-Arrears-Recognition-Based-On-the-Original-Schedule-Disb2Tranche.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|Modify Transaction1|
  
-@RunnerClass2
+@RunnerClassClientsSpecific
 Scenario: 4945-Do-Repayment-After-the-Maturity-Date
   Given I setup the center
   When I entered the values into center from "Center" sheet
@@ -126,7 +126,7 @@ Scenario: 4945-Do-Repayment-After-the-Maturity-Date
   And I "Disburse2ndTranche&MakeRepayment" and verified the following tabs
 	 | 4945-Do-Repayment-After-the-Maturity-Date.xlsx|Modify Transaction|Modify Transaction1|Modify Transaction2|Modify Transaction3|Summary|Repayment Schedule|Transactions|
  
- @RunnerClass2
+ @RunnerClassClientsSpecific
 Scenario: 4946-Close-Loan-On-Overpayment
   Given I setup the center
   When I entered the values into center from "Center" sheet
@@ -140,7 +140,7 @@ Scenario: 4946-Close-Loan-On-Overpayment
   And I "MakeRepayment" and verified the following tabs
 	 | 4946-Close-Loan-On-Overpayment.xlsx|Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
  
-@RunnerClass2
+@RunnerClassClientsSpecific
 Scenario: 4947-Advanced-Accounting-Rule
   Given I setup the center
   When I entered the values into center from "Center" sheet
@@ -160,7 +160,7 @@ Scenario: 4947-Advanced-Accounting-Rule
   And I search with transaction id & verified the accounting entries
      | 4947-Advanced-Accounting-Rule.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Repayment|Acc_Repayment1|Acc_Periodic|
 
-@RunnerClass2
+@RunnerClassClientsSpecific
 Scenario: 4948-Disburse1stTranche-WaiveChargeFor-2ndTranche
   Given I setup the center
   When I entered the values into center from "Center" sheet
@@ -178,7 +178,7 @@ Scenario: 4948-Disburse1stTranche-WaiveChargeFor-2ndTranche
   And I "MakeRepayment" and verified the following tabs
 	 | 4948-Disburse1stTranche-WaiveChargeFor-2ndTranche-MakeRepayment.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass2
+@RunnerClassClientsSpecific
 Scenario: 4949-TransferClientsBetweenGroups
   Given I setup the center
   When I entered the values into center from "Center" sheet

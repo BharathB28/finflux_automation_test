@@ -204,17 +204,14 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 * @return the list
 	 */
 	protected static List<WebElement> waitForElements(final By locator) {
-		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver())
-				.withTimeout(120, TimeUnit.SECONDS)
-				.pollingEvery(500, TimeUnit.MILLISECONDS)
-				.ignoring(NoSuchElementException.class);
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver()).withTimeout(120, TimeUnit.SECONDS)
+				.pollingEvery(500, TimeUnit.MILLISECONDS).ignoring(NoSuchElementException.class);
 
-		List<WebElement> element = wait
-				.until(new Function<WebDriver, List<WebElement>>() {
-					public List<WebElement> apply(WebDriver driver) {
-						return getWebDriver().findElements(locator);
-					}
-				});
+		List<WebElement> element = wait.until(new Function<WebDriver, List<WebElement>>() {
+			public List<WebElement> apply(WebDriver driver) {
+				return getWebDriver().findElements(locator);
+			}
+		});
 
 		return element;
 	}
@@ -808,32 +805,49 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			break;	
 			
 			case "NavigatePage":
-			if (key.equals("NavigateToCurrentJLG")
-					|| key.equals("NavigateToCurrentJLG1")) {
 				
-				value = currentJlgLoanUrl.split("#/")[1];
-			}
-			if (key.equals("NavigateToLoan")){
-				value = currentNewLoanUrl.split("#/")[1];
-			}
-			if (key.equals("NavigateToCurrentCenterPage")){
-				value = currentCenterUrl.split("#/")[1];
-			}
-			if (key.equals("NavigateToCurrentSavingPage")){
-				value = CurrentSavingAccounturl.split("#/")[1];
-			}
-			if (key.equals("NavigateToSavingPage1")){
-				value = SavingLoanAccountID.toArray()[0].toString().split("#/")[1];
-			}
-			if (key.equals("NavigateToCurrentSharePage")){
-				value = currentShareUrl.split("#/")[1];
-			}
-			if (key.equals("NavigateProductCreatedURL")){
-			value = FrontPage.ProductCreatedURL.split("#/")[1];
-			}
-			if (key.equals("NavigateDataTableCreatedURL")){
-				value = FrontPage.DataTableCreatedURL.split("#/")[1];
+				switch (key) {
+				case "NavigateToCurrentJLG":
+					value = currentJlgLoanUrl.split("#/")[1];
+					break;
+
+				case "NavigateToCurrentJLG1":
+					value = currentJlgLoanUrl.split("#/")[1];
+					break;
+
+				case "NavigateToLoan":
+					value = currentNewLoanUrl.split("#/")[1];
+					break;
+					
+				case "NavigateToCurrentCenterPage":
+					value = currentCenterUrl.split("#/")[1];
+					break;
+					
+				case "NavigateToCurrentSavingPage":
+					value =  CurrentSavingAccounturl.split("#/")[1];
+					break;
+					
+				case "NavigateToSavingPage1":
+					value = SavingLoanAccountID.toArray()[0].toString().split("#/")[1];
+					break;
+					
+				case "NavigateToCurrentSharePage":
+					value = currentShareUrl.split("#/")[1];
+					break;
+					
+				case "NavigateProductCreatedURL":
+					value = FrontPage.ProductCreatedURL.split("#/")[1];
+					break;
+					
+				case "NavigateDataTableCreatedURL":
+					value = FrontPage.DataTableCreatedURL.split("#/")[1];
+					break;
+					
+				default:
+					System.out.println("No Url to navigate");
+					break;
 				}
+			
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ value);
 				
 				Thread.sleep(getResourceKey("largeWait"));
@@ -978,7 +992,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					Thread.sleep(getResourceKey("wait"));
 					}
 				else
-					Assert.fail("Expected result:" + value );
+					Assert.fail("Expected result:" + value + "webpage contains: " + bodyText);
 		
 				
 				break;

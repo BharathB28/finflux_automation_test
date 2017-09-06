@@ -291,6 +291,10 @@ public class ClientSteps {
 		{
 			varFrontPage.verifyTransferData(ExcelSheetPath, excelSheetName, sheetName);
 		}
+		else if(sheetName.contains("Reccuring Client Data") || sheetName.contains("Reccuring Charges Transaction"))
+		{
+			varFrontPage.RecurringCharges(ExcelSheetPath, excelSheetName, sheetName);
+		}
 		else if(sheetName.contains("Saving")||sheetName.contains("FixedDeposit")||sheetName.contains("RecurringDeposit")
 				||sheetName.contains("RD") ||sheetName.contains("FD"))
 		{

@@ -8,21 +8,30 @@ Background:
 
 
 @RunnerClass8 
-Scenario: 4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013
-	 Given I create "move to next repayment day" As Payments due on non working days
-	 	|4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|
-     Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 	|4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     	|4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	  	|4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|	
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	    |4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|
-	  And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	    |4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|Summary|Repayment Schedule|Transactions|
+Scenario: 4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify
+      Given I setup the center
+	  When I entered the values into center from "Input" sheet
+	 			|4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify.xlsx|
+	  Then I entered the values into group from "Group" sheet
+     			|4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input" sheet
+	 		    |Createclient.xlsx|	 				  								  				  				  			
+	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify.xlsx |
+ 	  Then I "Add client charge" and verified the following tabs 
+	            |4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify.xlsx|Modify Transaction |
+	  Then I navigate to scheduler job & execute "Apply Recurring Charge On Client"
+	  Then I "Navigate to client and Verify Charge Overview" and verified the following tabs 
+	            |4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify.xlsx|Modify Transaction1 |
+	  And I verified the "Reccuring Charges Transaction" details successfully 
+	  			|4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify.xlsx|
+	  Then I "Pay Reccuring Charge" and verified the following tabs 
+	            |4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify.xlsx| Modify Transaction2|
+	  Then I "Navigate to client and Verify Charge Overview" and verified the following tabs 
+	            |4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify.xlsx|Modify Transaction1 |
+	  And I verified the "Reccuring Charges Transaction1" details successfully 
+	  			|4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify.xlsx|
+	  And I Navigate to Accounting web page
+	  Then I search with transaction id & verified the accounting entries
+	   			|4989-DisbLoan-ApplyClientCharge-PayAndUndo-Verify.xlsx| ClientChargeAccural|
+           

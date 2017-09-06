@@ -7,7 +7,8 @@ import cucumber.api.junit.Cucumber;
 @Cucumber.Options(format = { "pretty", "html:target/VariableInstallment/cucumber-html-report",
 		"json-pretty:target/VariableInstallment/cucumber-json-report.json" },
 		features = { "src/test/resources/features/VariableInstallments.feature" },
-		glue = { "com.mifos.steps" })
+		glue = { "com.mifos.steps" },
+		tags= {"@RunnerClassVariableInstallment" })
 
 public class VariableInstallmentsTest {
 

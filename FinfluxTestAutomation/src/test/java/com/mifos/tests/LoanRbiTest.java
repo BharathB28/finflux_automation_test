@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 		"json-pretty:target/LoanRbi/cucumber-json-report.json" },
 		features = { "src/test/resources/features/" },
 		glue = { "com.mifos.steps" },
-		tags= {"@RunnerClass3" })
+		tags= {"@RunnerClassLoanRBI" })
 public class LoanRbiTest {
 
 }
