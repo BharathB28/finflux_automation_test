@@ -6,7 +6,7 @@ Background:
 		| Login.xlsx  |
 	Then I should see logged in successfully
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2525-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -28,7 +28,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2525-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2526-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-AMT-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -46,7 +46,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2526-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-AMT-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2527-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DELETE-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -64,7 +64,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2527-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DELETE-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2528-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ADD-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -82,7 +82,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2528-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ADD-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2529-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PATTERN-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -100,7 +100,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2529-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PATTERN-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2530-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DATE-VAR-INST  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -122,7 +122,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2530-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DATE-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2531-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-AMT-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -140,7 +140,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2531-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-AMT-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2532-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DELETE-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -158,7 +158,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2532-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DELETE-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2533-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ADD-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -176,7 +176,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2533-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ADD-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2534-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-PATTERN-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -194,7 +194,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2534-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-PATTERN-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2535-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -216,7 +216,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2535-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2536-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-AMT-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -234,7 +234,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2536-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-AMT-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2537-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DELETE-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -252,7 +252,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2537-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DELETE-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2538-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ADD-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -270,7 +270,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2538-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ADD-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2539-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PATTERN-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -288,7 +288,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2539-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PATTERN-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2540-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DATE-VAR-INST  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -310,7 +310,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2540-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DATE-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2541-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-AMT-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -328,7 +328,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2541-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-AMT-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2542-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DELETE-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -346,7 +346,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2542-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DELETE-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2543-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ADD-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -364,7 +364,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2543-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ADD-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2544-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-PATTERN-VAR-INST  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -382,7 +382,7 @@ Background:
  Then I make repayment and read the transaction Id
  	|2544-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-PATTERN-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2545-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -414,7 +414,7 @@ Background:
  And I verified the "Transactions" details successfully	
 	|2545-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan2.xlsx|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2546-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -442,7 +442,7 @@ Background:
  And I verified the "Transactions" details successfully	
 	|2546-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan2.xlsx|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2547-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -470,7 +470,7 @@ Background:
  And I verified the "Transactions" details successfully	
 	|2547-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan2.xlsx|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2548-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -498,7 +498,7 @@ Background:
  And I verified the "Transactions" details successfully	
 	|2548-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan2.xlsx|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2549-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -526,7 +526,7 @@ Background:
  And I verified the "Transactions" details successfully	
 	|2549-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan2.xlsx|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2550-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -555,7 +555,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2550-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
  	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2551-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -580,7 +580,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2551-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2552-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -602,7 +602,7 @@ Background:
  Then I make repayment and read the transaction Id
 	|2552-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
  
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2553-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -627,7 +627,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2553-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2554-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -652,7 +652,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2554-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2555-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -679,7 +679,7 @@ Background:
  Then I make repayment and read the transaction Id
 	|2555-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2556-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -702,7 +702,7 @@ Background:
  Then I make repayment and read the transaction Id
 	|2556-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2557-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -728,7 +728,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2557-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2558-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -751,7 +751,7 @@ Background:
  Then I make repayment and read the transaction Id
 	|2558-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
  
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2559-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -778,7 +778,7 @@ Background:
 	|2559-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
 
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2560-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -808,7 +808,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2560-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2561-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -834,7 +834,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2561-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2562-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -860,7 +860,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2562-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2563-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -886,7 +886,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2563-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2564-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -912,7 +912,7 @@ Background:
 # And I search with transaction id & verified the accounting entries
 #	|2564-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -944,7 +944,7 @@ Background:
  And I verified the "Transactions" details successfully	
 	|2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan2.xlsx|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -972,7 +972,7 @@ Background:
  And I verified the "Transactions" details successfully	
 	|2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan2.xlsx|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1000,7 +1000,7 @@ Background:
  And I verified the "Transactions" details successfully	
 	|2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan2.xlsx|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1028,7 +1028,7 @@ Background:
  And I verified the "Transactions" details successfully	
 	|2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan2.xlsx|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1056,7 +1056,7 @@ Background:
  And I verified the "Transactions" details successfully	
 	|2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan2.xlsx|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -1085,7 +1085,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
  	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1110,7 +1110,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1135,7 +1135,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1160,7 +1160,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1186,7 +1186,7 @@ Background:
 	|2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 	
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -1216,7 +1216,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1242,7 +1242,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1268,7 +1268,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1294,7 +1294,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1320,7 +1320,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -1350,7 +1350,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1376,7 +1376,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1402,7 +1402,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1428,7 +1428,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1454,7 +1454,7 @@ Background:
  And I search with transaction id & verified the accounting entries
 	|2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -1479,7 +1479,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
  
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2586-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1500,7 +1500,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2586-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
  
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -1522,7 +1522,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
  	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1542,7 +1542,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -1567,7 +1567,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -1593,7 +1593,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
  	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1615,7 +1615,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1637,7 +1637,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2593-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY  
  
  Given I setup the clients 
@@ -1660,7 +1660,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2593-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2594-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY  
  
  Given I setup the clients 
@@ -1683,7 +1683,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2594-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2595-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-%INT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -1706,7 +1706,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2595-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-%INT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2596-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT  
  
   Given I setup the product loan "Setup"
@@ -1733,7 +1733,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2596-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2597-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-FIX-INST-AMT-MORE  
  
   Given I setup the product loan "Setup"
@@ -1757,7 +1757,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2597-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-FIX-INST-AMT-MORE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2598-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-FIX-INST-AMT-LESS  
  
  Given I setup the clients 
@@ -1777,7 +1777,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2598-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-FIX-INST-AMT-LESS-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2599-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-FLAT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1793,7 +1793,7 @@ Background:
  Then I make repayment and verified the following tabs
     |2599-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-FLAT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2600-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-SPEDUEDATE-FEE-FLAT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1809,7 +1809,7 @@ Background:
  Then I make repayment and verified the following tabs
     |2600-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-SPEDUEDATE-FEE-FLAT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2601-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -1827,7 +1827,7 @@ Background:
  Then i validate and Verify from "Output" sheet
 	|2601-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Newcreateloan1.xlsx|
  
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2602-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST  
  
  Given I setup the clients 
@@ -1842,7 +1842,7 @@ Background:
   Then I verified the following Tabs details successfully 
 	|2602-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2603-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST  
  
  Given I setup the clients 
@@ -1857,7 +1857,7 @@ Background:
  Then I verified the following Tabs details successfully
 	|2603-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2604-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST  
  
  Given I setup the clients 
@@ -1872,7 +1872,7 @@ Background:
 # Then I verified the following Tabs details successfully
 #	|2604-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2605-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PREPAY-15JAN  
  
  Given I setup the clients 
@@ -1887,7 +1887,7 @@ Background:
  Then I "Make Pre Payment" and verified the following tabs
 	|2605-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PREPAY-15JAN-Newcreateloan1.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2606-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST  
  
  Given I setup the clients 
@@ -1902,7 +1902,7 @@ Background:
  Then I "WaiveInterest" and verified the following tabs
 	|2606-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2607-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF  
  
  Given I setup the clients 
@@ -1917,7 +1917,7 @@ Background:
  Then I "WaiveInterest" and verified the following tabs
 	|2607-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2608-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2  
  
  Given I setup the clients 
@@ -1932,7 +1932,7 @@ Background:
 # Then I "WaiveInterest" and verified the following tabs
 #	|2608-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -1951,7 +1951,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2610-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE  
  
  Given I setup the clients 
@@ -1966,7 +1966,7 @@ Background:
  Then I "Wave Charge from Charges tab" and verified the following tabs
 	|2610-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE-Newcreateloan1.xlsx|Charges|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2611-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche
  		   
  Given I setup the clients 
@@ -1981,7 +1981,7 @@ Background:
  Then I "Add trance from trache tab" and verified the following tabs
 	|2611-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche-Newcreateloan1.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2612-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche  
  
  Given I setup the clients 
@@ -1996,7 +1996,7 @@ Background:
   Then I "Delete trance from trache tab" and verified the following tabs
 	|2612-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche-Newcreateloan1.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -2021,7 +2021,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
  
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2616-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2042,7 +2042,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2616-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
  
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -2064,7 +2064,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
  	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2084,7 +2084,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -2109,7 +2109,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -2135,7 +2135,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
  	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2157,7 +2157,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2179,7 +2179,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2623-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY  
 
  Given I setup the clients 
@@ -2202,7 +2202,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2623-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2624-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY  
  
  Given I setup the clients 
@@ -2225,7 +2225,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2624-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2625-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-%INT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -2248,7 +2248,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2625-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-%INT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2626-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT  
  
   Given I setup the product loan "Setup"
@@ -2275,7 +2275,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2626-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2627-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-FIX-INST-AMT-MORE  
  
   Given I setup the product loan "Setup"
@@ -2299,7 +2299,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2627-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-FIX-INST-AMT-MORE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2628-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-FIX-INST-AMT-LESS  
  
  Given I setup the clients 
@@ -2319,7 +2319,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2628-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-FIX-INST-AMT-LESS-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2629-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-FLAT  
   	
  Given I setup the clients 
@@ -2336,7 +2336,7 @@ Background:
  Then I make repayment and verified the following tabs
     |2629-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-FLAT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2630-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-SPEDUEDATE-FEE-FLAT  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2352,7 +2352,7 @@ Background:
  Then I make repayment and verified the following tabs
     |2630-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-SPEDUEDATE-FEE-FLAT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  	
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2631-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -2370,7 +2370,7 @@ Background:
  Then i validate and Verify from "Output" sheet
 	|2631-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Newcreateloan1.xlsx|
  
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2632-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST  
  
  Given I setup the clients 
@@ -2385,7 +2385,7 @@ Background:
   Then I verified the following Tabs details successfully 
 	|2632-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2633-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST  
  
  Given I setup the clients 
@@ -2400,7 +2400,7 @@ Background:
  Then I verified the following Tabs details successfully
 	|2633-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2634-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST  
  
  Given I setup the clients 
@@ -2415,7 +2415,7 @@ Background:
 # Then I verified the following Tabs details successfully
 #	|2634-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2635-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PREPAY-15JAN  
  
  Given I setup the clients 
@@ -2430,7 +2430,7 @@ Background:
  Then I "Make Pre Payment" and verified the following tabs
 	|2635-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PREPAY-15JAN-Newcreateloan1.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2636-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST  
  
  Given I setup the clients 
@@ -2445,7 +2445,7 @@ Background:
  Then I "WaiveInterest" and verified the following tabs
 	|2636-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2637-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF  
  
  Given I setup the clients 
@@ -2460,7 +2460,7 @@ Background:
  Then I "WRITEOFF" and verified the following tabs
 	|2637-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2638-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2  
  
  Given I setup the clients 
@@ -2475,7 +2475,7 @@ Background:
 # Then I "WaiveInterest" and verified the following tabs
 #	|2638-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
 	Scenario: 2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
@@ -2494,7 +2494,7 @@ Background:
  Then I verified the following Tabs details successfully 
 	|2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2640-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE  
  
  Given I setup the clients 
@@ -2509,7 +2509,7 @@ Background:
  Then I "Wave Charge from Charges tab" and verified the following tabs
 	|2640-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE-Newcreateloan1.xlsx|Charges|Summary|Repayment Schedule|Transactions|
 
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2641-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche  
  
  Given I setup the clients 
@@ -2524,7 +2524,7 @@ Background:
  Then I "Add trance from trache tab" and verified the following tabs
 	|2641-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche-Newcreateloan1.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
 	
-@RunnerClass4
+@RunnerClassVariableInstallment
  Scenario: 2642-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche  
  
  Given I setup the clients 
