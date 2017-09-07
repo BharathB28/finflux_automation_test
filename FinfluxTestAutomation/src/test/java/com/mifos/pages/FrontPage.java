@@ -1076,6 +1076,92 @@ public class FrontPage extends MifosWebPage {
 		}
 	}
 	
+	public void GlimTab(String clientExcelSheetPath,
+			String excelSheetName, String sheetname)throws InterruptedException, IOException, ParseException 
+	{
+
+		int rowCount = 0;
+		int maxClient = Integer.parseInt(String.valueOf(sheetname.charAt(sheetname.length()-1)));
+		int client = 1;
+		int excelRowCount=1;
+		new WebDriverWait(getWebDriver(), 120)
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'GLIM')]"))).click();
+		try {
+			FileInputStream file = new FileInputStream(new File(clientExcelSheetPath + "/" + excelSheetName));
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+			XSSFSheet sheet = workbook.getSheet(sheetname);
+			rowCount = 4;
+
+			int xlColumnPointer = 0;
+			List<WebElement> applicationCol = null;
+			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
+					applicationCol = getWebDriver().findElements(By.xpath("//table[(@ng-show='client.isClientSelected')]["
+							+ client + "]/tbody/tr[" + xlRowCount + "]/td"));
+				
+				verifyColumnDetails(xlColumnPointer, excelRowCount, applicationCol, sheet, sheetname);
+				excelRowCount++;
+				if (String.valueOf(sheet.getRow(excelRowCount).getCell(0)).contains("Client") ) {
+					xlRowCount=0;
+					excelRowCount++;
+					if(client>=maxClient)
+					{
+						xlRowCount=rowCount+1;
+					}
+
+					client++;
+				}
+			}
+		} catch (FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		} catch (NoSuchElementException e) {
+			Assert.fail(" Unable to click \n");
+		}
+	}
+	
+	public void charges(String clientExcelSheetPath,
+			String excelSheetName, String sheetname)throws InterruptedException, IOException, ParseException 
+	{
+
+		int rowCount = 0;
+		int Client ;
+		int xlColumnPointer=0;
+		if(sheetname.contains("GlimRepaymentScheduleOfClient"))
+		{
+			Client = Integer.parseInt(String.valueOf(sheetname.charAt(sheetname.length()-1)));
+			
+			new WebDriverWait(getWebDriver(), 120)
+			.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'GLIM')]"))).click();
+		
+			new WebDriverWait(getWebDriver(), 120)
+		.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[contains(.,'View Repayment Schedule ')])["+Client+"]"))).click();
+			
+		}else{getWebDriver().findElement(By.xpath(".//*[@heading='Charges']/a")).click();}
+		try {
+			FileInputStream file = new FileInputStream(new File(clientExcelSheetPath + "/" + excelSheetName));
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+			XSSFSheet sheet = workbook.getSheet(sheetname);
+			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
+			
+			List<WebElement> applicationCol = null;
+			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
+
+				if(sheetname.contains("GlimRepaymentScheduleOfClient"))
+				{
+					applicationCol = getWebDriver().findElements(By.xpath("//*[@ng-controller='ViewGlimRepaymentScheduleController']//table/tbody/tr["+xlRowCount+"]/td"));
+				}else{
+					applicationCol = getWebDriver().findElements(By.xpath("//div[@ng-show='chargeTableShow']/table/tbody/tr["+xlRowCount+"]/td"));
+				}
+				
+				verifyColumnDetails(xlColumnPointer, xlRowCount, applicationCol, sheet, sheetname);
+				
+			}
+		} catch (FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		} catch (NoSuchElementException e) {
+			Assert.fail(" Unable to click \n");
+		}
+	}
+	
 	public void verifyTransferData(String clientExcelSheetPath,
 			String excelSheetName, String sheetname)throws InterruptedException, IOException, ParseException 
 	{

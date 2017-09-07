@@ -6,7 +6,7 @@ Background:
 		|Login.xlsx|
 	Then I should see logged in successfully
 	
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate
 	 Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
@@ -28,7 +28,7 @@ Scenario:4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETIN
 	 Then I verified the following Tabs details successfully 
 	    |4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4446-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATEotherthanmeetingdate
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -44,7 +44,7 @@ Scenario:4446-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEE-Weekl
 	 |4446-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATEotherthanmeetingdate.xlsx|Repayment Schedule|
      
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4447-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATE-othermeetingdate
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -58,7 +58,7 @@ Scenario:4447-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then I verified the following Tabs details successfully 
 	 |4447-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATE-othermeetingdate.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4448-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-otherthanmeetingdate
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -72,7 +72,7 @@ Scenario:4448-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then I verified the following Tabs details successfully 
 	 |4448-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-otherthanmeetingdate.xlsx|Summary|Repayment Schedule|	Transactions|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4449-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-othermeetingdate
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -86,7 +86,7 @@ Scenario:4449-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1
 	 Then I verified the following Tabs details successfully 
 	 |4449-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-othermeetingdate.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4450-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifymeeting-toWednesday
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -103,7 +103,7 @@ Scenario:4450-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then I verified the following Tabs details successfully 
 	 |4450-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifymeeting-toWednesday.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4451-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifyfuturemeeting-to15April2015
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -119,7 +119,7 @@ Scenario:4451-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then i validate and Verify from "Output" sheet
 	 |4451-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifyfuturemeeting-to15April2015.xlsx|
 	  
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4452-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifyfuturemeeting-to15April2015-Makerepayment
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -136,7 +136,7 @@ Scenario:4452-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then I make repayment and verified the following tabs
      |4452-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifyfuturemeeting-to15April2015-Makerepayment.xlsx|Repay1|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4453-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015.
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -158,7 +158,7 @@ Scenario:4453-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then I verified the following Tabs details successfully 
 	 |4453-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015..xlsx|Summary|Repayment Schedule|
 	 
-#@RunnerClass1
+#@RunnerClassLoanCharges
 #Scenario:4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed
 #	 Given I setup the center
 #	 When I entered the values into center from "Input" sheet
@@ -180,7 +180,7 @@ Scenario:4453-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 #	 Then I verified the following Tabs details successfully 
 #	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4455-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifymeetingtoDaily
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -194,7 +194,7 @@ Scenario:4455-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then I Navigate Back to Current Center Page from "Center Page" sheet
 	 |4455-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifymeetingtoDaily.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4456-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifymeetingtoBiWeekly
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -208,7 +208,7 @@ Scenario:4456-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then I Navigate Back to Current Center Page from "Center Page" sheet
 	 |4456-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifymeetingtoBiWeekly.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4457-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifymeetingtoMonthly
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -222,7 +222,7 @@ Scenario:4457-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then I Navigate Back to Current Center Page from "Center Page" sheet
 	 |4457-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifymeetingtoMonthly.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4458-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifymeetingtoYearly
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -236,7 +236,7 @@ Scenario:4458-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then I Navigate Back to Current Center Page from "Center Page" sheet
 	 |4458-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifymeetingtoYearly.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4459-ACTCTR-MEET-WEEKLYonFRI-DisburseJLGloanonmeetingdatewithevery2weeksrepayment
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -250,7 +250,7 @@ Scenario:4459-ACTCTR-MEET-WEEKLYonFRI-DisburseJLGloanonmeetingdatewithevery2week
 	 Then I verified the following Tabs details successfully 
 	 |4459-ACTCTR-MEET-WEEKLYonFRI-DisburseJLGloanonmeetingdatewithevery2weeksrepayment|Summary|Repayment Schedule|
 	 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4460-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery2weeksonWednesday-DisburseJLGloanonmeetingdatewithevery2weeksrepayment
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -264,7 +264,7 @@ Scenario:4460-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery2weeksonWednes
 	 Then I verified the following Tabs details successfully 
 	 |4460-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery2weeksonWednesday-DisburseJLGloanonmeetingdatewithevery2weeksrepayment.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4461-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery2weeksonWednesday-DisburseJLGloanonmeetingdatewithevery1weeksrepayment
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -276,7 +276,7 @@ Scenario:4461-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery2weeksonWednes
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4461-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery2weeksonWednesday-DisburseJLGloanonmeetingdatewithevery1weeksrepayment.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4462-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery1weeksonWednesday-DisburseJLGloanonmeetingdatewithevery1weeksrepayment
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -290,7 +290,7 @@ Scenario:4462-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery1weeksonWednes
 	 Then I verified the following Tabs details successfully 
 	 |4462-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery1weeksonWednesday-DisburseJLGloanonmeetingdatewithevery1weeksrepayment.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4463-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery2weeksonWednesday-submitJLGloanOnFutureMEETDate-DisburseOn8-App-2015
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -302,7 +302,7 @@ Scenario:4463-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery2weeksonWednes
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4463-ACTCTR-MEET-WEEKLYonFRI-Modifymeeting-Repetesonevery2weeksonWednesday-submitJLGloanOnFutureMEETDate-DisburseOn8-App-2015.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4464-ACTCTR-MEETING-EVERY1MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -316,7 +316,7 @@ Scenario:4464-ACTCTR-MEETING-EVERY1MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETIN
 	 Then I verified the following Tabs details successfully 
 	 |4464-ACTCTR-MEETING-EVERY1MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4465-ACTCTR-MEETING-EVERY2MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery1months
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -328,7 +328,7 @@ Scenario:4465-ACTCTR-MEETING-EVERY2MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETIN
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4465-ACTCTR-MEETING-EVERY2MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery1months.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4466-ACTCTR-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Dailyloanevery1day
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -340,7 +340,7 @@ Scenario:4466-ACTCTR-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4466-ACTCTR-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Dailyloanevery1day.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4467-ACTCTR-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -352,7 +352,7 @@ Scenario:4467-ACTCTR-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4467-ACTCTR-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4468-ACTCTR-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery2years
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -366,7 +366,7 @@ Scenario:4468-ACTCTR-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING
 	 Then I verified the following Tabs details successfully 
 	 |4468-ACTCTR-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery2years.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4469-ACTCTR-MEETING-EVERY2YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery1years
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -378,7 +378,7 @@ Scenario:4469-ACTCTR-MEETING-EVERY2YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4469-ACTCTR-MEETING-EVERY2YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery1years.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4470-RBI-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -393,7 +393,7 @@ Scenario:4470-RBI-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN
 	 Then I Make Repayment Through "Collection" sheet
 	 |4470-RBI-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4471-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -411,7 +411,7 @@ Scenario:4471-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTA
 	 Then I verified the following Tabs details successfully 
 	    |4471-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4472-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -426,7 +426,7 @@ Scenario:4472-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-
 	 Then I Make Repayment Through "Collection" sheet
 	 |4472-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4473-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERGRP
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -441,7 +441,7 @@ Scenario:4473-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-
 	 Then I Make Repayment Through "Collection" sheet
 	 |4473-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERGRP.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4474-RBI-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN2015
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -456,7 +456,7 @@ Scenario:4474-RBI-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN20
 	 Then I Make Repayment Through "Collection" sheet
 	 |4474-RBI-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN2015.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4475-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON25DEC2014
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -471,7 +471,7 @@ Scenario:4475-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEET
 	 Then I Make Repayment Through "Collection" sheet
 	 |4475-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON25DEC2014.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4476-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -488,7 +488,7 @@ Scenario:4476-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEET
 	 Then i validate and Verify from "Output" sheet
 	 |4476-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4477-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -506,7 +506,7 @@ Scenario:4477-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEET
 	 Then I verified the following Tabs details successfully 
 	 |4477-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4478-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN-SAVEON03JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -521,7 +521,7 @@ Scenario:4478-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEET
 	 Then I Make Repayment Through "Collection" sheet
 	 |4478-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN-SAVEON03JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4479-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -539,7 +539,7 @@ Scenario:4479-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTI
 	 Then I verified the following Tabs details successfully 
 	 |4479-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 		 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4480-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -557,7 +557,7 @@ Scenario:4480-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS
 	 Then I verified the following Tabs details successfully 
 	 |4480-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 		 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4481-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -575,7 +575,7 @@ Scenario:4481-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE
 	 Then I verified the following Tabs details successfully 
 	 |4481-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4482-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -595,7 +595,7 @@ Scenario:4482-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandC
 	 Then I verified the following Tabs details successfully 
 	 |4482-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN.xlsx|Summary|	 	 
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4483-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -615,7 +615,7 @@ Scenario:4483-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFL
 	 Then I verified the following Tabs details successfully 
 	 |4483-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN.xlsx|Summary|	 	 
 	 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4484-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -635,7 +635,7 @@ Scenario:4484-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-
 	 Then I verified the following Tabs details successfully 
 	 |4484-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4485-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -655,7 +655,7 @@ Scenario:4485-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-
 	 Then I verified the following Tabs details successfully 
 	 |4485-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4486-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -675,7 +675,7 @@ Scenario:4486-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENA
 	 Then I verified the following Tabs details successfully 
 	 |4486-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4487-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -692,7 +692,7 @@ Scenario:4487-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-
 	 Then I Make Repayment Through "Collection" sheet
 	 |4487-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4488-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE02JAN-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -704,7 +704,7 @@ Scenario:4488-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4488-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE02JAN-COLLSHEETON09JAN.xlsx|
 	 	 	 	 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4489-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -722,7 +722,7 @@ Scenario:4489-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE
 	 Then I verified the following Tabs details successfully 
 	 |4489-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
 	 	 	 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4490-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -740,7 +740,7 @@ Scenario:4490-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-C
 	 Then I verified the following Tabs details successfully 
 	 |4490-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	 	 	 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4491-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN
 	 Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
@@ -763,7 +763,7 @@ Scenario:4491-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFE
 	 Then I verified the following Tabs details successfully 
 	 |4491-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4492-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -783,7 +783,7 @@ Scenario:4492-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTI
 	 Then i validate and Verify from "Output" sheet
 	 |4492-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4493-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -803,7 +803,7 @@ Scenario:4493-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTI
 	 Then i validate and Verify from "Output" sheet
 	 |4493-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
 	
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4494-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -823,7 +823,7 @@ Scenario:4494-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTI
 	 Then i validate and Verify from "Output" sheet
 	 |4494-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4495-MS-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN
 	  Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
@@ -842,7 +842,7 @@ Scenario:4495-MS-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN
 	 Then I Make Repayment Through "Collection" sheet
 	 |4495-MS-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -861,7 +861,7 @@ Scenario:4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAF
 	 |4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
      
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4497-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -876,7 +876,7 @@ Scenario:4497-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-C
 	 Then I Make Repayment Through "Collection" sheet
 	 |4497-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4498-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERGRP
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -891,7 +891,7 @@ Scenario:4498-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-C
 	 Then I Make Repayment Through "Collection" sheet
 	 |4498-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERGRP.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4499-MS-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN2015
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -906,7 +906,7 @@ Scenario:4499-MS-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN201
 	 Then I Make Repayment Through "Collection" sheet
 	 |4499-MS-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN2015.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4500-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON25DEC2014
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -921,7 +921,7 @@ Scenario:4500-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETO
 	 Then I Make Repayment Through "Collection" sheet
 	 |4500-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON25DEC2014.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4501-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -938,7 +938,7 @@ Scenario:4501-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETO
 	 Then i validate and Verify from "Output" sheet
 	 |4501-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4502-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -956,7 +956,7 @@ Scenario:4502-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETO
 	 Then I verified the following Tabs details successfully 
 	 |4502-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4503-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN-SAVEON03JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -971,7 +971,7 @@ Scenario:4503-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETO
 	 Then I Make Repayment Through "Collection" sheet
 	 |4503-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN-SAVEON03JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4504-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -989,7 +989,7 @@ Scenario:4504-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIM
 	 Then I verified the following Tabs details successfully 
 	 |4504-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 		 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4505-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1007,7 +1007,7 @@ Scenario:4505-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-
 	 Then I verified the following Tabs details successfully 
 	 |4505-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 		 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4506-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1025,7 +1025,7 @@ Scenario:4506-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-
 	 Then I verified the following Tabs details successfully 
 	 |4506-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1045,7 +1045,7 @@ Scenario:4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCL
 	 Then I verified the following Tabs details successfully 
 	 |4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN.xlsx|Summary|	 	 
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1065,7 +1065,7 @@ Scenario:4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLO
 	 Then I verified the following Tabs details successfully 
 	 |4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN.xlsx|Summary|	 	 
 	 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1085,7 +1085,7 @@ Scenario:4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-C
 	 Then I verified the following Tabs details successfully 
 	 |4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1105,7 +1105,7 @@ Scenario:4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-C
 	 Then I verified the following Tabs details successfully 
 	 |4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1125,7 +1125,7 @@ Scenario:4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENAL
 	 Then I verified the following Tabs details successfully 
 	 |4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4512-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1142,7 +1142,7 @@ Scenario:4512-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-C
 	 Then I Make Repayment Through "Collection" sheet
 	 |4512-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4513-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE02JAN-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1154,7 +1154,7 @@ Scenario:4513-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE0
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4513-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE02JAN-COLLSHEETON09JAN.xlsx|
 	 	 	 	 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4514-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1172,7 +1172,7 @@ Scenario:4514-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE0
 	 Then I verified the following Tabs details successfully 
 	 |4514-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
 	 	 	 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1190,7 +1190,7 @@ Scenario:4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-CO
 	 Then I verified the following Tabs details successfully 
 	 |4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	 	 	 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN
 	 Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
@@ -1213,7 +1213,7 @@ Scenario:4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEE
 	 Then I verified the following Tabs details successfully 
 	 |4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1233,7 +1233,7 @@ Scenario:4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIM
 	 Then i validate and Verify from "Output" sheet
 	 |4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1253,7 +1253,7 @@ Scenario:4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIM
 	 Then i validate and Verify from "Output" sheet
 	 |4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
 	
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1273,7 +1273,7 @@ Scenario:4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIM
 	 Then i validate and Verify from "Output" sheet
 	 |4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4520-RBI-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1288,19 +1288,19 @@ Scenario:4520-RBI-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHE
      Then I Make Repayment Through "Productive Collection" sheet
 	 |4520-RBI-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4522-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-ON-10JAN2015
 	 Given I navigate to collection Sheet
 	 Then I Make Repayment Through "Productive Collection" sheet
 	 |4522-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-ON-10JAN2015.xlsx|
 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4523-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-Branch-OFFICE 
 	 Given I navigate to collection Sheet
 	 Then I Make Repayment Through "Productive Collection" sheet
 	 |4523-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-Branch-OFFICE .xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4524-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1327,13 +1327,13 @@ Scenario:4524-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then I verified the following Tabs details successfully 
 	 |4524-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|Summary|Repayment Schedule|
 	 	 	
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4525-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-STAFF1 
 	 Given I navigate to collection Sheet
 	 Then I Make Repayment Through "Productive Collection" sheet
 	 |4525-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-STAFF1.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4526-RBI-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1360,7 +1360,7 @@ Scenario:4526-RBI-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIE
 	 Then I verified the following Tabs details successfully 
 	 |4526-RBI-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4527-RBI-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1386,7 +1386,7 @@ Scenario:4527-RBI-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-AC
 	 Then i validate and Verify from "Output" sheet
 	 |4527-RBI-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4528-RBI-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON14JAN
 	 Given I navigate to collection Sheet
      Then I Make Repayment Through "Productive Collection" sheet
@@ -1394,7 +1394,7 @@ Scenario:4528-RBI-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-AC
 	 Then i validate and Verify from "Output" sheet
 	 |4528-RBI-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON14JAN-C2.xlsx|
 	  	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4529-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC-C1
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1411,7 +1411,7 @@ Scenario:4529-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then i validate and Verify from "Output" sheet
 	 |4529-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC-C1.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4530-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN-C1
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1428,7 +1428,7 @@ Scenario:4530-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then i validate and Verify from "Output" sheet
 	 |4530-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN-C1.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4531-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1446,7 +1446,7 @@ Scenario:4531-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then I verified the following Tabs details successfully 
 	 |4531-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4532-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1464,7 +1464,7 @@ Scenario:4532-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then I verified the following Tabs details successfully 
 	 |4532-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4533-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-Remaning-on-09JAN
 	 Given I navigate to collection Sheet
      Then I Make Repayment Through "Productive Collection" sheet
@@ -1472,7 +1472,7 @@ Scenario:4533-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then i validate and Verify from "Output" sheet
 	 |4533-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-Remaning-on-09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4534-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1490,7 +1490,7 @@ Scenario:4534-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then I verified the following Tabs details successfully 
 	 |4534-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4535-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-2nd-Payment16JAN-C1
 	 Given I navigate to collection Sheet
      Then I Make Repayment Through "Productive Collection" sheet
@@ -1498,7 +1498,7 @@ Scenario:4535-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then i validate and Verify from "Output" sheet
 	 |4535-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-2nd-Payment16JAN-C1.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4536-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1515,7 +1515,7 @@ Scenario:4536-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
      Then I Make Repayment Through "Productive Collection" sheet
 	 |4536-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET-C1.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4537-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1534,7 +1534,7 @@ Scenario:4537-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then i validate and Verify from "Output" sheet
 	 |4537-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN-C1.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4538-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1554,7 +1554,7 @@ Scenario:4538-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then I verified the following Tabs details successfully 
 	 |4538-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4539-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1573,7 +1573,7 @@ Scenario:4539-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then i validate and Verify from "Output" sheet
 	 |4539-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4540-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1592,7 +1592,7 @@ Scenario:4540-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then i validate and Verify from "Output" sheet
 	 |4540-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
 	 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4541-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1612,7 +1612,7 @@ Scenario:4541-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then I verified the following Tabs details successfully 
 	 |4541-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4542-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1630,7 +1630,7 @@ Scenario:4542-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then I verified the following Tabs details successfully 
 	 |4542-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4543-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1649,7 +1649,7 @@ Scenario:4543-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then i validate and Verify from "Output" sheet
 	 |4543-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4544-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1667,7 +1667,7 @@ Scenario:4544-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02
 	 Then I verified the following Tabs details successfully 
 	 |4544-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1682,19 +1682,19 @@ Scenario:4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEE
      Then I Make Repayment Through "Productive Collection" sheet
 	 |4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4547-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-ON-10JAN2015
 	 Given I navigate to collection Sheet
 	 Then I Make Repayment Through "Productive Collection" sheet
 	 |4547-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-ON-10JAN2015.xlsx|
 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4548-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-Branch-OFFICE 
 	 Given I navigate to collection Sheet
 	 Then I Make Repayment Through "Productive Collection" sheet
 	 |4548-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-Branch-OFFICE .xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1721,13 +1721,13 @@ Scenario:4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then I verified the following Tabs details successfully 
 	 |4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|Summary|Repayment Schedule|
 	 	 	
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4550-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-STAFF1 
 	 Given I navigate to collection Sheet
 	 Then I Make Repayment Through "Productive Collection" sheet
 	 |4550-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-STAFF1.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1754,7 +1754,7 @@ Scenario:4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIEN
 	 Then I verified the following Tabs details successfully 
 	 |4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1780,7 +1780,7 @@ Scenario:4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACT
 	 Then i validate and Verify from "Output" sheet
 	 |4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4553-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON14JAN
 	 Given I navigate to collection Sheet
      Then I Make Repayment Through "Productive Collection" sheet
@@ -1788,7 +1788,7 @@ Scenario:4553-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACT
 	 Then i validate and Verify from "Output" sheet
 	 |4553-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON14JAN-C2.xlsx|
 	  	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4554-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1805,7 +1805,7 @@ Scenario:4554-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then i validate and Verify from "Output" sheet
 	 |4554-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4555-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1822,7 +1822,7 @@ Scenario:4555-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then i validate and Verify from "Output" sheet
 	 |4555-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN.xlsx|
 	 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4556-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1840,7 +1840,7 @@ Scenario:4556-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then I verified the following Tabs details successfully 
 	 |4556-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4557-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1858,7 +1858,7 @@ Scenario:4557-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then I verified the following Tabs details successfully 
 	 |4557-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4558-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-Remaning-on-09JAN
 	 Given I navigate to collection Sheet
      Then I Make Repayment Through "Productive Collection" sheet
@@ -1866,7 +1866,7 @@ Scenario:4558-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then i validate and Verify from "Output" sheet
 	 |4558-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-Remaning-on-09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4559-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1884,7 +1884,7 @@ Scenario:4559-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then I verified the following Tabs details successfully 
 	 |4559-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4560-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-2nd-Payment16JAN
 	 Given I navigate to collection Sheet
      Then I Make Repayment Through "Productive Collection" sheet
@@ -1892,7 +1892,7 @@ Scenario:4560-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then i validate and Verify from "Output" sheet
 	 |4560-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-2nd-Payment16JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4561-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1909,7 +1909,7 @@ Scenario:4561-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
      Then I Make Repayment Through "Productive Collection" sheet
 	 |4561-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET-C1.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1928,7 +1928,7 @@ Scenario:4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then i validate and Verify from "Output" sheet
 	 |4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN-C1.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1948,7 +1948,7 @@ Scenario:4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then I verified the following Tabs details successfully 
 	 |4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1967,7 +1967,7 @@ Scenario:4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then i validate and Verify from "Output" sheet
 	 |4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1986,7 +1986,7 @@ Scenario:4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then i validate and Verify from "Output" sheet
 	 |4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
 	 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2006,7 +2006,7 @@ Scenario:4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then I verified the following Tabs details successfully 
 	 |4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4567-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2024,7 +2024,7 @@ Scenario:4567-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then I verified the following Tabs details successfully 
 	 |4567-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2043,7 +2043,7 @@ Scenario:4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then i validate and Verify from "Output" sheet
 	 |4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
 
-@RunnerClass1 
+@RunnerClassLoanCharges 
 Scenario:4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2061,7 +2061,7 @@ Scenario:4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then I verified the following Tabs details successfully 
 	 |4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2078,7 +2078,7 @@ Scenario:4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2J
 	 Then i validate and Verify from "Output" sheet
 	 |4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4571-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2095,7 +2095,7 @@ Scenario:4571-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2
 	 Then i validate and Verify from "Output" sheet
 	 |4571-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2114,7 +2114,7 @@ Scenario:4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE
 	 Then i validate and Verify from "Output" sheet
 	 |4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2135,7 +2135,7 @@ Scenario:4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-les
 	 Then I verified the following Tabs details successfully 
 	 |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2155,7 +2155,7 @@ Scenario:4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-les
 	 Then I verified the following Tabs details successfully 
 	 |4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4575-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2172,7 +2172,7 @@ Scenario:4575-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JL
 	 Then i validate and Verify from "Output" sheet
 	 |4575-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4576-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2189,7 +2189,7 @@ Scenario:4576-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2J
 	 Then i validate and Verify from "Output" sheet
 	 |4576-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2208,7 +2208,7 @@ Scenario:4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2
 	 Then i validate and Verify from "Output" sheet
 	 |4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2229,7 +2229,7 @@ Scenario:4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-less
 	 Then I verified the following Tabs details successfully 
 	 |4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 	
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2249,7 +2249,7 @@ Scenario:4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-less
 	 Then I verified the following Tabs details successfully 
 	 |4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4600-Holidayon15Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN  
 
       Given I setup the product loan "Setup"
@@ -2266,7 +2266,7 @@ Scenario:4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-less
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4600-Holidayon15Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4601-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon15JAN  
 
       Given I setup the clients
@@ -2279,7 +2279,7 @@ Scenario:4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-less
 	  Then i validate and Verify from "error" sheet
 	 			|4601-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon15JAN.xlsx|
 	  
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4602-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN  
 
       Given I setup the clients
@@ -2292,7 +2292,7 @@ Scenario:4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-less
 	  Then I make repayment and verified the following tabs
      			|4602-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN.xlsx|Repay1|Repayment Schedule|
      			
-@RunnerClass1
+@RunnerClassLoanCharges
 Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY15JAN-THROUGH-COLLECTION-SHEET
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2309,7 +2309,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	 Then i validate and Verify from "error" sheet
 	 |4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY15JAN-THROUGH-COLLECTION-SHEET.xlsx|
 	 	  			
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4604-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-PREPAYON15JAN  
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -2319,7 +2319,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  Then I "Make Pre Payment" and verified the following tabs
 	  			|4604-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-PREPAYON15JAN.xlsx|Prepay Loan|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4605-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WRITEOFFON15JAN  
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -2329,7 +2329,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  Then I "WRITEOFF" and verified the following tabs
 	            |4605-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WRITEOFFON15JAN.xlsx|Modify Transaction|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4606-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WAIVEINTERESTON15JAN  
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -2339,7 +2339,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  Then I "WRITEOFF" and verified the following tabs
 	            |4606-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WAIVEINTERESTON15JAN.xlsx|Modify Transaction|Repayment Schedule|
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4607-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN-EDITTRANSACTIONDATETO15JAN  
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -2353,7 +2353,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	   Then i validate and Verify from "error" sheet
 	 			|4607-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN-EDITTRANSACTIONDATETO15JAN.xlsx|
 	 			
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4608-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY20JAN  
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -2363,7 +2363,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  Then I make repayment and verified the following tabs
        			|4608-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY20JAN.xlsx|Input|Repayment Schedule|
 
-#@RunnerClass1
+#@RunnerClassLoanCharges
 #	  Scenario: 4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN  
 #      Given I setup the clients
 #	  When I entered the values into client from "Input" sheet
@@ -2376,7 +2376,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 #	  Then I make repayment and verified the following tabs
 #      |4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|Input|Repayment Schedule|
 
-#@RunnerClass1
+#@RunnerClassLoanCharges
 #	  Scenario: 4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN  
 #      Given I "Create" holiday
 #	  |4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
@@ -2388,7 +2388,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 #	  And I verified the "Repayment Schedule" details successfully 
 #	  			|4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
 
-#@RunnerClass1
+#@RunnerClassLoanCharges
 #	  Scenario: 4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN  
  #     Given I setup the clients
 #	  When I entered the values into client from "Input" sheet
@@ -2399,7 +2399,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 #	 			|4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN.xlsx|
 #	  			
 
-#@RunnerClass1
+#@RunnerClassLoanCharges
 #	  Scenario: 4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan  
 #      Given I setup the clients
 ##	  When I entered the values into client from "Input" sheet
@@ -2411,7 +2411,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 #	   Then I "Delete" holiday
 #	  |4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan.xlsx|
 	  
-#@RunnerClass1
+#@RunnerClassLoanCharges
 #	  Scenario: 4613-4613-DISBLOAN01JAN-Holiday-on-22-Jan-2013-Reschedule-repayment-on-25-Jan-2013-EXECUTE-SCHEDULER-JOB  
 #      Given I setup the clients
 #	  When I entered the values into client from "Input" sheet
@@ -2425,7 +2425,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 #	  And I verified the "Repayment Schedule" details successfully 
 #	  |4613-4613-DISBLOAN01JAN-Holiday-on-22-Jan-2013-Reschedule-repayment-on-25-Jan-2013-EXECUTE-SCHEDULER-JOB.xlsx|
 
-#@RunnerClass1
+#@RunnerClassLoanCharges
 #	  Scenario: 4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB  
 #      Given I setup the clients
 #	  When I entered the values into client from "Input" sheet
@@ -2441,7 +2441,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 #	  And I verified the "Repayment Schedule" details successfully 
 #	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
 #	 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4580-RBI-SUBMITLOANON02JAN-INDCOLLSHEETON09JAN
 	  
 	  Given I setup the product loan "Setup"
@@ -2462,7 +2462,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	            |verifySubmitbutton|
 
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4581-RBI-APRLOANON02JAN-INDCOLLSHEETON02JAN
 	  
 	  Given I setup the clients
@@ -2478,7 +2478,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  And I Verify "element" not visible
 	            |verifySubmitbutton| 
 	   
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4582-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN
 	  
 	 Given I setup the clients
@@ -2495,7 +2495,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4582-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN.xlsx|         
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4583-RBI-DISBLOANON02JAN-UNDODISB-INDCOLLSHEETON09JAN
 	  
 	  Given I setup the clients
@@ -2511,7 +2511,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  And I Make Repayment Through "Collection" sheet
 	            |4583-RBI-DISBLOANON02JAN-UNDODISB-INDCOLLSHEETON09JAN.xlsx|	
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4584-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN-REPAYON16JAN
 	  
 	  Given I setup the clients
@@ -2531,7 +2531,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  And I Verify "element" not visible
 	            |verifySubmitbutton|		
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4585-RBI-DISBLOANON02JAN-INDCOLLSHEETON10JAN
 	  
 	  Given I setup the clients
@@ -2548,7 +2548,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4585-RBI-DISBLOANON02JAN-INDCOLLSHEETON10JAN.xlsx|		
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4586-RBI-DISBLOANON02JAN-WAIVEINT-INDCOLLSHEETON10JAN
 	  
 	  Given I setup the clients
@@ -2567,7 +2567,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4586-RBI-DISBLOANON02JAN-WAIVEINT-INDCOLLSHEETON10JAN.xlsx|	
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4587-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN
 	  
 	  Given I setup the clients
@@ -2586,7 +2586,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4587-RBI-DISBLOANON02JAN-instalmentFEE-INDCOLLSHEETON10JAN.xlsx|	
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4588-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN
 	  
 	  Given I setup the clients
@@ -2612,7 +2612,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  			
 	  				            	
 
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4589-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN
 	  
 	  Given I setup the clients
@@ -2636,7 +2636,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  			|4589-RBI-DISBLOANON02JAN-instalmentFEE-INDCOLLSHEETON10JAN.xlsx|	
 				
 				
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4590-RBI-DISBLOANON02JAN-WRITEOFF-INDCOLLSHEETON09JAN2015
 	  
 	  Given I setup the clients
@@ -2655,7 +2655,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	            |verifySubmitbutton|
 				
 				
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4591-RBI-DISBLOANON02JAN-OVERPAY-INDCOLLSHEETON09JAN2015
 	  
 	  Given I setup the clients
@@ -2674,7 +2674,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	            |verifySubmitbutton|
 				
 				
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4592-RBI-CREATE2CLIENTS-ASSIGNSTAFFto1CLIENT-DISBLOANFORBOTHCLIENTS-INDCOLLECTIONSHEET
 	  
 	  Given I setup the clients
@@ -2693,7 +2693,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  Then i validate and Verify from "Output" sheet
 	            |4592-RBI-CREATE2CLIENTS-ASSIGNSTAFFto1CLIENT-DISBLOANFORBOTHCLIENTS-INDCOLLECTIONSHEET.xlsx|
 				
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4593-RBI-CREATE2OFFICES-CREATE1CLIENT-DISBLOANforTHATCLIENT-INDCOLLECTION-SHEET-FOR-OTHEROFFICE
 	  
 	  Given I setup the clients
@@ -2707,7 +2707,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  And I Verify "element" not visible
 	            |verifySubmitbutton|
 				
-@RunnerClass1
+@RunnerClassLoanCharges
 	  Scenario: 4594-RBI-DISBLOANON02JAN-INDCOLLSHEETON01JAN
 	  
 	 Given I setup the clients

@@ -936,7 +936,7 @@ Scenario: 4988-DisbLoan-ApplyClientCharge-PayThroughCollectionSheet
 	            |4988-DisbLoan-ApplyClientCharge-PayThroughCollectionSheet.xlsx| Modify Transaction2|
 	  Then I "Navigate to client and Verify Charge Overview" and verified the following tabs 
 	            |4988-DisbLoan-ApplyClientCharge-PayThroughCollectionSheet.xlsx|Modify Transaction1 |
-	  And I verified the "Reccuring Client Data1" details successfully 
+	  And I verified the "Reccuring Charges Transaction" details successfully 
 	  			|4988-DisbLoan-ApplyClientCharge-PayThroughCollectionSheet.xlsx|
 	  And I Navigate to Accounting web page
 	  Then I search with transaction id & verified the accounting entries
