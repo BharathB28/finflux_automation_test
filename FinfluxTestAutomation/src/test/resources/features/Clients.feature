@@ -941,4 +941,295 @@ Scenario: 4988-DisbLoan-ApplyClientCharge-PayThroughCollectionSheet
 	  And I Navigate to Accounting web page
 	  Then I search with transaction id & verified the accounting entries
 	   			|4988-DisbLoan-ApplyClientCharge-PayThroughCollectionSheet.xlsx| ClientChargeAccural|
-   
+
+@RunnerClassClientsSpecific	   			
+Scenario: 4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input4" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input5" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input6" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|	
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  Then I verified the "Summary" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+ 	  And I verified the "Repayment Schedule" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  Then I verified the "GlimOfClient6" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+ 	  And I verified the "ChargesTab" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+      And I verified the "GlimRepaymentScheduleOfClient1" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient2" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient3" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient4" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient5" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient6" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  And I modify New Account from "UndoDisb" sheet 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	   Then I verified the "Summary" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+ 	  And I verified the "Repayment Schedule" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+ 	  And I verified the "ChargesTab" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+      And I verified the "GlimRepaymentScheduleOfClient1" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient2" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient3" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient4" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient5" details successfully 
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input4" sheet
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input5" sheet
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input6" sheet
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|	
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|
+	  Then I disburse loan from "GlimLoanInput1" sheet
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|
+	  Then I "MakeRepayment" and verified the following tabs
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|
+ 	  And I verified the "ChargesTab" details successfully 
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|
+	  And I verified the "Transactions" details and read the transaction Id 
+	 			|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|
+      And I Navigate to Accounting web page
+      And I search with transaction id & verified the accounting entries
+				|4991-GlimLoan-Disburse-MakeRepayment-VerifyTabs.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|Acc_Repayment2|
+
+@RunnerClassClientsSpecific
+Scenario: 4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input4" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input5" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input6" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|	
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  Then I "WaiveIterest&MakeRepayment" and verified the following tabs
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+ 	  And I verified the "ChargesTab" details successfully 
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  And I verified the "Transactions" details and read the transaction Id 
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+      And I Navigate to Accounting web page
+      And I search with transaction id & verified the accounting entries
+				|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|Acc_Repayment2|
+
+@RunnerClassClientsSpecific
+Scenario: 4993-GlimLoan-Disburse-MakeRepayment-waiveIterest-WaiveCharge-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|4993-GlimLoan-Disburse-MakeRepayment-waiveIterest-WaiveCharge-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input4" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input5" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|4993-GlimLoan-Disburse-MakeRepayment-waiveIterest-WaiveCharge-VerifyTabs.xlsx|
+	  Then I "MakeRepayment&WaiveIterest&waiveCharge" and verified the following tabs
+	 			|4993-GlimLoan-Disburse-MakeRepayment-waiveIterest-WaiveCharge-VerifyTabs.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4993-GlimLoan-Disburse-MakeRepayment-waiveIterest-WaiveCharge-VerifyTabs.xlsx|
+ 	  And I verified the "ChargesTab" details successfully 
+	 			|4993-GlimLoan-Disburse-MakeRepayment-waiveIterest-WaiveCharge-VerifyTabs.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 4994-GlimLoan-Disburse-waiveIterest-WaiveCharge-MakeRepayment-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|4994-GlimLoan-Disburse-waiveIterest-WaiveCharge-MakeRepayment-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input4" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input5" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|4994-GlimLoan-Disburse-waiveIterest-WaiveCharge-MakeRepayment-VerifyTabs.xlsx|
+	  Then I "MakeRepayment&WaiveIterest&waiveCharge" and verified the following tabs
+	 			|4994-GlimLoan-Disburse-waiveIterest-WaiveCharge-MakeRepayment-VerifyTabs.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4994-GlimLoan-Disburse-waiveIterest-WaiveCharge-MakeRepayment-VerifyTabs.xlsx|
+ 	  And I verified the "ChargesTab" details successfully 
+	 			|4994-GlimLoan-Disburse-waiveIterest-WaiveCharge-MakeRepayment-VerifyTabs.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 4995-GlimLoan-Disburse-Prepay-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|4995-GlimLoan-Disburse-Prepay-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input4" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input5" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs.xlsx|
+	  Then I "Prepay1client" and verified the following tabs
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs.xlsx|
+	  And I verified the "ChargesTab" details successfully 
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs.xlsx|
+	  Then I "OverRepaymentFor1client" and verified the following tabs
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs-OverRepay1client.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs-OverRepay1client.xlsx|
+	  Then I "PrepayAllclient" and verified the following tabs
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs-prepayAllClient.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs-prepayAllClient.xlsx|
+	  Then I "OverRepaymentForAllclient" and verified the following tabs
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs-OverRepayAllclient.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs-OverRepayAllclient.xlsx|
+ 	  And I verified the "ChargesTab" details successfully 
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs-OverRepayAllclient.xlsx|
+	  And I verified the "Transactions" details and read the transaction Id 
+	 			|4995-GlimLoan-Disburse-Prepay-VerifyTabs-OverRepayAllclient.xlsx|
+      And I Navigate to Accounting web page
+      And I search with transaction id & verified the accounting entries
+				|4995-GlimLoan-Disburse-Prepay-VerifyTabs-OverRepayAllclient.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|Acc_Repayment2|Acc_Repayment3|
+
+@RunnerClassClientsSpecific
+Scenario: 4996-GlimLoan-Disburse-Writeoff-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input4" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input5" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs.xlsx|
+	  Then I "Writeoff1client" and verified the following tabs
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs.xlsx|
+	  And I verified the "ChargesTab" details successfully 
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs.xlsx|
+	  Then I "RecoverRepaymentFor1client" and verified the following tabs
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs-RecoverRepayment1client.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs-RecoverRepayment1client.xlsx|
+	  Then I "WriteoffAllclient" and verified the following tabs
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs-WriteoffAllclient.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs-WriteoffAllclient.xlsx|
+	  Then I "RecoverRepaymentForAllclient" and verified the following tabs
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs-RecoverRepaymentForAllclient.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs-RecoverRepaymentForAllclient.xlsx|
+ 	  And I verified the "ChargesTab" details successfully 
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs-RecoverRepaymentForAllclient.xlsx|
+	  And I verified the "Transactions" details and read the transaction Id 
+	 			|4996-GlimLoan-Disburse-Writeoff-VerifyTabs-RecoverRepaymentForAllclient.xlsx|
+      And I Navigate to Accounting web page
+      And I search with transaction id & verified the accounting entries
+				|4996-GlimLoan-Disburse-Writeoff-VerifyTabs-RecoverRepaymentForAllclient.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|Acc_Repayment2|Acc_Repayment3|
+
+@RunnerClassClientsSpecific
+Scenario: 4997-GlimLoan-Disburse-Writeoff-Repayment
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|4997-GlimLoan-Disburse-Writeoff-Repayment.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input4" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input5" sheet
+	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|4997-GlimLoan-Disburse-Writeoff-Repayment.xlsx|
+	  Then I "Writeoff1client" and verified the following tabs
+	 			|4997-GlimLoan-Disburse-Writeoff-Repayment.xlsx |Modify Transaction|
+	  Then I "MakeRepayment" and verified the following tabs
+	 			|4997-GlimLoan-Disburse-Writeoff-Repayment.xlsx |Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4997-GlimLoan-Disburse-Writeoff-Repayment.xlsx|
+	  Then I "UndoRepayment" and verified the following tabs
+	 			|4997-GlimLoan-Disburse-Writeoff-Repayment-Undo.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "GlimOfClient5" details successfully 
+	 			|4997-GlimLoan-Disburse-Writeoff-Repayment-Undo.xlsx|
+	  And I verified the "Transactions" details and read the transaction Id 
+	 			|4997-GlimLoan-Disburse-Writeoff-Repayment-Undo.xlsx|
+      And I Navigate to Accounting web page
+      And I search with transaction id & verified the accounting entries
+				|4997-GlimLoan-Disburse-Writeoff-Repayment-Undo.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|
+		    	          	  	             

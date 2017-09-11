@@ -291,11 +291,11 @@ public class ClientSteps {
 		{
 			varFrontPage.verifyTransferData(ExcelSheetPath, excelSheetName, sheetName);
 		}
-		if(sheetName.contains("GlimOfClient") )
+		else if(sheetName.contains("GlimOfClient") )
 		{
 			varFrontPage.GlimTab(ExcelSheetPath, excelSheetName, sheetName);
 		}
-		if(sheetName.contains("ChargesTab") || sheetName.contains("GlimRepaymentScheduleOfClient"))
+		else if(sheetName.contains("ChargesTab") || sheetName.contains("GlimRepaymentScheduleOfClient"))
 		{
 			varFrontPage.charges(ExcelSheetPath, excelSheetName, sheetName);
 		}

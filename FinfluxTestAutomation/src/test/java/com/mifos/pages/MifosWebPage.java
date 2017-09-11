@@ -878,7 +878,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 						By locator1,Date1,Month1,Year1 = null;
 						locator = getLocator(getResource(key));
 						waitForElementAndPoll(locator).click();
-						Thread.sleep(2000);
+						Thread.sleep(3000);
 						locator1 = getLocator(getResource(key)+"/following-sibling::ul//thead/tr[1]/th[2]/button/strong");
 						Year1=getLocator(getResource(key)+"/following-sibling::ul//span[contains(.,'"+Year+"')]");
 						Month1=getLocator(getResource(key)+"/following-sibling::ul//span[contains(.,'"+Month+"')]");
@@ -886,18 +886,18 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 						
 						waitForElementAndPoll(locator1).click();
 
-						Thread.sleep(1000);
+						Thread.sleep(3000);
 						waitForElementAndPoll(locator1).click();
 
-						Thread.sleep(1000);
+						Thread.sleep(3000);
 						waitForElementAndPoll(Year1).click();
 
 						Thread.sleep(1000);
 						waitForElementAndPoll(Month1).click();
 
-						Thread.sleep(1000);
+						Thread.sleep(3000);
 						waitForElementAndPoll(Date1).click();
-						Thread.sleep(1000);
+						Thread.sleep(3000);
 					}
 					else{
 					LazyWebElement locatorElement = getElement(locator, clear);

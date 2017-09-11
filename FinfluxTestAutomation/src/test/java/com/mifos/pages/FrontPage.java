@@ -887,6 +887,7 @@ public class FrontPage extends MifosWebPage {
 						|| sheetname.equals("Acc_Repayment")
 						|| sheetname.equals("Acc_Repayment1")
 						|| sheetname.equals("Acc_Repayment2")
+						|| sheetname.equals("Acc_Repayment3")
 						|| sheetname.equals("Acc_Upfront1")
 						|| sheetname.equals("Acc_Upfront2")
 						|| sheetname.equals("Acc_Upfront3")
@@ -1091,6 +1092,7 @@ public class FrontPage extends MifosWebPage {
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 			rowCount = 4;
+			int excelToatlRows = sheet.getLastRowNum()-sheet.getFirstRowNum();
 
 			int xlColumnPointer = 0;
 			List<WebElement> applicationCol = null;
@@ -1100,7 +1102,7 @@ public class FrontPage extends MifosWebPage {
 				
 				verifyColumnDetails(xlColumnPointer, excelRowCount, applicationCol, sheet, sheetname);
 				excelRowCount++;
-				if (String.valueOf(sheet.getRow(excelRowCount).getCell(0)).contains("Client") ) {
+				if (excelRowCount>excelToatlRows || String.valueOf(sheet.getRow(excelRowCount).getCell(0)).contains("Client") ) {
 					xlRowCount=0;
 					excelRowCount++;
 					if(client>=maxClient)
@@ -1125,8 +1127,10 @@ public class FrontPage extends MifosWebPage {
 		int rowCount = 0;
 		int Client ;
 		int xlColumnPointer=0;
+		int xlRowCount;
 		if(sheetname.contains("GlimRepaymentScheduleOfClient"))
 		{
+			xlRowCount = 1;
 			Client = Integer.parseInt(String.valueOf(sheetname.charAt(sheetname.length()-1)));
 			
 			new WebDriverWait(getWebDriver(), 120)
@@ -1135,7 +1139,7 @@ public class FrontPage extends MifosWebPage {
 			new WebDriverWait(getWebDriver(), 120)
 		.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[contains(.,'View Repayment Schedule ')])["+Client+"]"))).click();
 			
-		}else{getWebDriver().findElement(By.xpath(".//*[@heading='Charges']/a")).click();}
+		}else{ xlRowCount = 2; getWebDriver().findElement(By.xpath(".//*[@heading='Charges']/a")).click();}
 		try {
 			FileInputStream file = new FileInputStream(new File(clientExcelSheetPath + "/" + excelSheetName));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -1143,7 +1147,7 @@ public class FrontPage extends MifosWebPage {
 			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
 			
 			List<WebElement> applicationCol = null;
-			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
+			for (; xlRowCount <= rowCount; xlRowCount++) {
 
 				if(sheetname.contains("GlimRepaymentScheduleOfClient"))
 				{
@@ -1154,6 +1158,11 @@ public class FrontPage extends MifosWebPage {
 				
 				verifyColumnDetails(xlColumnPointer, xlRowCount, applicationCol, sheet, sheetname);
 				
+				
+			}
+			if(sheetname.contains("GlimRepaymentScheduleOfClient"))
+			{
+				getWebDriver().findElement(By.xpath("//*[@ng-click='cancel()']")).click();
 			}
 		} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
@@ -1879,10 +1888,9 @@ public class FrontPage extends MifosWebPage {
 			throws InterruptedException, IOException, ParseException, Exception {
 
 		if (sheetName.equals("Acc_Disbursement") || sheetName.equals("Acc_Disbursement1")
-				|| sheetName.equals("Acc_RepaymentDisbursement") || sheetName.equals("Acc_Repayment")
-				|| sheetName.equals("Acc_Repayment1") || sheetName.equals("Acc_Upfront")
-				|| sheetName.equals("Acc_Upfront1") || sheetName.equals("Acc_Upfront2")
-				|| sheetName.equals("Acc_Upfront3")) {
+				|| sheetName.equals("Acc_RepaymentDisbursement") || sheetName.contains("Acc_Repayment")
+				|| sheetName.equals("Acc_Upfront") || sheetName.equals("Acc_Upfront1") 
+				|| sheetName.equals("Acc_Upfront2")|| sheetName.equals("Acc_Upfront3")) {
 
 			if (!sheetName.contains("Upfront") && istransactionIdIndexAssigned) {
 				transactionIDIndex = setAccuralTransactionID.size() - 1;
