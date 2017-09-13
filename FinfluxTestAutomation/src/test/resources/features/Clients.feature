@@ -624,6 +624,10 @@ Scenario: 4938-Mifos-EI-DB-SAR-Charges
   And I "writeoff" and verified the following tabs
 	 | 4938-Mifos-EI-DB-SAR-Charges-writeoff.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
 
+
+################################################### 	DIGAMBAR   #############################################################
+
+
 @RunnerClassClientsSpecific 
 Scenario: 4963-BulkJLGLOANon01JAN201-DISBLOAN
 	 Given I setup the center
@@ -669,6 +673,10 @@ Scenario: 4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1
 	  			|4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1-2ndClient.xlsx|
 	 Then I verified the following Tabs details successfully 
 	    		|4964-BulkJLGLOANon01JAN201-DISBLOAN-OnlyForClient1-2ndClient.xlsx|Summary|Repayment Schedule|
+
+
+################################################### 	SECDEP   #############################################################
+
 	 
 @RunnerClassClientsSpecific 
 Scenario: 4965-SUBMIT-MODAPP-APPROVE-UNDOAPPROVE-DISB-UNDODISB-DISBLessAmt
@@ -942,6 +950,10 @@ Scenario: 4988-DisbLoan-ApplyClientCharge-PayThroughCollectionSheet
 	  Then I search with transaction id & verified the accounting entries
 	   			|4988-DisbLoan-ApplyClientCharge-PayThroughCollectionSheet.xlsx| ClientChargeAccural|
 
+
+################################################### 	GLIM LOANS   #############################################################
+
+
 @RunnerClassClientsSpecific	   			
 Scenario: 4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs
       Given I setup the group
@@ -1050,8 +1062,6 @@ Scenario: 4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs
 	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
 	  When I entered the values into client from "Input5" sheet
 	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
-	  When I entered the values into client from "Input6" sheet
-	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|	
 	  When I set up the new create loan from "GlimLoanInput" sheet
 	 			|4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx|
 	  Then I "WaiveIterest&MakeRepayment" and verified the following tabs
@@ -1232,4 +1242,322 @@ Scenario: 4997-GlimLoan-Disburse-Writeoff-Repayment
       And I Navigate to Accounting web page
       And I search with transaction id & verified the accounting entries
 				|4997-GlimLoan-Disburse-Writeoff-Repayment-Undo.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|
-		    	          	  	             
+
+@RunnerClassClientsSpecific
+Scenario: 4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs
+      Given I Navigate to System Configuration web page & "enable" "glim-payment-as-group"
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  Then I verified the "Summary" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+ 	  And I verified the "Repayment Schedule" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  Then I verified the "GlimOfClient3" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+ 	  And I verified the "GlimRepaymentScheduleOfClient1" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient2" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient3" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  And I modify New Account from "UndoDisb" sheet 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	  Then I verified the "Summary" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+ 	  And I verified the "Repayment Schedule" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	  Then I verified the "GlimOfClient3" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+ 	  And I verified the "GlimRepaymentScheduleOfClient1" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient2" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	  And I verified the "GlimRepaymentScheduleOfClient3" details successfully 
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs-UndoDisb.xlsx|
+	  Then I "MakeRepayment" and verified the following tabs
+	 			|4998-GlimLoanAsGroup-Submit-Modify-Approve-Disburse-VerifyTabs-repayment.xlsx |Modify Transaction|Summary|Repayment Schedule|
+
+@RunnerClassClientsSpecific
+      Scenario: 4999-GlimLoanAsGroup-Disburse-WaiveInterest-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|4999-GlimLoanAsGroup-Disburse-WaiveInterest-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|4999-GlimLoanAsGroup-Disburse-WaiveInterest-VerifyTabs.xlsx|
+	  Then I "MakeRepayment&WaiveInterst&MakeRepayment" and verified the following tabs
+	 			|4999-GlimLoanAsGroup-Disburse-WaiveInterest-VerifyTabs.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|
+ 	  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ 	  And I verified the "Transactions" details and read the transaction Id 
+	 			|4999-GlimLoanAsGroup-Disburse-WaiveInterest-VerifyTabs.xlsx|
+      And I Navigate to Accounting web page
+      And I search with transaction id & verified the accounting entries
+				|4999-GlimLoanAsGroup-Disburse-WaiveInterest-VerifyTabs.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|Acc_Repayment2|
+
+@RunnerClassClientsSpecific
+Scenario: 5000-GlimLoanAsGroup-Disburse-Writeoff-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|5000-GlimLoanAsGroup-Disburse-Writeoff-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|5000-GlimLoanAsGroup-Disburse-Writeoff-VerifyTabs.xlsx|
+	  Then I "WaiveInterst&MakeRepayment&WriteOff" and verified the following tabs
+	 			|5000-GlimLoanAsGroup-Disburse-Writeoff-VerifyTabs.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|
+ 	  Then I "RecoverPayment" and verified the following tabs
+	 			|5000-GlimLoanAsGroup-Disburse-Writeoff-VerifyTabs-recover.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+ 	  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ 	  And I verified the "Transactions" details and read the transaction Id 
+	 			|5000-GlimLoanAsGroup-Disburse-Writeoff-VerifyTabs.xlsx|
+      And I Navigate to Accounting web page
+      And I search with transaction id & verified the accounting entries
+				|5000-GlimLoanAsGroup-Disburse-Writeoff-VerifyTabs.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|Acc_Repayment2|Acc_Repayment3|
+
+@RunnerClassClientsSpecific
+Scenario: 5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs.xlsx|
+	  Then I "MakeRepayment&WaiveInterst&Prepay" and verified the following tabs
+	 			|5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
+ 	  Then I "MakeOverRePayment" and verified the following tabs
+	 			|5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs-MakeRePayment.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+ 	  And I verified the "Transactions" details and read the transaction Id 
+	 			|5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs-MakeRePayment.xlsx|
+      And I Navigate to Accounting web page
+      And I search with transaction id & verified the accounting entries
+				|5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs-MakeRePayment.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|Acc_Repayment2|Acc_Repayment3|
+
+@RunnerClassClientsSpecific
+Scenario: 5002-GlimLoanAsGroup-Disburse-WaiveCharge-VerifyTabs
+      Given I setup the group
+      When I entered the values into group from "Group" sheet
+      			|5002-GlimLoanAsGroup-Disburse-WaiveCharge-VerifyTabs.xlsx |
+      When I entered the values into client from "Input1" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I entered the values into client from "Input2" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|	
+	  When I entered the values into client from "Input3" sheet
+	 			|4990-GlimLoan-Submit-Modify-Approve-Disburse-VerifyTabs.xlsx|
+	  When I set up the new create loan from "GlimLoanInput" sheet
+	 			|5002-GlimLoanAsGroup-Disburse-WaiveCharge-VerifyTabs.xlsx|
+	  And I verified the "ChargesTab" details successfully 
+	 			|5002-GlimLoanAsGroup-Disburse-WaiveCharge-VerifyTabs.xlsx|
+	  Then I "WaiveCharge" and verified the following tabs
+	 			|5002-GlimLoanAsGroup-Disburse-WaiveCharge-VerifyTabs.xlsx |Charges|Summary|Repayment Schedule|Transactions|
+ 	  Then I "MakeRePayment" and verified the following tabs
+	 			|5002-GlimLoanAsGroup-Disburse-WaiveCharge-VerifyTabs-Repayment.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+ 	  And I verified the "ChargesTab" details successfully 
+	 			|5002-GlimLoanAsGroup-Disburse-WaiveCharge-VerifyTabs-Repayment.xlsx|
+
+
+################################################### 	TOP-UP   #############################################################
+
+
+@RunnerClassClientsSpecific
+Scenario:5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx|	
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-topup.xlsx|
+	  Then I "Navigate to Old Loan" and verified the following tabs
+	 			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx |Modify Transaction|
+      Then I verified the following Tabs details successfully 
+	            |5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx|Summary|Repayment Schedule|Transactions|
+	 Then I navigate To Loan Account Page 
+      And I verified the "Summary" details successfully 
+	 			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-topup.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	 			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-topup.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	            |5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-topup.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-topup.xlsx|Acc_Disbursement|Acc_Disbursement1|
+      Then I "Navigate to Old Loan" and verified the following tabs
+	 			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx |Modify Transaction|
+      Then I verified the "Transactions" details and read the transaction Id 
+	            |5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Repayment|
+	  
+
+@RunnerClassClientsSpecific
+Scenario:5004-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5004-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015.xlsx|	
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|5004-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015.xlsx|
+	  Then i validate and Verify from "error" sheet
+	 			|5004-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario:5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|Repay1|	
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|
+	  Then I "Navigate to Old Loan" and verified the following tabs
+	 			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx |Modify Transaction|
+      Then I verified the following Tabs details successfully 
+	            |5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|Summary|Repayment Schedule|Transactions|
+	  Then I navigate To Loan Account Page 
+	  And I verified the "Summary" details successfully 
+	 			|5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015-topup.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	 			|5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015-topup.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	            |5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015-topup.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015-topup.xlsx|Acc_Disbursement|Acc_Disbursement1|Acc_RepaymentDisbursement|
+      Then I "Navigate to Old Loan" and verified the following tabs
+	 			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx |Modify Transaction|
+      Then I verified the "Transactions" details and read the transaction Id 
+	            |5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|
+
+@RunnerClassClientsSpecific
+Scenario:5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify.xlsx|Repay1|	
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify.xlsx|
+	  And I modify New Account from "UndoDisb" sheet 
+	 			|5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify.xlsx|
+	  Then I "Navigate to Old Loan" and verified the following tabs
+	 			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx |Modify Transaction|
+      And I verified the "Summary" details successfully 
+	 			|5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	 			|5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	            |5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|
+
+@RunnerClassClientsSpecific
+Scenario:5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify.xlsx|Repay1|	
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify.xlsx|
+	  When I set up the new create loan from "NewLoanInput2" sheet
+	  			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify.xlsx|
+	  And I verified the "Summary" details successfully 
+	 			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify-topup.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	 			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify-topup.xlsx|
+	  And I verified the "Transactions" details successfully 
+	            |5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify-topup.xlsx|
+	  And I modify New Account from "UndoDisb" sheet 
+	 			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify-newtopup.xlsx|Repay1|
+      And I verified the "Summary" details successfully 
+	 			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify-newtopup.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	 			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify-newtopup.xlsx|
+	  Then I "Navigate to Old Loan" and verified the following tabs
+	 			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx |Modify Transaction|
+      And I verified the "Summary" details successfully 
+	 			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	 			|5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	            |5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|
+      Then I navigate To Loan Account Page
+      Then I verified the "Transactions" details and read the transaction Id 
+	            |5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify-newtopup.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify-newtopup.xlsx|Acc_Disbursement|Acc_Disbursement1|Acc_Repayment|
+
+
+@RunnerClassClientsSpecific 
+Scenario:5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|Repay1|	
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  And I verified the "Summary" details successfully 
+	 			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	 			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  Then I verified the "Transactions" details successfully 
+	            |5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+
+@RunnerClassClientsSpecific	
+Scenario:5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|Repay1|	
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	 Then i validate and Verify from "error" sheet
+	 			|5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+  		    	          	  	             

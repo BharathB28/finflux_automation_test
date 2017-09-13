@@ -1,4 +1,4 @@
-/*package com.mifos.tests;
+package com.mifos.tests;
 
 import org.junit.runner.RunWith;
 import cucumber.api.junit.Cucumber;
@@ -7,10 +7,10 @@ import cucumber.api.junit.Cucumber;
 @Cucumber.Options(format = { "pretty", "html:target/Savings/cucumber-html-report",
 		"json-pretty:target//Savings/cucumber-json-report.json" },
 		features = { "src/test/resources/features/Savings.feature" },
-		glue = { "com.mifos.steps" })
+		glue = { "com.mifos.steps" },
+		tags= {"@RunnerClassWorkingDays" })
 
 
 public class SavingsTest {
 
 }
-*/

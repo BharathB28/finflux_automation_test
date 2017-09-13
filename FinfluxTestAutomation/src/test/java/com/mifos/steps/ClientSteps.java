@@ -283,43 +283,27 @@ public class ClientSteps {
 	public void I_verified_the_details_successfully(String sheetName,
 			List<String> excelSheet) throws Throwable {
 		String excelSheetName = excelSheet.get(0).toString();
-		if(sheetName.contains("Loan Provisioning Journals"))
-		{
+		if (sheetName.contains("Loan Provisioning Journals")) {
 			varFrontPage.verifyProvisionData(ExcelSheetPath, excelSheetName, sheetName);
 		}
-		if(sheetName.contains("TransferDetails"))
-		{
+		if (sheetName.contains("TransferDetails")) {
 			varFrontPage.verifyTransferData(ExcelSheetPath, excelSheetName, sheetName);
-		}
-		else if(sheetName.contains("GlimOfClient") )
-		{
+		} else if (sheetName.contains("GlimOfClient")) {
 			varFrontPage.GlimTab(ExcelSheetPath, excelSheetName, sheetName);
-		}
-		else if(sheetName.contains("ChargesTab") || sheetName.contains("GlimRepaymentScheduleOfClient"))
-		{
+		} else if (sheetName.contains("ChargesTab") || sheetName.contains("GlimRepaymentScheduleOfClient")) {
 			varFrontPage.charges(ExcelSheetPath, excelSheetName, sheetName);
-		}
-		else if(sheetName.contains("Reccuring Client Data") || sheetName.contains("Reccuring Charges Transaction"))
-		{
+		} else if (sheetName.contains("Reccuring Client Data") || sheetName.contains("Reccuring Charges Transaction")) {
 			varFrontPage.RecurringCharges(ExcelSheetPath, excelSheetName, sheetName);
-		}
-		else if(sheetName.contains("Saving")||sheetName.contains("FixedDeposit")||sheetName.contains("RecurringDeposit")
-				||sheetName.contains("RD") ||sheetName.contains("FD"))
-		{
+		} else if (sheetName.contains("Saving") || sheetName.contains("FixedDeposit")
+				|| sheetName.contains("RecurringDeposit") || sheetName.contains("RD") || sheetName.contains("FD")) {
 			varFrontPage.verifySavingData(ExcelSheetPath, excelSheetName, sheetName);
-		}
-		else if(sheetName.contains("Share"))
-		{
+		} else if (sheetName.contains("Share")) {
 			varFrontPage.verifyShareData(ExcelSheetPath, excelSheetName, sheetName);
-		}
-		else if(sheetName.contains("Teller") || sheetName.contains("Product"))
-		{
+		} else if (sheetName.contains("Teller") || sheetName.contains("Product")) {
 			varFrontPage.verifyTellerData(ExcelSheetPath, excelSheetName, sheetName);
-		}
-		else
-		{
+		} else {
 			varFrontPage.verifyLoanTabData(ExcelSheetPath, excelSheetName, sheetName);
-			}
+		}
 	}
 	
 	@Then("^I verified the \"([^\"]*)\" details and read the transaction Id$")

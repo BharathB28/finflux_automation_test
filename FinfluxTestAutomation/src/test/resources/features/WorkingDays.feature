@@ -6,7 +6,7 @@ Background:
 		|Login.xlsx|
 	Then I should see logged in successfully
 	
-@RunnerClassVariableInstallment
+@RunnerClassWorkingDays
 	  Scenario: 4615-DISB02JAN2013-NonWorkSatandSun
       Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
@@ -25,7 +25,7 @@ Background:
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4615-DISB02JAN2013-NonWorkSatandSun.xlsx|
 
-@RunnerClassVariableInstallment
+@RunnerClassWorkingDays
 	  Scenario: 4616-NonWorkSatandSun-DISB03JAN2013-MakeRepayment
 	  Given I create "same day" As Payments due on non working days
 	  			|4616-NonWorkSatandSun-DISB03JAN2013-MakeRepayment.xlsx|
@@ -40,7 +40,7 @@ Background:
 	            |4616-NonWorkSatandSun-DISB03JAN2013-MakeRepayment.xlsx|Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
  	
 	  			
-@RunnerClassVariableInstallment
+@RunnerClassWorkingDays
 	 Scenario: 4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013
 	  Given I create "move to next working day" As Payments due on non working days
 	  			|4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013.xlsx|
@@ -58,7 +58,7 @@ Background:
       And I "MakeRepayment&waiveInterest" and verified the following tabs
 	            |4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013.xlsx|Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
                 
-@RunnerClassVariableInstallment
+@RunnerClassWorkingDays
 	  Scenario: 4618-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTWORKINGDAY-DISBDAILYLOANon02JAN2013
 	  Given I create "move to next working day" As Payments due on non working days
 	  			|4618-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|
@@ -72,7 +72,7 @@ Background:
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4618-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|	  			  			
 
-@RunnerClassVariableInstallment
+@RunnerClassWorkingDays
 	  Scenario: 4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013
 	  Given I create "move to previous working day" As Payments due on non working days
 	  			|4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|
@@ -86,7 +86,7 @@ Background:
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|
 	  			
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
 	Scenario: 4620-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013
 	 Given I create "move to next repayment day" As Payments due on non working days
 	 	 |4620-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013.xlsx|
@@ -102,7 +102,7 @@ Background:
 	 And I verified the "Repayment Schedule" details successfully 
 	     |4620-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013.xlsx|
 	 	
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
 	Scenario: 4621-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013-MAKEREPAYon5th
 	 Given I create "move to next repayment day" As Payments due on non working days
 	 	 |4621-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013-MAKEREPAYon5th.xlsx|
@@ -118,7 +118,7 @@ Background:
 	 Then I make repayment and verified the following tabs
          |4621-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013-MAKEREPAYon5th.xlsx|Repay1|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassVariableInstallment 	
+@RunnerClassWorkingDays 	
 Scenario: 4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013
 	 Given I create "move to next repayment day" As Payments due on non working days
 	 	|4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|
@@ -138,7 +138,7 @@ Scenario: 4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DI
 	 Then I verified the following Tabs details successfully 
 	    |4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
 Scenario: 4950-NonWorkSatandSun-AdvanceSettings-MOVEtoNEXTWEEKDAY-CENTER-DISBDAILYLOANon01JAN2015
 	 Given I create "week Day" As Payments due on non working days
 	 	|4950-NonWorkSatandSun-AdvanceSettings-MOVEtoNEXTWEEKDAY-CENTER-DISBDAILYLOANon01JAN2015.xlsx|
@@ -150,7 +150,7 @@ Scenario: 4950-NonWorkSatandSun-AdvanceSettings-MOVEtoNEXTWEEKDAY-CENTER-DISBDAI
 	 Then I verified the following Tabs details successfully 
 	    |4950-NonWorkSatandSun-AdvanceSettings-MOVEtoNEXTWEEKDAY-CENTER-DISBDAILYLOANon01JAN2015.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassVariableInstallment  
+@RunnerClassWorkingDays  
 Scenario: 4951-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWEEKDAY-CENTER-DISBDAILYLOANon01JAN2015
 	 Given I create "week Day" As Payments due on non working days
 	 	|4951-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWEEKDAY-CENTER-DISBDAILYLOANon01JAN2015.xlsx|
@@ -162,7 +162,7 @@ Scenario: 4951-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWEEKDAY-CENTER-DIS
 	 Then I verified the following Tabs details successfully 
 	    |4951-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWEEKDAY-CENTER-DISBDAILYLOANon01JAN2015.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
  Scenario: 4952-NonWorkSatandSun-AdvanceSettings-MOVEToSameDAY-CENTER-DISBDAILYLOANon01JAN2015
 	 Given I create "week Day" As Payments due on non working days
 	 	|4952-NonWorkSatandSun-AdvanceSettings-MOVEToSameDAY-CENTER-DISBDAILYLOANon01JAN2015.xlsx|
@@ -174,7 +174,7 @@ Scenario: 4951-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWEEKDAY-CENTER-DIS
 	 Then I verified the following Tabs details successfully 
 	    |4952-NonWorkSatandSun-AdvanceSettings-MOVEToSameDAY-CENTER-DISBDAILYLOANon01JAN2015.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
 Scenario: 4953-NonWorkSatandSun-AdvanceSettings-MOVEToNextWorkingDay-CENTER-DISBDAILYLOANon01JAN2015
 	 Given I create "week Day" As Payments due on non working days
 	 	|4953-NonWorkSatandSun-AdvanceSettings-MOVEToNextWorkingDay-CENTER-DISBDAILYLOANon01JAN2015.xlsx|
@@ -186,7 +186,7 @@ Scenario: 4953-NonWorkSatandSun-AdvanceSettings-MOVEToNextWorkingDay-CENTER-DISB
 	 Then I verified the following Tabs details successfully 
 	    |4953-NonWorkSatandSun-AdvanceSettings-MOVEToNextWorkingDay-CENTER-DISBDAILYLOANon01JAN2015.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
 Scenario: 4954-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWorkingDay-CENTER-DISBDAILYLOANon01JAN2015
 	 Given I create "week Day" As Payments due on non working days
 	 	|4954-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWorkingDay-CENTER-DISBDAILYLOANon01JAN2015.xlsx|
@@ -202,7 +202,7 @@ Scenario: 4954-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWorkingDay-CENTER-
 ################## Holidays ###########################
 
 
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
  Scenario: 4955-ThursdayFridayAsHoliday-RepaymentSchedulingRule-As-RescheduleToSpecifiedDate-DISBLOAN
 	 Given I create Sat and Sun As "non working" days
 	 Given I setup the clients
@@ -221,7 +221,7 @@ Scenario: 4954-NonWorkSatandSun-AdvanceSettings-MOVEToPreviousWorkingDay-CENTER-
 	 Then I verified the following Tabs details successfully 
 	    |4955-ThursdayFridayAsHoliday-RepaymentSchedulingRule-As-RescheduleToSpecifiedDate-DISBLOAN.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
 Scenario: 4956-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN
 	 Given I setup the clients
 	 When I entered the values into client from "Input" sheet
@@ -231,7 +231,7 @@ Scenario: 4956-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN
 	 Then I verified the following Tabs details successfully 
 	    |4956-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
 Scenario: 4957-CreateHoliday-ApplyRepaymentSchedulingRule-DISBJLGLOAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -245,7 +245,7 @@ Scenario: 4957-CreateHoliday-ApplyRepaymentSchedulingRule-DISBJLGLOAN
 	 Then I verified the following Tabs details successfully 
 	    |4957-CreateHoliday-ApplyRepaymentSchedulingRule-DISBJLGLOAN.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
 Scenario: 4958-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN-MakeRepayment
 	 Given I setup the clients
 	 Then I entered the values into client from "Input" sheet
@@ -259,7 +259,7 @@ Scenario: 4958-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN-MakeRepayment
      Then i validate and Verify from "error" sheet
 	  	|4958-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN-MakeRepayment.xlsx|
 
-@RunnerClassVariableInstallment 
+@RunnerClassWorkingDays 
 Scenario: 4959-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN-RescheduleLoanRepayment
 	 Given I setup the clients
 	 Then I entered the values into client from "Input" sheet
@@ -273,7 +273,7 @@ Scenario: 4959-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN-RescheduleLoa
       Then i validate and Verify from "error" sheet
 	  	|4959-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN-RescheduleLoanRepayment.xlsx|
 
-@RunnerClassVariableInstallment 	  	
+@RunnerClassWorkingDays 	  	
  Scenario: 4960-DISBLOAN-RescheduleLoanRepayment-CreateHoliday-ApplyRepaymentSchedulingRule
 	 Given I setup the clients
 	 Then I entered the values into client from "Input" sheet
@@ -289,7 +289,7 @@ Scenario: 4959-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN-RescheduleLoa
 	 Then I verified the following Tabs details successfully 
 	    |4960-DISBLOAN-RescheduleLoanRepayment-CreateHoliday-ApplyRepaymentSchedulingRule.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassVariableInstallment  
+@RunnerClassWorkingDays  
 Scenario: 4961-NonWorkSatandSun-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN
 	 Given I create Sat and Sun As "working" days
 	 Given I create "week Day" As Payments due on non working days
@@ -308,7 +308,7 @@ Scenario: 4961-NonWorkSatandSun-CreateHoliday-ApplyRepaymentSchedulingRule-DISBL
 	 Then I verified the following Tabs details successfully 
 	    |4961-NonWorkSatandSun-CreateHoliday-ApplyRepaymentSchedulingRule-DISBLOAN.xlsx|Summary|Repayment Schedule|
 
-@RunnerClassVariableInstallment 	  	
+@RunnerClassWorkingDays 	  	
 Scenario: 4962-NonWorkSatandSun-CreateHolidayOnNonWorkingDay-VerifyError
 	 Given I "create" holiday
 	 	|4962-NonWorkSatandSun-CreateHolidayOnNonWorkingDay-VerifyError.xlsx|

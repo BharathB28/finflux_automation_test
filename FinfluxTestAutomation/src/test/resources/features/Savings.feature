@@ -7,7 +7,7 @@ Background:
 	Then I should see logged in successfully
 	
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4707-SUBMITSAVINGS01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015
       Given I setup the "Saving" product
 				| Productloannavigation.xlsx |
@@ -23,7 +23,7 @@ Background:
 	  Then i validate and Verify from "Validate" sheet
 	 			|4707-SUBMITSAVINGS01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4708-SUBMITSAVINGS01JAN2015-MODIFYAPP-MINIMUMOPENBAL300&INTPOSTPRD-Quarterly-APPROVEON01JAN2015-ACTIVATEON01JAN2015
       
 	  Given I setup the clients
@@ -38,7 +38,7 @@ Background:
 	  Then i validate and Verify from "Validate" sheet
 	 			|4708-SUBMITSAVINGS01JAN2015-MODIFYAPP-MINIMUMOPENBAL300&INTPOSTPRD-Quarterly-APPROVEON01JAN2015-ACTIVATEON01JAN2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4709-SUBMITSAVINGS01JAN2015-APPROVEON15JAN2015-UNDOAPPROVE-APPROVEON01JAN2015-ADDCHARGE-ACTIVATEON01JAN2015
       
 	  Given I setup the clients
@@ -53,7 +53,7 @@ Background:
 	  And I verified the "Saving Charges" details successfully 
 	  			|4709-SUBMITSAVINGS01JAN2015-APPROVEON15JAN2015-UNDOAPPROVE-APPROVEON01JAN2015-ADDCHARGE-ACTIVATEON01JAN2015.xlsx|
 	
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4710-SUBMITWITH(DUEDATE-15JAN2015)01JAN2015-DEP200-15JAN2015-WDRAW100-01FEB2015-POSTINTEREST01APR2015
       
 	  Given I setup the clients
@@ -73,7 +73,7 @@ Background:
 	  			|4710-SUBMITWITH(DUEDATE-15JAN2015)01JAN2015-DEP200-15JAN2015-WDRAW100-01FEB2015-POSTINTEREST01APR2015.xlsx|
 				
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4711-SUBMITSAVINGS(WITHENFORCEMINBAL)ON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-WITHDRAW50on01FEB2015
       
 	  Given I setup the clients
@@ -86,7 +86,7 @@ Background:
 	  Then i validate and Verify from "error2" sheet
 	 			|4711-SUBMITSAVINGS(WITHENFORCEMINBAL)ON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-WITHDRAW50on01FEB2015.xlsx|
 	
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4712-SUBMITSAVINGS(WITHLOCKPRD2MONTHS)ON01JAN2015-DEPOSIT500on15JAN2015-WITHDRAW50on01FEB2015
       
 	  Given I setup the clients
@@ -99,7 +99,7 @@ Background:
 	  Then i validate and Verify from "error" sheet
 	 			|4712-SUBMITSAVINGS(WITHLOCKPRD2MONTHS)ON01JAN2015-DEPOSIT500on15JAN2015-WITHDRAW50on01FEB2015.xlsx|	
 	  
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4713-SUBMITSAVINGSON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-CLOSEON01MARCH2015
       
 	  Given I setup the clients
@@ -113,7 +113,7 @@ Background:
 	 			|4713-SUBMITSAVINGSON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-CLOSEON01MARCH2015.xlsx|	  
 
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4714-SUBMITSAVINGSON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-POSTINTERESTAsOn15FEB2015
       
 	  Given I setup the clients
@@ -126,7 +126,7 @@ Background:
 	  And I verified the "Saving Transaction" details successfully 
 	  			|4714-SUBMITSAVINGSON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-POSTINTERESTAsOn15FEB2015.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4715-SUBMITSAVINGSON01JAN2015-DEPOSIT500on01FEB2015-WITHDRAW100on01FEB2015-UNDOBOTHTRANSACTIONS
       
 	  Given I setup the clients
@@ -144,7 +144,7 @@ Background:
 	  			|4715-SUBMITSAVINGSON01JAN2015-DEPOSIT500on01FEB2015-WITHDRAW100on01FEB2015-UNDOBOTHTRANSACTIONS.xlsx|
 	  				
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4716-SUBMITSAVINGSON01JAN2015WITHCHARGEMONTHLYFEE-ACTIVATEON01JAN2015-PAYCHARGE01FEB2015
       
 	  Given I setup the clients
@@ -160,7 +160,7 @@ Background:
 	  			|4716-SUBMITSAVINGSON01JAN2015WITHCHARGEMONTHLYFEE-ACTIVATEON01JAN2015-PAYCHARGE01FEB2015.xlsx|
 				
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4717-SUBMITSAVINGSON01JAN2015-MONTHLYFEE-ACTIVATEON01JAN2015-WAIVECHARGE01FEB2015-PAYCHARGE01FEB2015
       
 	  Given I setup the clients
@@ -177,7 +177,7 @@ Background:
 	  And I verified the "Saving Charges" details successfully 
 	  			|4717-SUBMITSAVINGSON01JAN2015-MONTHLYFEE-ACTIVATEON01JAN2015-WAIVECHARGE01FEB2015-PAYCHARGE01FEB2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4718-SUBMITSAVINGSON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-WITHDRAW500on01FEB2015
       Given I setup the "Saving" product
 				| Productloannavigation.xlsx |
@@ -193,7 +193,7 @@ Background:
 	  Then i validate and Verify from "error2" sheet
 	 			|4718-SUBMITSAVINGSON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-WITHDRAW500on01FEB2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4719-ACTIVATEON01JAN2015-WITHDRAW100on01JAN2015-CLICKONPOSTINTEREST
       
 	  Given I setup the clients
@@ -206,7 +206,7 @@ Background:
 	  And I verified the "Saving Transaction" details successfully 
 	  			|4719-ACTIVATEON01JAN2015-WITHDRAW100on01JAN2015-CLICKONPOSTINTEREST.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4720-SUBMIT01JAN2015-APPROVE01JAN2015-ACTIVATE01JAN2015-WITHDRAW200on01JAN2015-CLICKONPOSTINTEREST
       
 	  Given I setup the clients
@@ -224,7 +224,7 @@ Background:
 	  			|4720-SUBMIT01JAN2015-APPROVE01JAN2015-ACTIVATE01JAN2015-WITHDRAW200on01JAN2015-CLICKONPOSTINTEREST.xlsx|
 				
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4721-CREATEGRPWITH3CLIENTS-SUBMITSAVINGS01JAN2015-MODIFYAPP-ADDCHARGE-APPROVEON01JAN2015-ACTIVATEON01JAN2015
       
       Given I setup the group
@@ -245,7 +245,7 @@ Background:
 	   And I verified the "Saving Charges" details successfully 
 	  			|4721-CREATEGRPWITH3CLIENTS-SUBMITSAVINGS01JAN2015-MODIFYAPP-ADDCHARGE-APPROVEON01JAN2015-ACTIVATEON01JAN2015.xlsx|
 	  
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4722-CREATEGRPWITH3CLIENTS-SUBMITSAVINGSWITHCHARGE(DUEDATE-15JAN2015)01JAN2015-ACTIVATEON01JAN2015-PAYCHARGEon01FEB2015
       
       Given I setup the group
@@ -267,7 +267,7 @@ Background:
 	  			|4722-CREATEGRPWITH3CLIENTS-SUBMITSAVINGSWITHCHARGE(DUEDATE-15JAN2015)01JAN2015-ACTIVATEON01JAN2015-PAYCHARGEon01FEB2015.xlsx|
 	  	
 		
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4723-CREATEGROUPW2CLIENTS-SUBMIT(WITHLOCKPRD2MONTHS)01JAN2015-ACTIVATE01JAN2015-DEPOSIT500on15JAN2015-WITHDRAW50on01FEB2015
       
       Given I setup the group
@@ -284,7 +284,7 @@ Background:
 	    Then i validate and Verify from "error" sheet
 	 			|4723-CREATEGROUPW2CLIENTS-SUBMIT(WITHLOCKPRD2MONTHS)01JAN2015-ACTIVATE01JAN2015-DEPOSIT500on15JAN2015-WITHDRAW50on01FEB2015.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4724-CREATEGROUP2CLIENTS-SUBMITSAVINGS(WITHMONTHLYCHARGE)01JAN2015-APPROVE01JAN2015-ACTIVATE01JAN2015-CLICKonINACTIVECHARGE
       
       Given I setup the group
@@ -302,7 +302,7 @@ Background:
 	 			|4724-CREATEGROUP2CLIENTS-SUBMITSAVINGS(WITHMONTHLYCHARGE)01JAN2015-APPROVE01JAN2015-ACTIVATE01JAN2015-CLICKonINACTIVECHARGE.xlsx|
 	 	
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4725-CREATEGROUP2CLIENTS-SUBMIT01JAN2015(CHARGEMONTHLYFEE)-APPROVE01JAN2015-ACTIVATE01JAN2015-PAYCHARGE01FEB2015
       
       Given I setup the group
@@ -321,7 +321,7 @@ Background:
 	 	#And I verified the "Saving Charges" details successfully 
 	 	#		|4725-CREATEGROUP2CLIENTS-SUBMIT01JAN2015(CHARGEMONTHLYFEE)-APPROVE01JAN2015-ACTIVATE01JAN2015-PAYCHARGE01FEB2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4726-SUBMITSAVINGS01JAN2015-ASSIGNSTAFFON01JAN2015-ADDCHARGE-APPROVEON01JAN2015-ACTIVATEON01JAN2015
       
       Given I setup the clients
@@ -334,7 +334,7 @@ Background:
 	  Then i validate and Verify from "Validate" sheet
 	 			|4726-SUBMITSAVINGS01JAN2015-ASSIGNSTAFFON01JAN2015-ADDCHARGE-APPROVEON01JAN2015-ACTIVATEON01JAN2015.xlsx|	 			
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4727-ACTIVATEON01JAN2015-DEPOSIT200on15JAN2015-WITHDRAW100on01FEB2015-POSTINTEREST-VIEWJRNALENTRY
       
 	  Given I setup the clients
@@ -352,7 +352,7 @@ Background:
 	  Then I search with transaction id & verified the accounting entries
 	   			|4727-ACTIVATEON01JAN2015-DEPOSIT200on15JAN2015-WITHDRAW100on01FEB2015-POSTINTEREST-VIEWJRNALENTRY.xlsx| Deposit1 | Deposit2 | Withdrawal1 | Interst_Posting1 |  Interst_Posting2 | Interst_Posting3 |
 			
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4728-SUBMIT(DUEDATE-15JAN2015)01JAN2015-PAYCHARGE15JAN2015-DEPOSIT500on01FEB2015-VIEWJRNALENTRY
       
 	  Given I setup the clients
@@ -368,7 +368,7 @@ Background:
 	  Then I search with transaction id & verified the accounting entries
 	   			|4728-SUBMIT(DUEDATE-15JAN2015)01JAN2015-PAYCHARGE15JAN2015-DEPOSIT500on01FEB2015-VIEWJRNALENTRY.xlsx| Deposit1 | Pay_charge  | Deposit2 |
 	
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4729-ACTIVATEON01JAN2015-WITHDRAW100on01JAN2015-CLICKONPOSTINTEREST-VIEWJRNALENTRY
       
 	  Given I setup the clients
@@ -386,7 +386,7 @@ Background:
 	  Then I search with transaction id & verified the accounting entries
 	   			|4729-ACTIVATEON01JAN2015-WITHDRAW100on01JAN2015-CLICKONPOSTINTEREST-VIEWJRNALENTRY.xlsx| Deposit |Withdrawal |
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4730-CREATEGROUPWITH2CLIENTS-SUBMITSAVINGS01JAN2015-DEPOSIT500on15JAN2015-WITHDRAW50on01FEB2015-VIEWJRNLENTRY
       
 	  Given I setup the group
@@ -406,7 +406,7 @@ Background:
 	  Then I search with transaction id & verified the accounting entries
 	   			|4730-CREATEGROUPWITH2CLIENTS-SUBMITSAVINGS01JAN2015-DEPOSIT500on15JAN2015-WITHDRAW50on01FEB2015-VIEWJRNLENTRY.xlsx| Deposit1 | Deposit2 | Withdrawal |
 	
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4731-CREATEGROUPWITH2CLIENTS-SUBMITSAVINGSON01JAN2015-POSTINTRST01APRIL2015-CLOSE01APRIL2015-VIEWJRNLENTRY
       
 	  Given I setup the group
@@ -429,7 +429,7 @@ Background:
 	   			|4731-CREATEGROUPWITH2CLIENTS-SUBMITSAVINGSON01JAN2015-POSTINTRST01APRIL2015-CLOSE01APRIL2015-VIEWJRNLENTRY.xlsx| Deposit1 | Interst_Posting1 | Interst_Posting2 | Interst_Posting3 | Withdrawal |
 	
 	
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4732-CREATE2CLIENTSWITHSAVINGSACCOUNTSon01JAN2013--DEPOSIT500onEachAccount-TRANSFER300fromONEClient2OTHER
       
 	  Given I setup the clients
@@ -458,7 +458,7 @@ Background:
 	   Then I search with transaction id & verified the accounting entries
 	   			|4732-CREATE2CLIENTSWITHSAVINGSACCOUNTSon01JAN2013--DEPOSIT500onEachAccount-TRANSFER300fromONEClient2OTHER-1stClient.xlsx| Deposit1 | Deposit2 |
 	   	
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4733-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTofOTHERCLIENT
       
 	  Given I setup the clients
@@ -488,7 +488,7 @@ Background:
 	  And I verified the "Transactions" details successfully
 	  			|4733-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER846on08JAN2015toLOANACCOUNTofOTHERCLIENT-1stClient.xlsx|			
 	  
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4734-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTofSAMECLIENT
       
 	  Given I setup the clients
@@ -515,7 +515,7 @@ Background:
 	  And I verified the "Transactions" details successfully
 	  			|4734-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTofSAMECLIENT-1stClient.xlsx|			
 	  
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4735-SUBMIT01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTOTHERCLIENT-undoTransactionINLOANACCOUNT
       
 	  Given I setup the clients
@@ -546,7 +546,7 @@ Background:
 	 	And I verified the "Saving Transaction" details successfully 
 	  			|4735-SUBMIT01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTOTHERCLIENT-undoTransactionINLOANACCOUNT-1stClient.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4736-SUBMITSAVINGS01JAN2015-APRACT01JAN2015-TRANSFER2000on08JAN2015toLOANACCOUNTofSAMECLIENT
       
 	  Given I setup the clients
@@ -561,7 +561,7 @@ Background:
 	   Then i validate and Verify from "error2" sheet
 	  			|4736-SUBMITSAVINGS01JAN2015-APRACT01JAN2015-TRANSFER2000on08JAN2015toLOANACCOUNTofSAMECLIENT.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4737-SUBMITFD01JAN2015(AMT5000-PERIOD12MNTH)-APRACT05JAN2015
       
       Given I setup the "FixedDeposit" product
@@ -578,7 +578,7 @@ Background:
 	  And I verified the "FixedDeposit Transaction" details successfully 
 	  			|4737-SUBMITFD01JAN2015(AMT5000-PERIOD12MNTH)-APRACT05JAN2015.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4738-SUBMITFD01JAN2015(AMT5000-DEPOPRD12MNTH)-MODIFYAPP-LOCKPRD6MNTH-DEPOPRD6MNTH-ACT01JAN2015
       
 	  Given I setup the clients
@@ -593,7 +593,7 @@ Background:
 	  And I verified the "FixedDeposit Transaction" details successfully 
 	  			|4738-SUBMITFD01JAN2015(AMT5000-DEPOPRD12MNTH)-MODIFYAPP-LOCKPRD6MNTH-DEPOPRD6MNTH-ACT01JAN2015.xlsx|
 	   
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4739-SUBMITFD01JAN2015(AMT5000-LCKPRD12MNTH-DEPOPRD6MNTH)-ACT01JAN2015-PREMATURECLOSE02JULY2015
       
 	  Given I setup the clients
@@ -606,7 +606,7 @@ Background:
 	  Then i validate and Verify from "error" sheet 
 	  			|4739-SUBMITFD01JAN2015(AMT5000-LCKPRD12MNTH-DEPOPRD6MNTH)-ACT01JAN2015-PREMATURECLOSE02JULY2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4740-SUBMITFDS01JAN2015(AMT5000-LCKPRD6MNTH-DEPOPRD6MNTH)-APRACT01JAN2015-POSTINTon01APR2015
       
 	  Given I setup the clients
@@ -621,7 +621,7 @@ Background:
 	  And I verified the "FixedDeposit Transaction" details successfully 
 	  			|4740-SUBMITFDS01JAN2015(AMT5000-LCKPRD6MNTH-DEPOPRD6MNTH)-APRACT01JAN2015-POSTINTon01APR2015.xlsx|
 	   
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4741-SUBMITFDS01JAN2015(AMT5000-LCKPRD6MNTH-DEPOPRD6MNTH)-APR01JAN2015-REJECT05JAN2015
       
 	  Given I setup the clients
@@ -634,7 +634,7 @@ Background:
 	  And I verified the "FixedDeposit Summary" details successfully 
 	  			|4741-SUBMITFDS01JAN2015(AMT5000-LCKPRD6MNTH-DEPOPRD6MNTH)-APR01JAN2015-REJECT05JAN2015.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4742-SUBMITFDS01JAN2015(DEPOPRD12MNTH)-ADDCHRGE-APRACT01FEB2015
       
 	  Given I setup the clients
@@ -651,7 +651,7 @@ Background:
 	  And I verified the "FixedDeposit Charges" details successfully 
 	  			|4742-SUBMITFDS01JAN2015(DEPOPRD12MNTH)-ADDCHRGE-APRACT01FEB2015.xlsx|
 	
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4743-SUBMITFDS01JAN2015(AMT5000-DEPOPRD12MNTH-ActivationCharge-Flat)-ACT01JAN2015
       
 	  Given I setup the clients
@@ -666,7 +666,7 @@ Background:
 	  And I verified the "FixedDeposit Charges" details successfully 
 	  			|4743-SUBMITFDS01JAN2015(AMT5000-DEPOPRD12MNTH-ActivationCharge-Flat)-ACT01JAN2015.xlsx|	
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4744-SUBMITFDS01JAN2015(AMT5000-DEPOPRD12MNTH)-ACT01JAN2015-ADDCHARGE(FD-SpecifiedDueDate-Flat)
       
 	  Given I setup the clients
@@ -683,7 +683,7 @@ Background:
 	  And I verified the "FixedDeposit Charges" details successfully 
 	  			|4744-SUBMITFDS01JAN2015(AMT5000-DEPOPRD12MNTH)-ACT01JAN2015-ADDCHARGE(FD-SpecifiedDueDate-Flat).xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4745-SUBMITFDS01JAN2015(AMT5000-DEPOPRD12MNTH-SavingsActivation-Flat)-ACT01JAN2015-WaiveCharge
       
 	  Given I setup the clients
@@ -701,7 +701,7 @@ Background:
 	  			|4745-SUBMITFDS01JAN2015(AMT5000-DEPOPRD12MNTH-SavingsActivation-Flat)-ACT01JAN2015-WaiveCharge.xlsx|	
 				
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4746-SUBMITFDS01JAN2015(AMT5000-DEPOPRD12MNTH)-ACT01JAN2015-POSTINTEREST
       
 	  Given I setup the clients
@@ -716,7 +716,7 @@ Background:
 	  And I verified the "FixedDeposit Summary" details successfully 
 	  			|4746-SUBMITFDS01JAN2015(AMT5000-DEPOPRD12MNTH)-ACT01JAN2015-POSTINTEREST.xlsx|	
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4747-SUBMITFD01JAN2015(AMT5000-PRD06MNTHwithINCT-1)-APRACT01JAN2015
  
 	  Given I setup the "FixedDeposit" product
@@ -733,7 +733,7 @@ Background:
 	  And I verified the "FixedDeposit Summary" details successfully 
 	  			|4747-SUBMITFD01JAN2015(AMT5000-PRD06MNTHwithINCT-1)-APRACT01JAN2015.xlsx|	
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4748-SUBMITFD01JAN2015(AMT5000-PRD06MNTHwithINCT-2)-APRACT01JAN2015
       
       Given I setup the "FixedDeposit" product
@@ -750,7 +750,7 @@ Background:
 	  And I verified the "FixedDeposit Summary" details successfully 
 	  			|4748-SUBMITFD01JAN2015(AMT5000-PRD06MNTHwithINCT-2)-APRACT01JAN2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4749-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithINCT-3)-APRACT01JAN2015
       
       Given I setup the "FixedDeposit" product
@@ -767,7 +767,7 @@ Background:
 	  And I verified the "FixedDeposit Summary" details successfully 
 	  			|4749-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithINCT-3)-APRACT01JAN2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4750-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithINCT-4)-APRACT01JAN2015
       
       Given I setup the "FixedDeposit" product
@@ -784,7 +784,7 @@ Background:
 	  And I verified the "FixedDeposit Summary" details successfully 
 	  			|4750-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithINCT-4)-APRACT01JAN2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4751-SUBMITFD01JAN2015(AMT5000-PRD06MNTHwithINCT-5)-APRACT01JAN2015
       
       Given I setup the "FixedDeposit" product
@@ -801,7 +801,7 @@ Background:
 	  And I verified the "FixedDeposit Summary" details successfully 
 	  			|4751-SUBMITFD01JAN2015(AMT5000-PRD06MNTHwithINCT-5)-APRACT01JAN2015.xlsx|
 	  	
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4752-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithINCT-6)-APRACT01JAN2015
       
       Given I setup the "FixedDeposit" product
@@ -818,7 +818,7 @@ Background:
 	  And I verified the "FixedDeposit Summary" details successfully 
 	  			|4752-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithINCT-6)-APRACT01JAN2015.xlsx|	
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4753-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithLINKSAVINGS)-APRACT01JAN2015
       
       
@@ -832,7 +832,7 @@ Background:
 	  Then i validate and Verify from "error2" sheet 
 	  			|4753-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithLINKSAVINGS)-APRACT01JAN2015.xlsx|	
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4754-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithLINKSAVINGS)-APRACT01JAN2015
       
       
@@ -851,7 +851,7 @@ Background:
 	  And I verified the "Saving Transaction" details successfully 
 	  			|4754-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithLINKSAVINGS)-APRACT01JAN2015.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4755-SUBMITFD01SEPT2014(AMT5000-PRD06MNTH)-ACT01SEPT2014-POSTINTEREST-CLOSEon01APR2015-ACTNwithdrawdeposit
       
       
@@ -867,7 +867,7 @@ Background:
 	  And I verified the "FixedDeposit Summary" details successfully 
 	  			|4755-SUBMITFD01SEPT2014(AMT5000-PRD06MNTH)-ACT01SEPT2014-POSTINTEREST-CLOSEon01APR2015-ACTNwithdrawdeposit.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4756-SUBMITFD01SEPT2014(AMT5000-PRD06MNTH)-ACT01SEPT2014-POSTINTEREST-CLOSEon01APR2015-ACTIONTransfersavings
       
       
@@ -888,7 +888,7 @@ Background:
 	  And I verified the "Saving Transaction" details successfully 
 	  			|4756-SUBMITFD01SEPT2014(AMT5000-PRD06MNTH)-ACT01SEPT2014-POSTINTEREST-CLOSEon01APR2015-ACTIONTransfersavings.xlsx|
 		
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4757-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01FEB2015
       
       Given I setup the "RecurringDeposit" product
@@ -903,7 +903,7 @@ Background:
 	  And I verified the "RecurringDeposit Summary" details successfully 
 	  			|4757-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01FEB2015.xlsx|
 	 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4758-SUBMITRDS01JAN2015(AMT5000-DEPOPRD06MNTH)-MODIFYAPP-LOCKPRD&DEPOPRD3MNTH-ACT01JAN2015
       
       
@@ -917,7 +917,7 @@ Background:
 	  Then i validate and Verify from "error" sheet
 	  			|4758-SUBMITRDS01JAN2015(AMT5000-DEPOPRD06MNTH)-MODIFYAPP-LOCKPRD&DEPOPRD3MNTH-ACT01JAN2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4759-SUBMIT01SEP2014(AMT5000-LCKIN12MNT-DEPPRD6MNT)-ACT01SEP2014-MKEPAYMENT01FEB2015-PREMATURECLOSE2MAR2015
       
       
@@ -937,7 +937,7 @@ Background:
 	  Then i validate and Verify from "error" sheet
 	  			|4759-SUBMIT01SEP2014(AMT5000-LCKIN12MNT-DEPPRD6MNT)-ACT01SEP2014-MKEPAYMENT02FEB2015-PREMATURECLOSE2MAR2015.xlsx|
 	 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4760-SUBMITRD01JAN2015(AMT5000-LCKIN6MNT-DEPOPRD6MNTH)-ACT01JAN2015-MakePayment01FEB2015-POSTINT01APR2015
       
       
@@ -955,7 +955,7 @@ Background:
 	  And I verified the "RecurringDeposit Transaction" details successfully 
 	  			|4760-SUBMITRD01JAN2015(AMT5000-LCKIN6MNT-DEPOPRD6MNTH)-ACT01JAN2015-MakePayment01FEB2015-POSTINT01APR2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4761-SUBMITRD01JAN2015(AMT5000-LCKPRD6MNTH-DEPOPRD6MNTH)-APR01JAN2015-REJECT05JAN2015
       
       
@@ -969,7 +969,7 @@ Background:
 	  And I verified the "RecurringDeposit Summary" details successfully 
 	  			|4761-SUBMITRD01JAN2015(AMT5000-LCKPRD6MNTH-DEPOPRD6MNTH)-APR01JAN2015-REJECT05JAN2015.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4762-SUBMITRD01JAN2015(DEPOPRD06MNTH)-ADDCHRGE(savings-activation)-APRACT01FEB2015
       
       
@@ -986,7 +986,7 @@ Background:
 	  			|4762-SUBMITRD01JAN2015(DEPOPRD06MNTH)-ADDCHRGE(savings-activation)-APRACT01FEB2015.xlsx|
 
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4763-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-duedate-flat)-ACT01JAN2015
       
       
@@ -1005,7 +1005,7 @@ Background:
 	  			|4763-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-duedate-flat)-ACT01JAN2015.xlsx|
 
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4764-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH)-APRACT01JAN2015-ADDCHARGE(RD-SpecifiedDueDate-Flat)
       
       
@@ -1025,7 +1025,7 @@ Background:
 	  And I verified the "RecurringDeposit Charges" details successfully 
 	  			|4764-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH)-APRACT01JAN2015-ADDCHARGE(RD-SpecifiedDueDate-Flat).xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4765-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-SavingsActivation-Flat)-ACT01JAN2015-WaiveCharge
       
       
@@ -1043,7 +1043,7 @@ Background:
 	  And I verified the "RecurringDeposit Charges" details successfully 
 	  			|4765-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-SavingsActivation-Flat)-ACT01JAN2015-WaiveCharge.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4766-SUBMIT01JAN2015(AMT5000-DEPOPRD06MNTH)-ACT01JAN2015-makepay01FEB2015-POSTINTEREST01APR2015
       
       
@@ -1061,7 +1061,7 @@ Background:
 	  And I verified the "RecurringDeposit Transaction" details successfully 
 	  			|4766-SUBMIT01JAN2015(AMT5000-DEPOPRD06MNTH)-ACT01JAN2015-makepay01FEB2015-POSTINTEREST01APR2015.xlsx|
 	
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4767-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-1)-APRACT01JAN2015
      
 	  Given I setup the "RecurringDeposit" product
@@ -1076,7 +1076,7 @@ Background:
 	  And I verified the "RecurringDeposit Summary" details successfully
 	  			|4767-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-1)-APRACT01JAN2015.xlsx|				
 	  
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4768-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-2)-APRACT01JAN2015
      
 	  Given I setup the "RecurringDeposit" product
@@ -1091,7 +1091,7 @@ Background:
 	  And I verified the "RecurringDeposit Summary" details successfully
 	  			|4768-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-2)-APRACT01JAN2015.xlsx|	
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4769-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-3)-APRACT01JAN2015
      
 	  Given I setup the "RecurringDeposit" product
@@ -1106,7 +1106,7 @@ Background:
 	  And I verified the "RecurringDeposit Summary" details successfully
 	  			|4769-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-3)-APRACT01JAN2015.xlsx|	
 	  
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4770-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-4)-APRACT01JAN2015
      
 	  Given I setup the "RecurringDeposit" product
@@ -1121,7 +1121,7 @@ Background:
 	  And I verified the "RecurringDeposit Summary" details successfully
 	  			|4770-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-4)-APRACT01JAN2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4771-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-5)-APRACT01JAN2015
      
 	  Given I setup the "RecurringDeposit" product
@@ -1136,7 +1136,7 @@ Background:
 	  And I verified the "RecurringDeposit Summary" details successfully
 	  			|4771-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-5)-APRACT01JAN2015.xlsx|	
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4772-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-6)-APRACT01JAN2015
      
 	  Given I setup the "RecurringDeposit" product
@@ -1151,7 +1151,7 @@ Background:
 	  And I verified the "RecurringDeposit Summary" details successfully
 	  			|4772-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-6)-APRACT01JAN2015.xlsx|		
 	  			
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4773-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB&01MAR2015
      
 	  Given I setup the clients
@@ -1172,7 +1172,7 @@ Background:
 	  Then i validate and Verify from "error" sheet
 	  			|4773-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB&01MAR2015.xlsx|	
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4774-SUBMITRD01JAN2015(5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-SCHEDjOB-CLOSEACCOUNT
      
 	  Given I setup the clients
@@ -1194,7 +1194,7 @@ Background:
 	  			|4774-SUBMITRD01JAN2015(5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-SCHEDjOB-CLOSEACCOUNT.xlsx|
 				
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings)
      
 	  Given I setup the clients
@@ -1222,7 +1222,7 @@ Background:
 	  			|4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings).xlsx|
 				
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest)
      
 	  Given I setup the clients
@@ -1250,7 +1250,7 @@ Background:
 	#  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
 				
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4777-SUBMITRD01JAN2015(AMT5000-PRD02MNTH-ALLOWwithdraw)-APRACT01JAN2015-DPT01JAN01FEB2015-ClickWithdraw
      
 	  Given I setup the clients
@@ -1265,7 +1265,7 @@ Background:
       Then I "Withdraw" and verified the following tabs
 	  			|4777-SUBMITRD01JAN2015(AMT5000-PRD02MNTH-ALLOWwithdraw)-APRACT01JAN2015-DPT01JAN01FEB2015-ClickWithdraw.xlsx|Modify Transaction|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4778-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-ClickTransferFunds
      
 	  
@@ -1283,7 +1283,7 @@ Background:
 	  Then I "Transfer Funds" and verified the following tabs
 	  			|4778-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-ClickTransferFunds.xlsx| Modify Transaction |
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4779-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015(AMOUNT7000)-ClickOnDepositAgain
      
 	  
@@ -1301,7 +1301,7 @@ Background:
 	  And I verified the "RecurringDeposit Transaction" details successfully 
 	  			|4779-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015(AMOUNT7000)-ClickOnDepositAgain.xlsx|
 	  
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4780-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015-PrematureCloseOn01FEB2015
      
 	  
@@ -1319,7 +1319,7 @@ Background:
 	  And I verified the "RecurringDeposit Transaction" details successfully 
 	  			|4780-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015-PrematureCloseOn01FEB2015.xlsx|
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions
      
 	  
@@ -1335,7 +1335,7 @@ Background:
 	   And I verified the "RecurringDeposit Summary" details successfully
 	  			|4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions.xlsx|
 	  		
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4782-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01JAN2015-DPT01APR2015
      
 	  
@@ -1352,7 +1352,7 @@ Background:
 	  			|4782-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01JAN2015-DPT01APR2015.xlsx|
 				
 				
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4783-SUBMITRD01JAN2015(AMT5000-PRD03MNT)-ACT01JAN2015-DPT01JAN2015-RUNSCHEDjOB-CloseRDAcc01April2015
      
 	  
@@ -1372,7 +1372,7 @@ Background:
 	  And I verified the "RecurringDeposit Transaction" details successfully 
 	  			|4783-SUBMITRD01JAN2015(AMT5000-PRD03MNT)-ACT01JAN2015-DPT01JAN2015-RUNSCHEDjOB-CloseRDAcc01April2015.xlsx|
 	 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT
      
 	  Given I setup the "FixedDeposit" product
@@ -1400,7 +1400,7 @@ Background:
 	   			|4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT.xlsx| Deposit1 | Interst_Posting1 | Interst_Posting2 |Withdrawal |
 	 				
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 	  Scenario: 4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT
      
 	  
@@ -1428,7 +1428,7 @@ Background:
 	   Then I search with transaction id & verified the accounting entries
 	   			|4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx| Deposit1 | Deposit2 | Interst_Posting1 | Interst_Posting2 |Withdrawal |
 	
-	@RunnerClassClientsSpecific
+	@RunnerClassWorkingDays
 	  Scenario: 4786-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01FEB2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT
        
 	  Given I setup the clients
@@ -1455,7 +1455,7 @@ Background:
 	  
    
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 Scenario: 4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE
      
 	  Given I setup the "Saving" product
@@ -1479,7 +1479,7 @@ Scenario: 4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE
 	  Then I search with transaction id & verified the accounting entries
 	   			|4974-SUBMITSAVINGS-APPROVE-ACTIVATE-DEPOSIT-WITHDRAW-PRECLOSURE.xlsx| Deposit1 |  Withdrawal | Interst_Posting1 |  Interst_Posting2 |Withdrawal1|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 Scenario: 4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT
      
 	  Given I setup the clients
@@ -1505,7 +1505,7 @@ Scenario: 4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT
 	   Then I search with transaction id & verified the accounting entries
 	   			|4975-ACTIVATESAVINGS-FUNDTRANSFER-BETWEENACCOUNT-SAMECLIENT-2nd.xlsx| Deposit1 | 
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 Scenario: 4976-ACTIVATESAVINGS-DEPOSIT-WITHDRAW-POSTINTEREST
      
 	  Given I setup the clients
@@ -1523,7 +1523,7 @@ Scenario: 4976-ACTIVATESAVINGS-DEPOSIT-WITHDRAW-POSTINTEREST
 	   Then I search with transaction id & verified the accounting entries
 	   			|4976-ACTIVATESAVINGS-DEPOSIT-WITHDRAW-POSTINTEREST.xlsx| Deposit | Interst_Posting1 |
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 Scenario: 4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-Withdraw
 	 Given I setup the "RecurringDeposit" product
 				| Productloannavigation.xlsx |
@@ -1546,7 +1546,7 @@ Scenario: 4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-Withdra
 	  Then I search with transaction id & verified the accounting entries
 	   			|4977-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-MATURE.xlsx| Deposit1|Deposit2|Deposit3|Interst_Posting1 |Withdrawal|
 
-@RunnerClassClientsSpecific 
+@RunnerClassWorkingDays 
 Scenario: 4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest
 	 Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -1573,7 +1573,7 @@ Scenario: 4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInves
 	  Then I search with transaction id & verified the accounting entries
 	   			|4978-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-ReInvest-newRD.xlsx| Deposit1|
  
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 Scenario: 4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving
 	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -1601,7 +1601,7 @@ Scenario: 4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-Transfe
 	  Then I search with transaction id & verified the accounting entries
 	   			|4979-ACTIVATERD-DEPOSITE-EDITTRANSACTION-RUNSCHEDULERJOB-Close-TransferToSaving.xlsx| Deposit4 | 
  
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 Scenario: 4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw
 	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -1617,7 +1617,7 @@ Scenario: 4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw
 	  And I Navigate to Accounting web page
 	  Then I search with transaction id & verified the accounting entries
 	   			|4980-ACTIVATERD-DEPOSIT-PreMatureClose-Withdraw.xlsx| Deposit1|Deposit2|Interst_Posting1 |Withdrawal|
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 Scenario: 4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw
 	  Given I setup the "RecurringDeposit" product
 				| Productloannavigation.xlsx |
@@ -1637,7 +1637,7 @@ Scenario: 4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw
 	  And I verified the "RD Transaction & TransID" details successfully 
 	  			|4981-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassWorkingDays
 Scenario: 4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw
 	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -1651,7 +1651,7 @@ Scenario: 4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw
 	  And I verified the "RD Transaction & TransID" details successfully 
 	  			|4982-CreateRDProduct-EditInterestChart-ACTIVATERD-DEPOSIT-Withdraw.xlsx|
  
- @RunnerClassClientsSpecific 
+ @RunnerClassWorkingDays 
 Scenario: 4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction
       Given I Navigate to System Configuration web page & "enable" "savings-interest-posting-current-period-end"
       Given I setup the clients
@@ -1666,7 +1666,7 @@ Scenario: 4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-Veri
 	  And I verified the "Saving Transaction & TransID" details successfully 
 	  			|4984-Enable-SavingsInterestPostingCurrentPeriodEnd-ActivateSaving-VerifyTransaction.xlsx|
 
-@RunnerClassClientsSpecific 
+@RunnerClassWorkingDays 
 Scenario: 4985-ActivateSaving&RD-PayThroughCollectionSheet-VerifyTransaction
       Given I Navigate to System Configuration web page & "enable" "savings_account_included_in_collection_sheet"
       Given I Navigate to System Configuration web page & "enable" "savings_withdraw_included_in_collection_sheet"
@@ -1698,7 +1698,7 @@ Scenario: 4985-ActivateSaving&RD-PayThroughCollectionSheet-VerifyTransaction
 	  Then I search with transaction id & verified the accounting entries
 	   			|4985-ActivateSaving&RD-PayThroughCollectionSheet-VerifyTransaction.xlsx| Deposit2 |  
 	   			
-@RunnerClassClientsSpecific 
+@RunnerClassWorkingDays 
 Scenario: 4986-ActivateSaving&RD-Deposit-WithdrawThroughCollectionSheet-VerifyTransaction
       Given I setup the center
 	  When I entered the values into center from "Input" sheet
@@ -1732,7 +1732,7 @@ Scenario: 4986-ActivateSaving&RD-Deposit-WithdrawThroughCollectionSheet-VerifyTr
 	  Then I search with transaction id & verified the accounting entries
 	   			|4986-ActivateSaving&RD-Deposit-WithdrawThroughCollectionSheet-VerifyTransaction.xlsx| Deposit3 |Deposit4 |Deposit5 |
 	   			
-@RunnerClassClientsSpecific 
+@RunnerClassWorkingDays 
 Scenario: 4987-ActivateSaving&RD-Deposit-WithdrawThroughCollectionSheet-AdvanceAccounting-VerifyTransaction
       Given I setup the center
 	  When I entered the values into center from "Input" sheet

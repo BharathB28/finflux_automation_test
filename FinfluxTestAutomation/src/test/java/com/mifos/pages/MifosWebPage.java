@@ -843,6 +843,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					value = FrontPage.DataTableCreatedURL.split("#/")[1];
 					break;
 					
+				case "OldLoan":
+					value = RememberTopupUrl.split("#/")[1];
+					break;
+					
 				default:
 					System.out.println("No Url to navigate");
 					break;
@@ -872,12 +876,13 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					if(key.equals("Savinginsertdate"))
 					{
 						//||key.equals("SavingClosedon")
+
+						locator = getLocator(getResource(key));
+						waitForElementAndPoll(locator).click();
 						String Date= value.substring(0, 2);
 						String Month=value.substring(3, value.length()-5);
 						String Year=value.substring(value.length()-4, value.length());
 						By locator1,Date1,Month1,Year1 = null;
-						locator = getLocator(getResource(key));
-						waitForElementAndPoll(locator).click();
 						Thread.sleep(3000);
 						locator1 = getLocator(getResource(key)+"/following-sibling::ul//thead/tr[1]/th[2]/button/strong");
 						Year1=getLocator(getResource(key)+"/following-sibling::ul//span[contains(.,'"+Year+"')]");
@@ -1011,7 +1016,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				try {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);
-					if(key.equals("ChooseLoanToClose")||key.equals("GuarantorAccount")
+					if(key.equals("GuarantorAccount") || key.equals("ChooseLoanToCloseInEditPage")
 					|| key.contains("SavingTranferToAccountNum")|| key.equals("FdTranferToAccountNumber")
 					|| key.equals("ShareLinkToSavingAccount")|| key.equals("GroupLoanLinkingSavingAccount"))
 					{

@@ -1914,6 +1914,11 @@ public class FrontPage extends MifosWebPage {
 				clickButton(getResource("frontend.accounting.searchjournal.transactionid.Parameters"), "xpath");
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
+			if (transactionIDIndex == -1) {
+				isTransactionTabSelected = false;
+				setAccuralTransactionID.clear();
+				istransactionIdIndexAssigned = true;
+			}
 		}
 		if (sheetName.contains("Interst_Posting") || sheetName.contains("Deposit") || sheetName.contains("Withdrawal")
 				|| sheetName.contains("Pay_charge")) {
@@ -2124,9 +2129,9 @@ public class FrontPage extends MifosWebPage {
 		By locator = null;
 		locator = getLocator(getResource("runSelectedJobs"));
 		clickButton(locator, 30);
-
+		Thread.sleep(5000);
 		clickButton(getResource("refresh"));
-		Thread.sleep(getResourceKey("largeWait"));
+		Thread.sleep(10000);
 
 		System.out.println(currentUrl);
 		if (!currentUrl.equals("")) {
@@ -2478,15 +2483,7 @@ public class FrontPage extends MifosWebPage {
 	}
 
 	public void navigateLoanAccounting() throws Throwable {
-		if(RememberTopupUrl!=null)
-		{
-			MifosWebPage.navigateToUrl(RememberTopupUrl);
-			RememberTopupUrl=null;
-		}
-		
-		else{
 			MifosWebPage.navigateToUrl(currentUrl);
-		}
 		Thread.sleep(getResourceKey("smallWait"));
 	}
 	
@@ -2635,6 +2632,17 @@ public class FrontPage extends MifosWebPage {
 			if (ClientChargesInCollectionSheet.getText().equalsIgnoreCase(Status)) {
 				getElement(getResource("IncludeClientChargesInCollectionSheet.click")).click();
 				Thread.sleep(getResourceKey("smallWait"));
+			}else {
+				System.out.println("Already Status is "+Status);
+			}
+			break;
+			
+		case "glim-payment-as-group":
+			WebElement GlimPaymentAsGroup = getElement(getResource("GlimpaymentAsGroup"));
+			Thread.sleep(getResourceKey("largeWait"));
+			if (GlimPaymentAsGroup.getText().equalsIgnoreCase(Status)) {
+				getElement(getResource("GlimpaymentAsGroup.click")).click();
+				Thread.sleep(getResourceKey("largeWait"));
 			}else {
 				System.out.println("Already Status is "+Status);
 			}
