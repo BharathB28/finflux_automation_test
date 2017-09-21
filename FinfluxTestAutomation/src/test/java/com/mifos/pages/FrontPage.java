@@ -1957,6 +1957,7 @@ public class FrontPage extends MifosWebPage {
 			
 		}
 		if (sheetName.equals("Acc_Periodic")) {
+			isTransactionTabSelected = true;
 
 			for (int i = setAccuralTransactionType.size() - 1; i >= 0; i--) {
 				getWebDriver().findElement(By.xpath("//input[@placeholder='Search by transaction']"))
@@ -1968,6 +1969,7 @@ public class FrontPage extends MifosWebPage {
 				clickButton(getResource("frontend.accounting.searchjournal.transactionid.Parameters"), "xpath");
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
+			isTransactionTabSelected = false;
 		}
 
 	}
@@ -2279,7 +2281,7 @@ public class FrontPage extends MifosWebPage {
 			String excelSheetName, String sheetName) throws Throwable {
 		// TODO Auto-generated method stub
 
-		if (sheetName.equals("Loan Tranche Details")) {
+		if (sheetName.contains("Loan Tranche Details")) {
 
 			StaleElementHandle("//a[contains(.,'" + sheetName + "')]");
 			Thread.sleep(getResourceKey("largeWait"));
@@ -2483,51 +2485,67 @@ public class FrontPage extends MifosWebPage {
 	}
 
 	public void navigateLoanAccounting() throws Throwable {
-			MifosWebPage.navigateToUrl(currentUrl);
+		MifosWebPage.navigateToUrl(currentUrl);
 		Thread.sleep(getResourceKey("smallWait"));
 	}
-	
+
 	public void navigateSavingAccounting() throws Throwable {
-		if(RememberPreviousUrl!=null)
-		{
+		if (RememberPreviousUrl != null) {
 			MifosWebPage.navigateToUrl(RememberPreviousUrl);
-			RememberPreviousUrl=null;
-		}
-		else{
+			RememberPreviousUrl = null;
+		} else {
 			MifosWebPage.navigateToUrl(CurrentSavingAccounturl);
 		}
-		
+
 		Thread.sleep(getResourceKey("smallWait"));
 	}
-	public void navigateToCurrentCenterPage(String excelSheetPath,
-			String excelSheetName, String sheetName) throws Throwable {
+
+	public void navigateToPage(String url) throws Throwable {
+
+		switch (url) {
+		case "LoanEmiPack Page":
+			url = "loanemipacks";
+			break;
+			
+		case "Charge Page":
+			url = "charges";
+			break;
+
+
+		default:
+			System.out.println("Invalid URL name");
+			break;
+
+		}
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl() +url);
+		Thread.sleep(getResourceKey("smallWait"));
+	}
+
+	public void navigateToCurrentCenterPage(String excelSheetPath, String excelSheetName, String sheetName)
+			throws Throwable {
 
 		Map<String, String> newLoanDetailsMap;
-		newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
-				sheetName);
+		newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName, sheetName);
 		Thread.sleep(getResourceKey("smallWait"));
-		insertValues(newLoanDetailsMap);		
+		insertValues(newLoanDetailsMap);
 	}
-	
-	public void navigateToLoanProvisioningPage(String excelSheetPath,
-			String excelSheetName, String LoanProvision,String sheetName) throws Throwable {
-		
-		if(sheetName.equals("Loan Provisioning Criteria"))
-		{
-		    MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"viewallprovisionings");
-		    Thread.sleep(getResourceKey("mediumWait"));
+
+	public void navigateToLoanProvisioningPage(String excelSheetPath, String excelSheetName, String LoanProvision,
+			String sheetName) throws Throwable {
+
+		if (sheetName.equals("Loan Provisioning Criteria")) {
+			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl() + "viewallprovisionings");
+			Thread.sleep(getResourceKey("mediumWait"));
 			verifySuccessMessage("CreateProvisioningCriteria", "Create Provisioning Criteria");
-		}
-		else
-		{
-			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"viewprovisioningentries");
+		} else {
+			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl() + "viewprovisioningentries");
 			Thread.sleep(getResourceKey("mediumWait"));
 			verifySuccessMessage("CreateProvisioningEntry", "Create Provisioning Entry");
 		}
 		Map<String, String> LoanProvisioningDetailsMap;
-		LoanProvisioningDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,sheetName);
+		LoanProvisioningDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName, sheetName);
 		Thread.sleep(getResourceKey("smallWait"));
-		insertValues(LoanProvisioningDetailsMap);		
+		insertValues(LoanProvisioningDetailsMap);
 	}
 	
 	public void StaleElementHandle (String elementID){

@@ -873,11 +873,12 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					locator = getLocator(getResource(key));
 					waitForElementAndPoll(locator);
 					waitForElementAndPoll(locator).click();
-					if(key.equals("Savinginsertdate"))
+					if(key.equals("Savinginsertdate") || key.equals("NewMeetingDates"))
 					{
 						//||key.equals("SavingClosedon")
 
 						locator = getLocator(getResource(key));
+						waitForElementAndPoll(locator).click();
 						waitForElementAndPoll(locator).click();
 						String Date= value.substring(0, 2);
 						String Month=value.substring(3, value.length()-5);

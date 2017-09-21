@@ -1349,6 +1349,7 @@ Scenario: 5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs
 	 			|5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
  	  Then I "MakeOverRePayment" and verified the following tabs
 	 			|5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs-MakeRePayment.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+ 	  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
  	  And I verified the "Transactions" details and read the transaction Id 
 	 			|5001-GlimLoanAsGroup-Disburse-PrePay-VerifyTabs-MakeRePayment.xlsx|
       And I Navigate to Accounting web page
@@ -1560,4 +1561,188 @@ Scenario:5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-V
 	  			|5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
 	 Then i validate and Verify from "error" sheet
 	 			|5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
-  		    	          	  	             
+
+@RunnerClassClientsSpecific
+Scenario:5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|Repay1|	
+	  Then I "Disburse 2nd Tranche" and verified the following tabs
+	 			|5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx |Modify Transaction|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  Then I "WaiveIterest&WriteOff" and verified the following tabs
+	 			|5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx |Modify Transaction1|Modify Transaction2|
+	  And I verified the "Summary" details successfully 
+	 			|5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	 			|5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	            |5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|Acc_Disbursement|Acc_Disbursement1|Acc_RepaymentDisbursement|Acc_Repayment|Acc_Repayment1|
+	  Then I "Navigate to Old Loan" and verified the following tabs
+	 			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx |Modify Transaction|
+      Then I verified the "Transactions" details and read the transaction Id 
+	            |5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify-OldLoan.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify-OldLoan.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+
+#@RunnerClassClientsSpecific
+#Scenario:5011-DisbLoan-AproveTOPUP-CloseOldLoan-DisburseTopup-Verify
+#      Given I setup the clients
+#	  When I entered the values into client from "Input" sheet
+#	  			|Createclient.xlsx|
+#	  When I set up the new create loan from "NewLoanInput" sheet
+#	  			|5011-DisbLoan-AproveTOPUP-CloseOldLoan-DisburseTopup-Verify.xlsx|	
+#	  When I set up the new create loan from "NewLoanInput1" sheet
+#	  			|5011-DisbLoan-AproveTOPUP-CloseOldLoan-DisburseTopup-Verify.xlsx|
+#	  Then I "Navigate to Old Loan" and verified the following tabs
+#	 			|5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx |Modify Transaction|
+#      Then I "CloeLoan" and verified the following tabs
+#	 			|5011-DisbLoan-AproveTOPUP-CloseOldLoan-DisburseTopup-Verify.xlsx |Modify Transaction|
+#	  Then I navigate To Loan Account Page
+#	  Then I "Disburse TopUp Tranche" and verified the following tabs
+#	 			|5011-DisbLoan-AproveTOPUP-CloseOldLoan-DisburseTopup-Verify.xlsx |Modify Transaction1|
+#	  Then i validate and Verify from "error" sheet
+#	 			|5011-DisbLoan-AproveTOPUP-CloseOldLoan-DisburseTopup-Verify.xlsx|
+ 
+ 
+###################################################  Slab Based  #############################################################
+
+@RunnerClassClientsSpecific
+Scenario:5018-CreateAndEdit-SlabBased-Charges
+      Given I navigate To "Charge Page" Page
+      Then I "Create charge and Edit Created charge" and verified the following tabs
+	 			|5018-CreateAndEdit-SlabBased-Charges.xlsx |Modify Transaction|Modify Transaction1|
+	  Given I navigate To "Charge Page" Page
+	  Then I "Create Another charge" and verified the following tabs
+	 			|5018-CreateAndEdit-SlabBased-Charges.xlsx |Modify Transaction2|
+	  Given I navigate To "Charge Page" Page
+	  Then I "Create Another charge" and verified the following tabs
+	 			|5018-CreateAndEdit-SlabBased-Charges.xlsx |Modify Transaction3|
+	  Given I navigate To "Charge Page" Page
+	  Then I "Create Another charge" and verified the following tabs
+	 			|5018-CreateAndEdit-SlabBased-Charges.xlsx |Modify Transaction4|
+
+@RunnerClassClientsSpecific
+Scenario:5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify.xlsx|
+	  Then I verified the following Tabs details successfully
+	   			|5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify.xlsx|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	            |5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|
+	  Then I navigate To Loan Account Page
+	  And I modify New Account from "UndoDisb" sheet
+	  			|5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify-undoDisb.xlsx|
+	  And I "Disburse2ndTranche" and verified the following tabs
+	 			|5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify-undoDisb.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	            |5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify-undoDisb.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify-undoDisb.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Disbursement1|
+	  Then I navigate To Loan Account Page
+	  And I modify New Account from "UndoDisb" sheet
+	  			|5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify-undoDisb-disb.xlsx|
+	  And I "Disburse2ndTranche" and verified the following tabs
+	 			|5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify-undoDisb-disb.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+
+
+#Scenario:5020-SubmitLoan-Add-SlabBased-InstallmentNumberCharges-DisburseLoan-verify
+#      Given I setup the clients
+#	  When I entered the values into client from "Input" sheet
+#	  			|Createclient.xlsx|
+#	  When I set up the new create loan from "NewLoanInput" sheet
+#	  			|5020-SubmitLoan-Add-SlabBased-InstallmentNumberCharges-DisburseLoan-verify.xlsx|
+#	  Then I verified the following Tabs details successfully
+#	   			|5020-SubmitLoan-Add-SlabBased-InstallmentNumberCharges-DisburseLoan-verify.xlsx|Summary|Repayment Schedule|Transactions|
+#	  And I "MakeRepayment&Disburse2ndTranche" and verified the following tabs
+#	            |5020-SubmitLoan-Add-SlabBased-InstallmentNumberCharges-DisburseLoan-verify-Repayment.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+#	  And I Navigate to Accounting web page          
+#	  And I search with transaction id & verified the accounting entries
+ #               |5020-SubmitLoan-Add-SlabBased-InstallmentNumberCharges-DisburseLoan-verify.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|
+#	  Then I navigate To Loan Account Page
+#	  And I modify New Account from "UndoDisb" sheet
+#	  			|5020-SubmitLoan-Add-SlabBased-InstallmentNumberCharges-DisburseLoan-verify.xlsx|
+#	  And I "Disburse2ndTranche" and verified the following tabs
+#	 			|5020-SubmitLoan-Add-SlabBased-InstallmentNumberCharges-DisburseLoan-verify.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+#	  Then I verified the "Transactions" details and read the transaction Id 
+#	            |5020-SubmitLoan-Add-SlabBased-InstallmentNumberCharges-DisburseLoan-verify.xlsx|
+#	  And I Navigate to Accounting web page          
+#	  And I search with transaction id & verified the accounting entries
+ #               |5020-SubmitLoan-Add-SlabBased-InstallmentNumberCharges-DisburseLoan-verify.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Disbursement1|
+
+@RunnerClassClientsSpecific
+Scenario:5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify.xlsx|
+	  Then I verified the following Tabs details successfully
+	   			|5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify.xlsx|Summary|Repayment Schedule|Transactions|
+	  And I "MakeRepayment&Disburse2ndTranche" and verified the following tabs
+	            |5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-repayment.xlsx|Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	            |5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-repayment.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-repayment.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|Acc_Disbursement1|
+	  Then I navigate To Loan Account Page
+	  And I modify New Account from "UndoDisb" sheet
+	  			|5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-undoDisb.xlsx|
+	  And I "MakeRepayment&Disburse2ndTranche" and verified the following tabs
+	            |5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-undoDisb-repayment.xlsx|Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	  And I modify New Account from "UndoDisb" sheet
+	  			|5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|
+	  And I "WaiveCharge&Reapyment" and verified the following tabs
+	            |5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|Charges|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+
+@RunnerClassClientsSpecific
+Scenario:5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify.xlsx|
+	  Then I verified the following Tabs details successfully
+	   			|5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify.xlsx|Summary|Repayment Schedule|Transactions|
+	  And I "MakeRepayment&Disburse2ndTranche" and verified the following tabs
+	            |5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-repayment.xlsx|Modify Transaction|Modify Transaction2|Summary|Repayment Schedule|Transactions|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	            |5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-repayment.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-repayment.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|
+	  Then I navigate To Loan Account Page
+	  And I modify New Account from "UndoDisb" sheet
+	  			|5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-undoDisb.xlsx|
+	  And I "MakeRepayment&Disburse2ndTranche" and verified the following tabs
+	            |5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-undoDisb-repayment.xlsx|Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	  And I modify New Account from "UndoDisb" sheet
+	  			|5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-Disb.xlsx|
+	  And I "MakeRepayment&Disburse2ndTranche" and verified the following tabs
+	            |5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-Disb-repayment.xlsx|Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	  And I modify New Account from "UndoDisb" sheet
+	  			|5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|
+	  And I "WaiveCharge&Reapyment" and verified the following tabs
+	            |5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|Charges|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	  And I modify New Account from "UndoDisb" sheet
+	  			|5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-undoDisb-undoRepayment.xlsx|
+	  And I "Reapyment" and verified the following tabs
+	            |5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-undoDisb-undoRepayment.xlsx|Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	    		    	          	  	             

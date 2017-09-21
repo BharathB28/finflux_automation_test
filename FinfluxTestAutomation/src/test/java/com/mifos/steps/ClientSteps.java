@@ -524,6 +524,11 @@ public class ClientSteps {
 				sheetName);
 		
 	}
+	
+	@Given("^I navigate To \"([^\"]*)\" Page$")
+	public void I_navigate_To_Specified_Page(String url) throws Throwable {
+		varFrontPage.navigateToPage(url);
+		}
 /*	@When("^I set up the new savings$")
 	public void I_set_up_the_new_savings(String sheetName,
 			List<String> excelSheetName) throws Throwable {

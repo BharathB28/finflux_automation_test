@@ -7,8 +7,8 @@ import cucumber.api.junit.Cucumber;
 @Cucumber.Options(format = { "pretty", "html:target/WorkingDays/cucumber-html-report",
 		"json-pretty:target/WorkingDays/cucumber-json-report.json" },
 		features = { "src/test/resources/features/WorkingDays.feature" },
-		glue = { "com.mifos.steps" },
-		tags= {"@RunnerClassWorkingDays" })
+		glue = { "com.mifos.steps" })
+		//tags= {"@RunnerClassWorkingDays" })
 
 public class WorkingDaysTest {
 
