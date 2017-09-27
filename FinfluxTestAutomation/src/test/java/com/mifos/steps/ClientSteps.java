@@ -286,7 +286,7 @@ public class ClientSteps {
 		if (sheetName.contains("Loan Provisioning Journals")) {
 			varFrontPage.verifyProvisionData(ExcelSheetPath, excelSheetName, sheetName);
 		}
-		if (sheetName.contains("TransferDetails")) {
+		else if (sheetName.contains("TransferDetails")) {
 			varFrontPage.verifyTransferData(ExcelSheetPath, excelSheetName, sheetName);
 		} else if (sheetName.contains("GlimOfClient")) {
 			varFrontPage.GlimTab(ExcelSheetPath, excelSheetName, sheetName);

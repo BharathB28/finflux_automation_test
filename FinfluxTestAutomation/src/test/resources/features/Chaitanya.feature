@@ -220,7 +220,7 @@ Scenario: 4949-TransferClientsBetweenGroups
 	  And I "Disburse2ndTranche&waiveInterest&MakeRepayment" and verified the following tabs
 	 			|5012-CreateEmiPack-DisburseLoan-Verify-2ndTranche.xlsx|Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
 	  And I "Try To Undo LastTranche" and verified the following tabs
-	 			|5012-CreateEmiPack-DisburseLoan-Verify-2ndTranche.xlsx|Modify Transaction|
+	 			|5012-CreateEmiPack-DisburseLoan-Verify-2ndTranche.xlsx|Modify Transaction3|
  	  Then i validate and Verify from "error" sheet
 	 			|5012-CreateEmiPack-DisburseLoan-Verify-2ndTranche.xlsx|
 
@@ -284,7 +284,7 @@ Scenario:5015-CreateEmiPack-DisbLoan-Edittranche-Verify
   	  When I set up the new create loan from "NewLoanInput" sheet
 	 			|5016-CreateEmiPack-DisbLoan-Edittranche-Verify.xlsx|
       And I "Delete&AddTranche" and verified the following tabs
-	 			|5016-CreateEmiPack-DisbLoan-Edittranche-Verify.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
+	 			|5016-CreateEmiPack-DisbLoan-Edittranche-Verify.xlsx|Loan Tranche Details|Loan Tranche Details1|Summary|Repayment Schedule|Transactions|
 	  And I "Disburse2ndTranche" and verified the following tabs
 	 			|5016-CreateEmiPack-DisbLoan-Edittranche-Verify-2ndTranche.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
@@ -303,9 +303,78 @@ Scenario:5017-EditEmiPack-DisbLoan-Verify
   	  When I set up the new create loan from "NewLoanInput" sheet
 	 			|5017-EditEmiPack-DisbLoan-Verify.xlsx|
       Then I verified the following Tabs details successfully 
-	 			|5017-EditEmiPack-DisbLoan-Verify.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+	 			|5017-EditEmiPack-DisbLoan-Verify.xlsx|Summary|Repayment Schedule|Transactions|
 	  And I "PreClose" and verified the following tabs
 	 			|5017-EditEmiPack-DisbLoan-Verify-2ndTranche.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 	  
 
+@RunnerClassClientsSpecific
+Scenario: 5023-MonthlyMeetingLoan-Disb-Repayment-WaiveInterest
+  Given I setup the center
+  When I entered the values into center from "Center" sheet
+	 | 5023-MonthlyMeetingLoan-Disb-Repayment-WaiveInterest.xlsx|
+  Then I entered the values into group from "Group" sheet
+     | 5023-MonthlyMeetingLoan-Disb-Repayment-WaiveInterest.xlsx|		  								  				  				  			
+  Then I entered the values into client from "Input" sheet
+	 | CreateChaitanyaclient.xlsx|		 				  								  				  				  			
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 5023-MonthlyMeetingLoan-Disb-Repayment-WaiveInterest.xlsx|
+  Then I verified the following Tabs details successfully 
+	 | 5023-MonthlyMeetingLoan-Disb-Repayment-WaiveInterest.xlsx|Summary|Repayment Schedule|Transactions|
+  And I "Disburse2ndTranche&ReschRepayDate" and verified the following tabs
+	 | 5023-MonthlyMeetingLoan-Disb-Repayment-WaiveInterest-Disb2ndTranche.xlsx|Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|
+  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+  Then I verified the "Transactions" details and read the transaction Id 
+	 |5023-MonthlyMeetingLoan-Disb-Repayment-WaiveInterest-Disb2ndTranche.xlsx|
+  And I Navigate to Accounting web page          
+  And I search with transaction id & verified the accounting entries
+     |5023-MonthlyMeetingLoan-Disb-Repayment-WaiveInterest-Disb2ndTranche.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Repayment|Acc_Disbursement1|Acc_RepaymentDisbursement1|Acc_Periodic|
+
+
+@RunnerClassClientsSpecific
+Scenario: 5024-MonthlyMeetingLoan-Disb-changeMeetingDate-Repayment-WaiveInterest
+  Given I setup the center
+  When I entered the values into center from "Center" sheet
+	 | 5024-MonthlyMeetingLoan-Disb-changeMeetingDate-Repayment-WaiveInterest.xlsx|
+  Then I entered the values into group from "Group" sheet
+     | 5024-MonthlyMeetingLoan-Disb-changeMeetingDate-Repayment-WaiveInterest.xlsx|		  								  				  				  			
+  Then I entered the values into client from "Input" sheet
+	 | CreateChaitanyaclient.xlsx|		 				  								  				  				  			
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 5024-MonthlyMeetingLoan-Disb-changeMeetingDate-Repayment-WaiveInterest.xlsx|
+  Then I verified the following Tabs details successfully 
+	 | 5024-MonthlyMeetingLoan-Disb-changeMeetingDate-Repayment-WaiveInterest.xlsx|Summary|Repayment Schedule|Transactions|
+  And I "ChangeMeetingDate" and verified the following tabs
+	 | 5024-MonthlyMeetingLoan-Disb-changeMeetingDate-Repayment-WaiveInterest-Disb2ndTranche.xlsx|Modify Transaction|
+  And I navigate To Loan Account Page
+  Then I verified the following Tabs details successfully 
+	 | 5024-MonthlyMeetingLoan-Disb-changeMeetingDate-Repayment-WaiveInterest-Disb2ndTranche.xlsx|Summary|Repayment Schedule|Transactions|
+  And I "ChangeMeetingDate To BackDate" and verified the following tabs
+	 | 5024-MonthlyMeetingLoan-Disb-changeMeetingDate-Repayment-WaiveInterest-ChangeDate.xlsx|Modify Transaction|
+  And I navigate To Loan Account Page
+  Then I verified the following Tabs details successfully 
+	 | 5024-MonthlyMeetingLoan-Disb-changeMeetingDate-Repayment-WaiveInterest-ChangeDate.xlsx|Summary|Repayment Schedule|Transactions|
+
+
+@RunnerClassClientsSpecific
+Scenario: 5025-DisburseLoan-ChangeMeetingDate-MakeRepayment-ChangeMeetingToBackDate-verify
+  Given I setup the center
+  When I entered the values into center from "Center" sheet
+	 | 5025-DisburseLoan-ChangeMeetingDate-MakeRepayment-ChangeMeetingToBackDate-verify.xlsx|
+  Then I entered the values into group from "Group" sheet
+     | 5025-DisburseLoan-ChangeMeetingDate-MakeRepayment-ChangeMeetingToBackDate-verify.xlsx|		  								  				  				  			
+  Then I entered the values into client from "Input" sheet
+	 | CreateChaitanyaclient.xlsx|		 				  								  				  				  			
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 5025-DisburseLoan-ChangeMeetingDate-MakeRepayment-ChangeMeetingToBackDate-verify.xlsx|
+  And I "MakeRepayment&ChangeMeetingdate" and verified the following tabs
+	 | 5025-DisburseLoan-ChangeMeetingDate-MakeRepayment-ChangeMeetingToBackDate-verify.xlsx|Modify Transaction1|Modify Transaction|
+  And I navigate To Loan Account Page
+  Then I verified the following Tabs details successfully 
+	 | 5025-DisburseLoan-ChangeMeetingDate-MakeRepayment-ChangeMeetingToBackDate-verify.xlsx|Summary|Repayment Schedule|Transactions|
+  And I "ChangeMeetingToBackDate And Do Repayment" and verified the following tabs
+	 | 5025-DisburseLoan-ChangeMeetingDate-MakeRepayment-ChangeMeetingToBackDate-verify-Changedate.xlsx|Modify Transaction|Modify Transaction1|
+  And I navigate To Loan Account Page
+  Then I verified the following Tabs details successfully 
+	 | 5025-DisburseLoan-ChangeMeetingDate-MakeRepayment-ChangeMeetingToBackDate-verify-Changedate.xlsx|Summary|Repayment Schedule|Transactions|
 	   

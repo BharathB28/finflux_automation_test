@@ -56,6 +56,7 @@ public class FrontPage extends MifosWebPage {
 	Set<String> setAccuralTransactionType = new LinkedHashSet<String>();
 	Set<String> setSavingTransactionID = new LinkedHashSet<String>();
 	public String ClientChargeID = "";
+	public static String LoanProvisioningId = "";
 	static String value = "";
 	public String rowval;
 	public boolean ishideAccuralsChecked = true;
@@ -883,7 +884,7 @@ public class FrontPage extends MifosWebPage {
 
 				} else if (sheetname.equals("Acc_Disbursement")
 						|| sheetname.equals("Acc_Disbursement1")
-						|| sheetname.equals("Acc_RepaymentDisbursement")
+						|| sheetname.contains("Acc_RepaymentDisbursement")
 						|| sheetname.equals("Acc_Repayment")
 						|| sheetname.equals("Acc_Repayment1")
 						|| sheetname.equals("Acc_Repayment2")
@@ -897,7 +898,8 @@ public class FrontPage extends MifosWebPage {
 						|| sheetname.contains("Deposit")
 						|| sheetname.contains("Withdraw")
 						|| sheetname.contains("Pay_charge")
-						|| sheetname.contains("ClientChargeAccural")) {
+						|| sheetname.contains("ClientChargeAccural")
+						|| sheetname.contains("LoanProvisioningAccural")) {
 					
 					applicationCol = getWebDriver().findElements(
 								By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/div[4]/table/tbody/tr["
@@ -1032,8 +1034,9 @@ public class FrontPage extends MifosWebPage {
 			int xlColumnPointer=0;
 			List<WebElement> applicationCol = null;
 			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
+				String row = String.valueOf(xlRowCount+1);
 				applicationCol=getWebDriver().findElements(
-								By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/form/fieldset/table/tbody/tr[2]/td"));
+								By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/form/fieldset/table/tbody/tr["+row+"]/td"));
 		verifyColumnDetails(xlColumnPointer, xlRowCount,
 				applicationCol, sheet, sheetname);
 	}
@@ -1888,7 +1891,7 @@ public class FrontPage extends MifosWebPage {
 			throws InterruptedException, IOException, ParseException, Exception {
 
 		if (sheetName.equals("Acc_Disbursement") || sheetName.equals("Acc_Disbursement1")
-				|| sheetName.equals("Acc_RepaymentDisbursement") || sheetName.contains("Acc_Repayment")
+				|| sheetName.contains("Acc_RepaymentDisbursement") || sheetName.contains("Acc_Repayment")
 				|| sheetName.equals("Acc_Upfront") || sheetName.equals("Acc_Upfront1") 
 				|| sheetName.equals("Acc_Upfront2")|| sheetName.equals("Acc_Upfront3")) {
 
@@ -1948,6 +1951,18 @@ public class FrontPage extends MifosWebPage {
 			isTransactionTabSelected = true;
 			getWebDriver().findElement(By.xpath("//input[@placeholder='Search by transaction']")).sendKeys(
 						Keys.chord(Keys.CONTROL, "a"), "C" + transactionIDIndex);
+				Thread.sleep(getResourceKey("smallWait"));
+				clickButton(getResource("frontend.accounting.searchjournal.transactionid.submit"), "xpath");
+				Thread.sleep(getResourceKey("mediumWait"));
+				verifyLoanTabData(clientExcelSheetPath, excelSheetName, sheetName);
+				clickButton(getResource("frontend.accounting.searchjournal.transactionid.Parameters"), "xpath");
+				Thread.sleep(getResourceKey("mediumWait"));
+			
+		}
+		if (sheetName.contains("LoanProvisioningAccural")) {
+			//transactionIDIndex = Integer.parseInt(ClientChargeID);
+			isTransactionTabSelected = true;
+			getWebDriver().findElement(By.xpath("//input[@placeholder='Search by transaction']")).sendKeys(LoanProvisioningId);
 				Thread.sleep(getResourceKey("smallWait"));
 				clickButton(getResource("frontend.accounting.searchjournal.transactionid.submit"), "xpath");
 				Thread.sleep(getResourceKey("mediumWait"));

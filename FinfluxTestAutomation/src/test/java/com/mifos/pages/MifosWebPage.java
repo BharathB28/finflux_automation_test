@@ -873,7 +873,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					locator = getLocator(getResource(key));
 					waitForElementAndPoll(locator);
 					waitForElementAndPoll(locator).click();
-					if(key.equals("Savinginsertdate") || key.equals("NewMeetingDates"))
+					if(key.equals("Savinginsertdate"))
 					{
 						//||key.equals("SavingClosedon")
 
@@ -984,6 +984,12 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 
 				break;
+				
+			case "read":
+				FrontPage.LoanProvisioningId = getWebDriver().findElement(getLocator(getResource(key))).getText();
+
+				break;
+				
 			case "verify":
 				Thread.sleep(2000);
 				String bodyText = getWebDriver().findElement(By.tagName("body"))
