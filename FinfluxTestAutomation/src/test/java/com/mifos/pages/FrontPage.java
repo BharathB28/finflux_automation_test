@@ -54,6 +54,8 @@ public class FrontPage extends MifosWebPage {
 
 	Set<String> setAccuralTransactionID = new LinkedHashSet<String>();
 	Set<String> setAccuralTransactionType = new LinkedHashSet<String>();
+	Set<String> setAccuralSuspenseTransactionType = new LinkedHashSet<String>();
+	Set<String> setAccuralSuspenseReversalTransactionType = new LinkedHashSet<String>();
 	Set<String> setSavingTransactionID = new LinkedHashSet<String>();
 	public String ClientChargeID = "";
 	public static String LoanProvisioningId = "";
@@ -69,6 +71,7 @@ public class FrontPage extends MifosWebPage {
 	public static String DataTableCreatedURL="";
     private boolean istransactionIdIndexAssigned = true;
 	public static String sheetName="";
+	public static int accuralRowCount=1;
 
 	// WebDriver driver = new ChromeDriver();
 
@@ -725,24 +728,50 @@ public class FrontPage extends MifosWebPage {
 												+ sheetIndex
 												+ "]/table/tbody/tr["
 												+ xlRowCount + "]/td[4]")).getText();
-						
-						if (Accrual.equals("Accrual")) {
+						switch (Accrual) {
+						case "Accrual":
 							setAccuralTransactionType
-									.add(getWebDriver().findElement(By.xpath
-											("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
-															+ sheetIndex
-															+ "]/table/tbody/tr["
-															+ xlRowCount
-															+ "]/td[1]")).getText());
-						} else {
+							.add(getWebDriver().findElement(By.xpath
+									("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
+													+ sheetIndex
+													+ "]/table/tbody/tr["
+													+ xlRowCount
+													+ "]/td[1]")).getText());
+							break;
+							
+						case "Accrual Suspense":
+							setAccuralSuspenseTransactionType
+							.add(getWebDriver().findElement(By.xpath
+									("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
+													+ sheetIndex
+													+ "]/table/tbody/tr["
+													+ xlRowCount
+													+ "]/td[1]")).getText());
+							break;
+							
+						case "Accrual Suspense Reverse":
+							setAccuralSuspenseReversalTransactionType
+							.add(getWebDriver().findElement(By.xpath
+									("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
+													+ sheetIndex
+													+ "]/table/tbody/tr["
+													+ xlRowCount
+													+ "]/td[1]")).getText());
+							break;
+
+						default:
 							setAccuralTransactionID
-									.add(getWebDriver().findElement(
-													By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
-															+ sheetIndex
-															+ "]/table/tbody/tr["
-															+ xlRowCount
-															+ "]/td[1]")).getText());
+							.add(getWebDriver().findElement(
+											By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
+													+ sheetIndex
+													+ "]/table/tbody/tr["
+													+ xlRowCount
+													+ "]/td[1]")).getText());
+							break;
 						}
+						
+						
+						
 					}
 
 					do{
@@ -882,19 +911,15 @@ public class FrontPage extends MifosWebPage {
 							applicationCol, sheet, sheetname);
 					}
 
-				} else if (sheetname.equals("Acc_Disbursement")
-						|| sheetname.equals("Acc_Disbursement1")
+				} else if (sheetname.contains("Acc_Disbursement")
 						|| sheetname.contains("Acc_RepaymentDisbursement")
-						|| sheetname.equals("Acc_Repayment")
-						|| sheetname.equals("Acc_Repayment1")
-						|| sheetname.equals("Acc_Repayment2")
-						|| sheetname.equals("Acc_Repayment3")
-						|| sheetname.equals("Acc_Upfront1")
-						|| sheetname.equals("Acc_Upfront2")
-						|| sheetname.equals("Acc_Upfront3")
+						|| sheetname.contains("Acc_Repayment")
+						|| sheetname.contains("Acc_Upfront")
 						|| sheetname.equals("Acc_Periodic")
+						|| sheetname.equals("Acc_Suspenses")
+						|| sheetname.equals("Acc_SuspenseReversal")
 						|| sheetname.equals("Acc_Upfront")
-						||sheetname.contains("Interst_Posting")
+						|| sheetname.contains("Interst_Posting")
 						|| sheetname.contains("Deposit")
 						|| sheetname.contains("Withdraw")
 						|| sheetname.contains("Pay_charge")
@@ -913,7 +938,7 @@ public class FrontPage extends MifosWebPage {
 				int counter=0;
 				List<XLCellElement> xlRow =null;
 				
-					if (sheetname.equals("Acc_Periodic")) {
+					if (sheetname.equals("Acc_Periodic")||sheetname.equals("Acc_Suspenses")||sheetname.equals("Acc_SuspenseReversal")) {
 
 						if (iteration) {
 							int result[] = verifyAccrualData(clientExcelSheetPath, excelSheetName, sheetname);
@@ -1864,6 +1889,7 @@ public class FrontPage extends MifosWebPage {
 			throws Throwable {
 		// TODO Auto-generated method stub
 		isaccuralsTypeTransaction = false;
+		//ishideAccuralsChecked = false;
 		verifyLoanTabData(excelSheetPath, excelSheetName, sheetName);
 	}
 
@@ -1890,10 +1916,9 @@ public class FrontPage extends MifosWebPage {
 	public void searchWithTransactinID(String clientExcelSheetPath, String excelSheetName, String sheetName)
 			throws InterruptedException, IOException, ParseException, Exception {
 
-		if (sheetName.equals("Acc_Disbursement") || sheetName.equals("Acc_Disbursement1")
+		if (sheetName.contains("Acc_Disbursement") 
 				|| sheetName.contains("Acc_RepaymentDisbursement") || sheetName.contains("Acc_Repayment")
-				|| sheetName.equals("Acc_Upfront") || sheetName.equals("Acc_Upfront1") 
-				|| sheetName.equals("Acc_Upfront2")|| sheetName.equals("Acc_Upfront3")) {
+				|| sheetName.contains("Acc_Upfront")) {
 
 			if (!sheetName.contains("Upfront") && istransactionIdIndexAssigned) {
 				transactionIDIndex = setAccuralTransactionID.size() - 1;
@@ -1904,7 +1929,7 @@ public class FrontPage extends MifosWebPage {
 			}
 			if (transactionIDIndex >= 0) {
 
-				if (sheetName.equals("Acc_Upfront1") || sheetName.equals("Acc_Upfront")) {
+				if (sheetName.contains("Acc_Upfront")) {
 					setAccuralTransactionID = setAccuralTransactionType;
 				}
 				isTransactionTabSelected = true;
@@ -1983,8 +2008,57 @@ public class FrontPage extends MifosWebPage {
 				verifyLoanTabData(clientExcelSheetPath, excelSheetName, sheetName);
 				clickButton(getResource("frontend.accounting.searchjournal.transactionid.Parameters"), "xpath");
 				Thread.sleep(getResourceKey("mediumWait"));
+				if(i== 0)
+				{
+					istransactionIdIndexAssigned = true;
+					setAccuralTransactionType.clear();
+					isTransactionTabSelected = false;
+				}
 			}
 			isTransactionTabSelected = false;
+		}
+		if (sheetName.equals("Acc_Suspenses")) {
+			isTransactionTabSelected = true;
+
+			for (int i = setAccuralSuspenseTransactionType.size() - 1; i >= 0; i--) {
+				getWebDriver().findElement(By.xpath("//input[@placeholder='Search by transaction']"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "a"), "L" + setAccuralSuspenseTransactionType.toArray()[i]);
+				Thread.sleep(getResourceKey("smallWait"));
+				clickButton(getResource("frontend.accounting.searchjournal.transactionid.submit"), "xpath");
+				Thread.sleep(getResourceKey("mediumWait"));
+				verifyLoanTabData(clientExcelSheetPath, excelSheetName, sheetName);
+				clickButton(getResource("frontend.accounting.searchjournal.transactionid.Parameters"), "xpath");
+				Thread.sleep(getResourceKey("mediumWait"));
+				if(i== 0)
+				{
+					istransactionIdIndexAssigned = true;
+					setAccuralSuspenseTransactionType.clear();
+					isTransactionTabSelected = false;
+				}
+			}
+			isTransactionTabSelected = false;
+		}
+		if (sheetName.equals("Acc_SuspenseReversal")) {
+			isTransactionTabSelected = true;
+
+			for (int i = setAccuralSuspenseReversalTransactionType.size() - 1; i >= 0; i--) {
+				getWebDriver().findElement(By.xpath("//input[@placeholder='Search by transaction']"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "a"), "L" + setAccuralSuspenseReversalTransactionType.toArray()[i]);
+				Thread.sleep(getResourceKey("smallWait"));
+				clickButton(getResource("frontend.accounting.searchjournal.transactionid.submit"), "xpath");
+				Thread.sleep(getResourceKey("mediumWait"));
+				verifyLoanTabData(clientExcelSheetPath, excelSheetName, sheetName);
+				clickButton(getResource("frontend.accounting.searchjournal.transactionid.Parameters"), "xpath");
+				Thread.sleep(getResourceKey("mediumWait"));
+				if(i== 0)
+				{
+					istransactionIdIndexAssigned = true;
+					setAccuralSuspenseReversalTransactionType.clear();
+					isTransactionTabSelected = false;
+				}
+			}
+			isTransactionTabSelected = false;
+			
 		}
 
 	}
@@ -2032,6 +2106,15 @@ public class FrontPage extends MifosWebPage {
 			System.out.println("currentUrl " + currentUrl);
 
 			break;
+			
+		case "Update Non Performing Assets":
+			RunPeriodicAccural();
+			Thread.sleep(getResourceKey("smallWait"));
+
+			ishideAccuralsChecked = false;
+			System.out.println("currentUrl " + currentUrl);
+
+			break;
 		case "Pay Due Savings Charges":
 			LazyWebElement SavingsCharges = getElement(getResource("PayDueSavingsCharges"));
 			if (!SavingsCharges.isSelected()) {
@@ -2061,6 +2144,16 @@ public class FrontPage extends MifosWebPage {
 				clickButton(getResource("addpenaltytooverdueloans"));
 				Thread.sleep(getResourceKey("smallWait"));
 			}
+			break;
+			
+		case "Add Due Date Accrual Transactions":
+			LazyWebElement DueDateAccrualTransactions = getElement(getResource("AddDueDateAccrualTransactions"));
+			if (!DueDateAccrualTransactions.isSelected()) {
+				RunPeriodicAccural();
+				clickButton(getResource("AddDueDateAccrualTransactions"));
+				Thread.sleep(getResourceKey("smallWait"));
+			}
+			ishideAccuralsChecked = false;
 			break;
 
 		case "Update Deposit Accounts Maturity details":
@@ -2194,82 +2287,103 @@ public class FrontPage extends MifosWebPage {
 		boolean rowWithDateFound = true;
 		
 
-		try {
-			FileInputStream file = new FileInputStream(new File(
-					clientExcelSheetPath + "/" + excelSheetName));
-			XSSFWorkbook workbook = new XSSFWorkbook(file);
-			XSSFSheet sheet = workbook.getSheet(sheetname);
+		try {FileInputStream file = new FileInputStream(new File(
+				clientExcelSheetPath + "/" + excelSheetName));
+		XSSFWorkbook workbook = new XSSFWorkbook(file);
+		XSSFSheet sheet = workbook.getSheet(sheetname);
 
-			excelRowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
+		excelRowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
 
-			DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
-			List<WebElement> applicationCol = null;
+		DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
+		List<WebElement> applicationCol = null;
 
-			applicationCol = getWebDriver()
-					.findElements(
-							By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/div[4]/table/tbody/tr[1]/td"));
+		applicationCol = getWebDriver()
+				.findElements(
+						By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/div[4]/table/tbody/tr[1]/td"));
 
-			for (int row = 1; row <= excelRowCount; row++) {
+		for (; accuralRowCount <= excelRowCount; accuralRowCount++) {
 
-				if ((sheet.getRow(row) == null)
-						|| (sheet.getRow(row).getCell(2) == null)) {
-					
-					continue;
-				}
+			if ((sheet.getRow(accuralRowCount) == null)
+					|| (sheet.getRow(accuralRowCount).getCell(2) == null)) {
 				
-				switch (sheet.getRow(row).getCell(2).getCellType()) {
-				case Cell.CELL_TYPE_BLANK:
-					break;
-				case Cell.CELL_TYPE_NUMERIC:
-
-					if (HSSFDateUtil.isCellDateFormatted(sheet.getRow(row)
-							.getCell(2))) {
-						excelDate = sheet.getRow(row).getCell(2)
-								.getDateCellValue();
-					}
-					break;
+				accuralRowCount++;
+				currentRow = accuralRowCount;
+				rowToiterate = accuralRowCount+1;
+				accuralRowCount = accuralRowCount + 2 ;
+				if(accuralRowCount>excelRowCount)
+				{
+					accuralRowCount=1;
 				}
-				textVal1 = applicationCol.get(2).getText();
-				Date appDate = dateFormat.parse(textVal1);
-
-				if ((textVal1.equals(dateFormat.format(excelDate)))) {
-					if (rowWithDateFound) {
-						currentRow = row;
-						rowWithDateFound = false;
-					}
-					rowToiterate = excelRowCount;
-
-				} else if (!appDate.after(excelDate)){
-					rowToiterate = row-2;
-					
-					break;
-				}
-					
+				break;
 			}
-			if(rowWithDateFound)
+			else
 			{
-				Assert.fail();
+				currentRow = accuralRowCount;
+				rowToiterate = accuralRowCount+1;
+				accuralRowCount = accuralRowCount + 2 ;
+				if(accuralRowCount>excelRowCount)
+				{
+					accuralRowCount=1;
+				}
+				break;
 			}
-			else{
-			result[0]=currentRow;
-			result[1]=rowToiterate;}
-/*			List<WebElement> readApplicationCol = null;
-			for (; rowToiterate != 0; rowToiterate--) {
-				int colIndex = 6;
+			
+			/*switch (sheet.getRow(row).getCell(2).getCellType()) {
+			case Cell.CELL_TYPE_BLANK:
+			
+				
+				break;
+			case Cell.CELL_TYPE_NUMERIC:
 
-				readApplicationCol = getWebDriver()
-						.findElements(
-								By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr["
-										+ xPathRow + "]/td"));
-				verifyColumnDetails(colIndex, currentRow, readApplicationCol,
-						sheet, sheetname);
+				if (HSSFDateUtil.isCellDateFormatted(sheet.getRow(row)
+						.getCell(2))) {
+					excelDate = sheet.getRow(row).getCell(2)
+							.getDateCellValue();
+				}
+				break;
+			}
+			textVal1 = applicationCol.get(2).getText();
+			Date appDate = dateFormat.parse(textVal1);
+			
+				if ((textVal1.equals(dateFormat.format(excelDate)))) {
+				if (rowWithDateFound) {
+					currentRow = row;
+					rowWithDateFound = false;
+				}
+				rowToiterate = excelRowCount;
 
-				currentRow++;
-				xPathRow++;
-
+			} else if (!appDate.after(excelDate)){
+				rowToiterate = row-2;
+				
+				break;
 			}*/
-		
-		} catch (FileNotFoundException fnfe) {
+				
+			}
+				
+	
+		/*if(rowWithDateFound)
+		{
+			Assert.fail();
+		}
+		else{*/
+		result[0]=currentRow;
+		result[1]=rowToiterate;
+		//}
+/*			List<WebElement> readApplicationCol = null;
+		for (; rowToiterate != 0; rowToiterate--) {
+			int colIndex = 6;
+
+			readApplicationCol = getWebDriver()
+					.findElements(
+							By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr["
+									+ xPathRow + "]/td"));
+			verifyColumnDetails(colIndex, currentRow, readApplicationCol,
+					sheet, sheetname);
+
+			currentRow++;
+			xPathRow++;
+
+		}*/} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
 			
 		}

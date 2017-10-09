@@ -377,4 +377,292 @@ Scenario: 5025-DisburseLoan-ChangeMeetingDate-MakeRepayment-ChangeMeetingToBackD
   And I navigate To Loan Account Page
   Then I verified the following Tabs details successfully 
 	 | 5025-DisburseLoan-ChangeMeetingDate-MakeRepayment-ChangeMeetingToBackDate-verify-Changedate.xlsx|Summary|Repayment Schedule|Transactions|
+
+
+################################################### 	NPA   #############################################################
+
+
+@RunnerClassClientsSpecific
+Scenario: 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA
+  Given I setup the center
+  When I entered the values into center from "Center" sheet
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I entered the values into group from "Group" sheet
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|		  								  				  				  			
+  Then I entered the values into client from "Input" sheet
+	 | CreateChaitanyaclient.xlsx|		 				  								  				  				  			
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|
+  And I Navigate to Accounting web page
+  And I search with transaction id & verified the accounting entries
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Suspenses|Acc_Periodic|
+  Then I navigate To Loan Account Page
+  And I "MakeRepayment" and verified the following tabs
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-1stRepayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-1stRepayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-1stRepayment.xlsx|
+  And I Navigate to Accounting web page
+  And I search with transaction id & verified the accounting entries
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-1stRepayment.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Repayment|Acc_Suspenses|Acc_Periodic|Acc_SuspenseReversal|
+  Then I navigate To Loan Account Page
+  And I "UndoRepayment" and verified the following tabs
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-undoRepayment.xlsx|Modify Transaction|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-undoRepayment.xlsx|
+  And I Navigate to Accounting web page
+  And I search with transaction id & verified the accounting entries
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-undoRepayment.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Repayment|Acc_Suspenses|Acc_Periodic|Acc_SuspenseReversal|
+  Then I navigate To Loan Account Page
+  And I "MakeEarlyRepayment Exact Amount" and verified the following tabs
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-EarlyRepayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-EarlyRepayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-EarlyRepayment.xlsx|
+  And I "MakeLessRepayment on Exact Date" and verified the following tabs
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-lessRepaymentExactDate.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-lessRepaymentExactDate.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-lessRepaymentExactDate.xlsx|
+   And I "MakeMoreRepayment on Late Date" and verified the following tabs
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreRepaymentLateDate.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreRepaymentLateDate.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreRepaymentLateDate.xlsx|
+   And I "MakeMoreRepayment on ExactDate" and verified the following tabs
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreRepaymentExactDate.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreRepaymentExactDate.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreRepaymentExactDate.xlsx|
+  And I "MakeMoreRepayment on EarlyDate" and verified the following tabs
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreRepaymentEarlyDate.xlsx|Modify Transaction|Summary|Repayment Schedule|
+  And I "MakeLessRepayment on EarlyDate" and verified the following tabs
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-LessRepaymentEarlyDate.xlsx|Modify Transaction|Summary|Repayment Schedule|
+  And I "MakeMoreRepayment on ExactDate" and verified the following tabs
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreeRepaymentExactDate.xlsx|Modify Transaction|Summary|Repayment Schedule|
+  And I "MakeMoreRepayment" and verified the following tabs
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreRepayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreRepayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5031-DISBURSELOANon01DEC2014-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-MoreRepayment.xlsx|
+
+
+@RunnerClassClientsSpecific
+Scenario: 5032-DISBURSELOANon01Jan2015-Preclose-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA
+  Given I setup the center
+  When I entered the values into center from "Center" sheet
+	 | 5032-DISBURSELOANon01Jan2015-Preclose-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I entered the values into group from "Group" sheet
+     | 5032-DISBURSELOANon01Jan2015-Preclose-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|		  								  				  				  			
+  Then I entered the values into client from "Input" sheet
+	 | CreateChaitanyaclient.xlsx|		 				  								  				  				  			
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 5032-DISBURSELOANon01Jan2015-Preclose-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  And I "Preclose" and verified the following tabs
+	 | 5032-DISBURSELOANon01Jan2015-Preclose-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5032-DISBURSELOANon01Jan2015-Preclose-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5032-DISBURSELOANon01Jan2015-Preclose-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|
+  And I "UndoPreclose" and verified the following tabs
+	 | 5032-DISBURSELOANon01Jan2015-Preclose-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-undoPreclose.xlsx|Modify Transaction|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5032-DISBURSELOANon01Jan2015-Preclose-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-undoPreclose.xlsx|
+
+
+@RunnerClassClientsSpecific
+Scenario: 5034-DISBURSELOANon01Jan2015-writeoff-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA
+  Given I setup the center
+  When I entered the values into center from "Center" sheet
+	 | 5034-DISBURSELOANon01Jan2015-writeoff-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I entered the values into group from "Group" sheet
+     | 5034-DISBURSELOANon01Jan2015-writeoff-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|		  								  				  				  			
+  Then I entered the values into client from "Input" sheet
+	 | CreateChaitanyaclient.xlsx|		 				  								  				  				  			
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 5034-DISBURSELOANon01Jan2015-writeoff-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  And I "Writeoff" and verified the following tabs
+	 | 5034-DISBURSELOANon01Jan2015-writeoff-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5034-DISBURSELOANon01Jan2015-writeoff-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5034-DISBURSELOANon01Jan2015-writeoff-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA.xlsx|
+  And I "Recover Repayment" and verified the following tabs
+	 | 5034-DISBURSELOANon01Jan2015-writeoff-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-Recover.xlsx|Modify Transaction|Summary|Repayment Schedule|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5034-DISBURSELOANon01Jan2015-writeoff-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-NPA-Recover.xlsx|
+
+
+@RunnerClassClientsSpecific
+Scenario: 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA
+  Given I setup the product loan "Setup"
+	 | Productloannavigation.xlsx |
+  Then I entered the values into product from "ProductLoanInput" Sheet
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA.xlsx|
+  Given I setup the center
+  When I entered the values into center from "Center" sheet
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I entered the values into group from "Group" sheet
+     | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA.xlsx|		  								  				  				  			
+  Then I entered the values into client from "Input" sheet
+	 | CreateChaitanyaclient.xlsx|		 				  								  				  				  			
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA.xlsx|
+  And I "MakeRepayment" and verified the following tabs
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-Repayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-Repayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-Repayment.xlsx|
+   And I "EarlyMakeRepayment" and verified the following tabs
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-EarlyMakeRepayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-EarlyMakeRepayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-EarlyMakeRepayment.xlsx|
+  And I "Disburse 2nd tranche" and verified the following tabs
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-Disb2ndTranche.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-Disb2ndTranche.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-Disb2ndTranche.xlsx|
+  And I "Make Repayment" and verified the following tabs
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-MakeRepayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Add Due Date Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-MakeRepayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5035-DISBURSELOANon01Jan2015-uncheckAccountMovesOutOfNPA-VIEWJOURNALENTRIES-NPA-MakeRepayment.xlsx|
+
+
+@RunnerClassClientsSpecific
+Scenario: 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA
+  Given I setup the center
+  When I entered the values into center from "Center" sheet
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I entered the values into group from "Group" sheet
+     | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA.xlsx|		  								  				  				  			
+  Then I entered the values into client from "Input" sheet
+	 | CreateChaitanyaclient.xlsx|		 				  								  				  				  			
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA.xlsx|
+  And I "MakeRepayment" and verified the following tabs
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-Repayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-Repayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-Repayment.xlsx|
+   And I "LateMakeRepayment" and verified the following tabs
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-LateMakeRepayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-LateMakeRepayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-LateMakeRepayment.xlsx|
+  And I "Disburse 2nd tranche" and verified the following tabs
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-Disb2ndTranche.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-Disb2ndTranche.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-Disb2ndTranche.xlsx|
+  And I "Make Repayment" and verified the following tabs
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-MakeRepayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+  Then I verified the following Tabs details successfully
+     | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-MakeRepayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5036-DISBURSELOANon01Jan2015-RunPeriodicAccrualJob-VIEWJOURNALENTRIES-NPA-MakeRepayment.xlsx|
+	 
+@RunnerClassClientsSpecific
+Scenario: 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA
+  Given I setup the center
+  When I entered the values into center from "Center" sheet
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I entered the values into group from "Group" sheet
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA.xlsx|		  								  				  				  			
+  Then I entered the values into client from "Input" sheet
+	 | CreateChaitanyaclient.xlsx|		 				  								  				  				  			
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA.xlsx|
+  Then I navigate to scheduler job & execute "Update Non Performing Assets"
+  Then I Execute Periodic Accrual Accounting
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA.xlsx|RunPeriodicAccrual|
+  Then I verified the following Tabs details successfully
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA.xlsx|
+  And I "MakeRepayment" and verified the following tabs
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-Repayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Update Non Performing Assets"
+  Then I Execute Periodic Accrual Accounting
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-Repayment.xlsx|RunPeriodicAccrual|
+  Then I verified the following Tabs details successfully
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-Repayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-Repayment.xlsx|
+  And I "LateMakeRepayment" and verified the following tabs
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-LateMakeRepayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Update Non Performing Assets"
+  Then I Execute Periodic Accrual Accounting
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-LateMakeRepayment.xlsx|RunPeriodicAccrual|
+  Then I verified the following Tabs details successfully
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-LateMakeRepayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-LateMakeRepayment.xlsx|
+  And I "Disburse 2nd tranche" and verified the following tabs
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-Disb2ndTranche.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Update Non Performing Assets"
+  Then I Execute Periodic Accrual Accounting
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-Disb2ndTranche.xlsx|RunPeriodicAccrual|
+  Then I verified the following Tabs details successfully
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-Disb2ndTranche.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-Disb2ndTranche.xlsx|
+  And I "Make Repayment" and verified the following tabs
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-MakeRepayment.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Update Non Performing Assets"
+  Then I Execute Periodic Accrual Accounting
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-MakeRepayment.xlsx|RunPeriodicAccrual|
+  Then I verified the following Tabs details successfully
+     | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-MakeRepayment.xlsx|Summary|Repayment Schedule|
+  Then I verified the "Transactions" details and read the transaction Id 
+	 | 5037-DISBURSELOANon01Jan2015-RunPeriodicAccrualtillDate-VIEWJOURNALENTRIES-NPA-MakeRepayment.xlsx|
+
 	   
