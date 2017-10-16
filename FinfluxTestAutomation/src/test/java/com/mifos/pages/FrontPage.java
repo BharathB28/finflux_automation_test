@@ -674,6 +674,9 @@ public class FrontPage extends MifosWebPage {
 			case "Floating Interest Rates":
 				sheetIndex = "10";
 				break;
+			case "Original Schedule":
+				sheetIndex = "15";
+				break;
 				
 			default:
 				break;
@@ -718,7 +721,8 @@ public class FrontPage extends MifosWebPage {
 				if (sheetname.equals("Summary")
 						|| sheetname.equals("Repayment Schedule")
 						|| sheetname.equals("Transactions")
-						|| sheetname.equals("Floating Interest Rates")) {
+						|| sheetname.equals("Floating Interest Rates")
+						|| sheetname.equals("Original Schedule")) {
 
 					if (sheetname.equals("Transactions")
 							&& !isaccuralsTypeTransaction) {
@@ -2146,6 +2150,23 @@ public class FrontPage extends MifosWebPage {
 			}
 			break;
 			
+		case "Apply Penalty For Broken Periods":
+			LazyWebElement PenaltyForBrokenPeriods = getElement(getResource("ApplyPenaltyForBrokenPeriods"));
+			LazyWebElement checkpenalty12 = getElement(getResource("addpenaltytooverdueloans"));
+			if (!checkpenalty12.isSelected()) {
+				RunPeriodicAccural();
+				clickButton(getResource("addpenaltytooverdueloans"));
+				clickButton(getResource("runSelectedJobs"));
+				Thread.sleep(getResourceKey("smallWait"));
+				clickButton(getResource("refresh"));
+				Thread.sleep(getResourceKey("smallWait"));
+			}
+			if (!PenaltyForBrokenPeriods.isSelected()) {
+				clickButton(getResource("ApplyPenaltyForBrokenPeriods"));
+				Thread.sleep(getResourceKey("smallWait"));
+			}
+			break;
+			
 		case "Add Due Date Accrual Transactions":
 			LazyWebElement DueDateAccrualTransactions = getElement(getResource("AddDueDateAccrualTransactions"));
 			if (!DueDateAccrualTransactions.isSelected()) {
@@ -2629,26 +2650,6 @@ public class FrontPage extends MifosWebPage {
 		Thread.sleep(getResourceKey("smallWait"));
 	}
 
-	public void navigateToPage(String url) throws Throwable {
-
-		switch (url) {
-		case "LoanEmiPack Page":
-			url = "loanemipacks";
-			break;
-			
-		case "Charge Page":
-			url = "charges";
-			break;
-
-
-		default:
-			System.out.println("Invalid URL name");
-			break;
-
-		}
-		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl() +url);
-		Thread.sleep(getResourceKey("smallWait"));
-	}
 
 	public void navigateToCurrentCenterPage(String excelSheetPath, String excelSheetName, String sheetName)
 			throws Throwable {
@@ -2828,6 +2829,34 @@ public class FrontPage extends MifosWebPage {
 		if(element1.size()>0){
 			Assert.fail("UnExpected element is present : "+element);
 		}
+	}
+
+	public void navigateToPage(String url) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+
+		switch (url) {
+		case "LoanEmiPack Page":
+			url = "loanemipacks";
+			break;
+			
+		case "Charge Page":
+			url = "charges";
+			break;
+
+		case "Overdue Charge":
+			url = "run_overdue_charges";
+			break;
+
+		default:
+			System.out.println("Invalid URL name");
+			break;
+
+		}
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl() +url);
+		Thread.sleep(getResourceKey("smallWait"));
+	
+		
 	}
 
 

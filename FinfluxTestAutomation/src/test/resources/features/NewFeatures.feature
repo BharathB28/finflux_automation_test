@@ -171,12 +171,8 @@ Scenario:5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify
      			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|Repay1|	
 	  When I set up the new create loan from "NewLoanInput1" sheet
 	  			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
-	  And I verified the "Summary" details successfully 
-	 			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
-	  And I verified the "Repayment Schedule" details successfully 
-	 			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
-	  Then I verified the "Transactions" details successfully 
-	            |5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
+	  And I verified the following Tabs details successfully 
+	 			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|Summary|Repayment Schedule|Transactions|
 
 @RunnerClassClientsSpecific	
 Scenario:5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify
@@ -340,7 +336,7 @@ Scenario:5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-
 	  And I modify New Account from "UndoDisb" sheet
 	  			|5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|
 	  And I "WaiveCharge&Reapyment" and verified the following tabs
-	            |5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|Charges|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	            |5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|Charges|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
 @RunnerClassClientsSpecific
 Scenario:5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify
@@ -370,7 +366,7 @@ Scenario:5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-
 	  And I modify New Account from "UndoDisb" sheet
 	  			|5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|
 	  And I "WaiveCharge&Reapyment" and verified the following tabs
-	            |5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|Charges|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	            |5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|Charges|Modify Transaction|Summary|Repayment Schedule|Transactions|
 	  And I modify New Account from "UndoDisb" sheet
 	  			|5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify-undoDisb-undoRepayment.xlsx|
 	  And I "Reapyment" and verified the following tabs

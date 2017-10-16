@@ -273,7 +273,7 @@ Scenario:5015-CreateEmiPack-DisbLoan-Edittranche-Verify
 	 			|5015-CreateEmiPack-DisbLoan-Deletetranche-AddTranche-Verify-2ndTranche.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 	  
  @RunnerClassClientsSpecific
- Scenario:5016-CreateEmiPack-DisbLoan-Deletetranche-AddTranche-Verify
+Scenario:5016-CreateEmiPack-DisbLoan-Deletetranche-AddTranche-Verify
       Given I setup the center
       When I entered the values into center from "Center" sheet
 	 			|5016-CreateEmiPack-DisbLoan-Edittranche-Verify.xlsx|
@@ -283,8 +283,10 @@ Scenario:5015-CreateEmiPack-DisbLoan-Edittranche-Verify
 	 			| CreateChaitanyaclient.xlsx|		 				  								  				  				  			
   	  When I set up the new create loan from "NewLoanInput" sheet
 	 			|5016-CreateEmiPack-DisbLoan-Edittranche-Verify.xlsx|
-      And I "Delete&AddTranche" and verified the following tabs
-	 			|5016-CreateEmiPack-DisbLoan-Edittranche-Verify.xlsx|Loan Tranche Details|Loan Tranche Details1|Summary|Repayment Schedule|Transactions|
+      And I "DeleteTranche" and verified the following tabs
+	 			|5016-CreateEmiPack-DisbLoan-Edittranche-Verify.xlsx|Loan Tranche Details|
+	  And I "AddTranche" and verified the following tabs
+	 			|5016-CreateEmiPack-DisbLoan-Edittranche-Verify-AddTranche.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
 	  And I "Disburse2ndTranche" and verified the following tabs
 	 			|5016-CreateEmiPack-DisbLoan-Edittranche-Verify-2ndTranche.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
 

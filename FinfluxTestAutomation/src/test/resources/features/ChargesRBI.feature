@@ -284,19 +284,30 @@ Background:
 	|Createclient.xlsx|
  When I set up the new create loan from "NewLoanInput" sheet
 	| 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+     | 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|Modify Transaction1|
  Then I verified the "Summary" details successfully 
-	  			| 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|
+	| 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|
  And I verified the "Repayment Schedule" details successfully 
-	  			| 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|
+	| 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|
  Then I make repayment and read the transaction Id
- 	|3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ 	|3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Makerepayment1.xlsx|Input|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    | 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|Modify Transaction1|
+ Then I verified the "Summary" details successfully 
+	| 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Makerepayment1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	| 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Makerepayment1.xlsx|
+ And I verified the "Transactions" details and read the transaction Id 
+	|3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Makerepayment1.xlsx|
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
 	| 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|
 
 @RunnerClassLoanCharges
-	  Scenario: 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH  
+Scenario: 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
  Then I entered the values into product from "ProductLoanInput" Sheet
@@ -308,20 +319,31 @@ Background:
 	|Createclient.xlsx|
  When I set up the new create loan from "NewLoanInput" sheet
 	| 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan.xlsx|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    | 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|Modify Transaction1|
  Then I verified the "Summary" details successfully 
-	  			| 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan.xlsx|
+	| 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan.xlsx|
  And I verified the "Repayment Schedule" details successfully 
-	  			| 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan.xlsx|
+	| 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan.xlsx|
  Then I make repayment and read the transaction Id
- 	|3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ 	| 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Makerepayment1.xlsx|Input|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    | 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|Modify Transaction1|
+ Then I verified the "Summary" details successfully 
+	| 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Makerepayment1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	| 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Makerepayment1.xlsx|
+ And I verified the "Transactions" details and read the transaction Id 
+	| 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Makerepayment1.xlsx|
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
 	| 3012-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|
 
-@RunnerClassLoanCharges
-	  Scenario: 3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH  
 
+@RunnerClassLoanCharges
+Scenario: 3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
  Then I entered the values into product from "ProductLoanInput" Sheet
@@ -333,20 +355,30 @@ Background:
 	|Createclient.xlsx|
  When I set up the new create loan from "NewLoanInput" sheet
 	| 3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan.xlsx|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    | 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|Modify Transaction1|
  Then I verified the "Summary" details successfully 
 	| 3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan.xlsx|
  And I verified the "Repayment Schedule" details successfully 
 	| 3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan.xlsx|
  Then I make repayment and read the transaction Id
- 	|3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ 	| 3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Makerepayment1.xlsx|Input|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    | 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|Modify Transaction1|
+ Then I verified the "Summary" details successfully 
+	| 3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Makerepayment1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	| 3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Makerepayment1.xlsx|
+ And I verified the "Transactions" details and read the transaction Id 
+	| 3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Makerepayment1.xlsx|
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
 	| 3013-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|
 
 @RunnerClassLoanCharges
-	  Scenario: 3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH  
-
+Scenario: 3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
  Then I entered the values into product from "ProductLoanInput" Sheet
@@ -358,13 +390,24 @@ Background:
 	|Createclient.xlsx|
  When I set up the new create loan from "NewLoanInput" sheet
 	| 3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan.xlsx|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    | 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|Modify Transaction1|
  Then I verified the "Summary" details successfully 
 	| 3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan.xlsx|
  And I verified the "Repayment Schedule" details successfully 
 	| 3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan.xlsx|
  Then I make repayment and read the transaction Id
- 	|3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ 	| 3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Makerepayment1.xlsx|Input|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    | 3011-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|Modify Transaction1|
+ Then I verified the "Summary" details successfully 
+	| 3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Makerepayment1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	| 3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Makerepayment1.xlsx|
+ And I verified the "Transactions" details and read the transaction Id 
+	| 3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Makerepayment1.xlsx|
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
 	| 3014-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|
@@ -560,9 +603,8 @@ Background:
 				|3026-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 
 @RunnerClassLoanCharges	
-	  Scenario: 3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH 
-
-  	  Given I setup the product loan "Setup"
+Scenario: 3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH 
+	  Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
 				|3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
@@ -573,18 +615,21 @@ Background:
 	  			|Createclient.xlsx|
 	  When I set up the new create loan from "NewLoanInput" sheet
 	  			|3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan1.xlsx|
-	  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
-	  Then I verified the "Summary" details successfully 
+	  Given I navigate To "Overdue Charge" Page
+      Then I "Run OverDue till Date job" and verified the following tabs
+                |3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan1.xlsx|Modify Transaction1|
+ 	  Then I verified the "Summary" details successfully 
 	  			|3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan1.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan1.xlsx|
-	  And I verified the "Transactions" details successfully	
-				|3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan1.xlsx|
 	  Then I make repayment and verified the following tabs
        			|3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
       And I disburse loan from "NewLoanInput" sheet
       			|3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan2.xlsx|
-      Then I verified the "Summary" details successfully 
+      Given I navigate To "Overdue Charge" Page
+      Then I "Run OverDue till Date job" and verified the following tabs
+                |3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan2.xlsx|Modify Transaction1|
+ 	  Then I verified the "Summary" details successfully 
 	  			|3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan2.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan2.xlsx| 			
@@ -597,9 +642,8 @@ Background:
 				|3028-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 
 @RunnerClassLoanCharges	
-	  Scenario: 3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH 
-
-  	  Given I setup the product loan "Setup"
+Scenario: 3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH 
+	  Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
 				|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Loanproduct.xlsx|
@@ -610,8 +654,10 @@ Background:
 	  			|Createclient.xlsx|
 	  When I set up the new create loan from "NewLoanInput" sheet
 	  			|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan1.xlsx|
-	  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
-	  Then I verified the "Summary" details successfully 
+	  Given I navigate To "Overdue Charge" Page
+      Then I "Run OverDue till Date job" and verified the following tabs
+                |3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan1.xlsx|Modify Transaction1|
+ 	  Then I verified the "Summary" details successfully 
 	  			|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan1.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan1.xlsx|
@@ -621,22 +667,24 @@ Background:
        			|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
       And I disburse loan from "NewLoanInput" sheet
       			|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan2.xlsx|
-      Then I verified the "Summary" details successfully 
+      Given I navigate To "Overdue Charge" Page
+      Then I "Run OverDue till Date job" and verified the following tabs
+                |3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan2.xlsx|Modify Transaction1|
+ 	  Then I verified the "Summary" details successfully 
 	  			|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan2.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan2.xlsx| 			
 	  And I verified the "Transactions" details successfully	
 				|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan2.xlsx|
-	 Then I make repayment and read the transaction Id
+	  Then I make repayment and read the transaction Id
  				|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Makerepayment2.xlsx|Input|Transactions|
- 	 And I Navigate to Accounting web page
- 	 And I search with transaction id & verified the accounting entries
+ 	  And I Navigate to Accounting web page
+ 	  And I search with transaction id & verified the accounting entries
 				|3029-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 
 @RunnerClassLoanCharges	
-	  Scenario: 3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH 
-
-  	  Given I setup the product loan "Setup"
+Scenario: 3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH 
+	  Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
 				|3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Loanproduct.xlsx|
@@ -647,8 +695,10 @@ Background:
 	  			|Createclient.xlsx|
 	  When I set up the new create loan from "NewLoanInput" sheet
 	  			|3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan1.xlsx|
-	  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
-	  Then I verified the "Summary" details successfully 
+	  Given I navigate To "Overdue Charge" Page
+      Then I "Run OverDue till Date job" and verified the following tabs
+                |3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan1.xlsx|Modify Transaction1|
+ 	  Then I verified the "Summary" details successfully 
 	  			|3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan1.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan1.xlsx|
@@ -658,7 +708,10 @@ Background:
        			|3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
       And I disburse loan from "NewLoanInput" sheet
       			|3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan2.xlsx|
-      Then I verified the "Summary" details successfully 
+      Given I navigate To "Overdue Charge" Page
+      Then I "Run OverDue till Date job" and verified the following tabs
+                |3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan2.xlsx|Modify Transaction1|
+ 	  Then I verified the "Summary" details successfully 
 	  			|3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan2.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan2.xlsx| 			
@@ -671,9 +724,8 @@ Background:
 				|3030-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 	
 @RunnerClassLoanCharges
-	  Scenario: 3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH 
-
-  	  Given I setup the product loan "Setup"
+Scenario: 3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH 
+	  Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
 				|3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
@@ -684,8 +736,10 @@ Background:
 	  			|Createclient.xlsx|
 	  When I set up the new create loan from "NewLoanInput" sheet
 	  			|3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan1.xlsx|
-	  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
-	  Then I verified the "Summary" details successfully 
+	  Given I navigate To "Overdue Charge" Page
+      Then I "Run OverDue till Date job" and verified the following tabs
+                |3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan1.xlsx|Modify Transaction1|
+ 	  Then I verified the "Summary" details successfully 
 	  			|3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan1.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan1.xlsx|
@@ -695,7 +749,10 @@ Background:
        			|3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
       And I disburse loan from "NewLoanInput" sheet
       			|3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan2.xlsx|
-      Then I verified the "Summary" details successfully 
+      Given I navigate To "Overdue Charge" Page
+      Then I "Run OverDue till Date job" and verified the following tabs
+                |3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan2.xlsx|Modify Transaction1|
+ 	  Then I verified the "Summary" details successfully 
 	  			|3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan2.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|3031-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan2.xlsx| 			

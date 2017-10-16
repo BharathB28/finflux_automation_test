@@ -617,7 +617,10 @@ Scenario: 4936-Mifos-EI-FL-SAR-Charges
   Then I verified the following Tabs details successfully
 	 | 4936-Mifos-EI-FL-SAR-Charges.xlsx |Summary|Repayment Schedule|Transactions|
   And I "MakeRepayment&waiveInterest" and verified the following tabs
-	 | 4936-Mifos-EI-FL-SAR-Charges-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	 | 4936-Mifos-EI-FL-SAR-Charges-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|
+  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+  Then I verified the following Tabs details successfully
+     | 4936-Mifos-EI-FL-SAR-Charges-MakeRepayment.xlsx |Summary|Repayment Schedule|Transactions|
   And I "MakeRepayment&preclose" and verified the following tabs
 	 | 4936-Mifos-EI-FL-SAR-Charges-preclose.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
 
@@ -630,11 +633,17 @@ Scenario: 4937-Mifos-EI-DB-SAR-Charges
 	 | 4937-Mifos-EI-DB-SAR-Charges.xlsx |
   Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
   Then I verified the following Tabs details successfully
-	 | 4937-Mifos-EI-DB-SAR-Charges.xlsx |Summary|Repayment Schedule|Transactions|
+	 | 4937-Mifos-EI-DB-SAR-Charges.xlsx |Summary|Repayment Schedule|
   And I "MakeRepayment&waiveInterest" and verified the following tabs
-	 | 4937-Mifos-EI-DB-SAR-Charges-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	 | 4937-Mifos-EI-DB-SAR-Charges-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|
+  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+  Then I verified the following Tabs details successfully
+     | 4937-Mifos-EI-DB-SAR-Charges-MakeRepayment.xlsx |Summary|Repayment Schedule|Transactions|
   And I "MakeRepayment&preclose" and verified the following tabs
-	 | 4937-Mifos-EI-DB-SAR-Charges-preclose.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+	 | 4937-Mifos-EI-DB-SAR-Charges-preclose.xlsx |Modify Transaction|
+  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+  And I "preclose" and verified the following tabs
+     | 4937-Mifos-EI-DB-SAR-Charges-preclose.xlsx |Modify Transaction1|Summary|Repayment Schedule|Transactions|
  
  @RunnerClassClientsSpecific
 Scenario: 4938-Mifos-EI-DB-SAR-Charges
@@ -650,7 +659,7 @@ Scenario: 4938-Mifos-EI-DB-SAR-Charges
 	 | 4938-Mifos-EI-DB-SAR-Charges-MakeRepayment.xlsx |Summary|Repayment Schedule|Transactions|
   And I "writeoff" and verified the following tabs
 	 | 4938-Mifos-EI-DB-SAR-Charges-writeoff.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
-
+   
 
 ################################################### 	DIGAMBAR   #############################################################
 
@@ -1405,5 +1414,648 @@ Scenario: 5002-GlimLoanAsGroup-Disburse-WaiveCharge-VerifyTabs
  	  And I verified the "ChargesTab" details successfully 
 	 			|5002-GlimLoanAsGroup-Disburse-WaiveCharge-VerifyTabs-Repayment.xlsx|
 
+@RunnerClassClientsSpecific
+Scenario: 5038-Nabkisan-Componding-penality-Charge-loan
+      Given I setup the product loan "Setup"
+	 			| Productloannavigation.xlsx |
+  	  Then I entered the values into product from "ProductLoanInput" Sheet
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan.xlsx|
+	  Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
+  	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan.xlsx |
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5038-Nabkisan-Componding-penality-Charge-loan.xlsx|Modify Transaction1|Summary|Original Schedule|Repayment Schedule|Transactions|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-2ndInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-2ndInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan-2ndInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan-2ndInstallment.xlsx|
+	  And I Navigate to Accounting web page
+  	  And I search with transaction id & verified the accounting entries
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-2ndInstallment.xlsx|Acc_Disbursement|Acc_Periodic|
+      Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-3rdInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-3rdInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan-3rdInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan-3rdInstallment.xlsx|
+	  And I "Disburse 2nd tranche" and verified the following tabs
+	            | 5038-Nabkisan-Componding-penality-Charge-loan-Disb2ndTranche.xlsx|Modify Transaction|Summary|Original Schedule|Repayment Schedule|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-4thInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-4thInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan-4thInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan-4thInstallment.xlsx|
+	  And I "WaiveInterest" and verified the following tabs
+	            | 5038-Nabkisan-Componding-penality-Charge-loan-WaiveInterest.xlsx|Modify Transaction|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-WaiveInterest.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-WaiveInterest.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan-WaiveInterest.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan-WaiveInterest.xlsx|
+	  And I "UndoDisburse and Disburse" and verified the following tabs
+	            | 5038-Nabkisan-Componding-penality-Charge-loan-UndoDisburse.xlsx|Modify Transaction|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-UndoDisburse.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5038-Nabkisan-Componding-penality-Charge-loan-UndoDisburse.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan-UndoDisburse.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5038-Nabkisan-Componding-penality-Charge-loan-UndoDisburse.xlsx|
 
-	    		    	          	  	             
+@RunnerClassClientsSpecific
+Scenario: 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod.xlsx |
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod.xlsx|Modify Transaction1|Summary|Original Schedule|Repayment Schedule|Transactions|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-2ndInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-2ndInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-2ndInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-2ndInstallment.xlsx|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-3rdInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-3rdInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-3rdInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-3rdInstallment.xlsx|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-4thInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-4thInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-4thInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-4thInstallment.xlsx|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-5thInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-5thInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-5thInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-5thInstallment.xlsx|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-6thInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-6thInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-6thInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5039-CompondingPenalityCharge-BeforeGracePeriod-AfterGracePeriod-6thInstallment.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 5040-CompondingPenalityCharge-MakeRepayment
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5040-CompondingPenalityCharge-MakeRepayment.xlsx |
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5040-CompondingPenalityCharge-MakeRepayment.xlsx|Modify Transaction1|Summary|Original Schedule|Repayment Schedule|Transactions|
+	  And I verified the "ChargesTab" details successfully 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment.xlsx|
+	  Then I "MakeRepayment on Exacttime and amount" and verified the following tabs
+	 			|5040-CompondingPenalityCharge-MakeRepayment-1stRepayment.xlsx |Modify Transaction|Summary|Original Schedule|Repayment Schedule|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5040-CompondingPenalityCharge-MakeRepayment-1stRepayment-overdues.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5040-CompondingPenalityCharge-MakeRepayment-1stRepayment-overdues.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-1stRepayment-overdues.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-1stRepayment-overdues.xlsx|
+	  Then I "MakeRepayment on Exacttime and less amount" and verified the following tabs
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-2ndRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5040-CompondingPenalityCharge-MakeRepayment-2ndRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5040-CompondingPenalityCharge-MakeRepayment-2ndRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-2ndRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-2ndRepayment.xlsx|
+	  Then I "MakeRepayment on Exacttime and More amount" and verified the following tabs
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5040-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5040-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx|
+	  Then I "MakeRepayment on Early and exactamount" and verified the following tabs
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-4thRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5040-CompondingPenalityCharge-MakeRepayment-4thRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5040-CompondingPenalityCharge-MakeRepayment-4thRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-4thRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-4thRepayment.xlsx|
+	  Then I "MakeRepayment on Early and Lessamount" and verified the following tabs
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-5thRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5040-CompondingPenalityCharge-MakeRepayment-5thRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5040-CompondingPenalityCharge-MakeRepayment-5thRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-5thRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-5thRepayment.xlsx|
+	  Then I "MakeRepayment on Early and Moreamount" and verified the following tabs
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-6thRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5040-CompondingPenalityCharge-MakeRepayment-6thRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5040-CompondingPenalityCharge-MakeRepayment-6thRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-6thRepayment.xlsx|
+	  And I "Disburse 2nd tranche" and verified the following tabs
+	            | 5040-CompondingPenalityCharge-MakeRepayment-Disb2ndTranche.xlsx|Modify Transaction|
+	  Then I "MakeRepayment on Late and Exactamount" and verified the following tabs
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-Disb2ndTranche.xlsx |Modify Transaction1|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5040-CompondingPenalityCharge-MakeRepayment-Disb2ndTranche.xlsx|Modify Transaction2|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5040-CompondingPenalityCharge-MakeRepayment-Disb2ndTranche.xlsx|Summary|Original Schedule|Repayment Schedule|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5040-CompondingPenalityCharge-MakeRepayment-Disb2ndTranche.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 5041-CompondingPenalityCharge-MakeRepayment
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5041-CompondingPenalityCharge-MakeRepayment.xlsx |
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5041-CompondingPenalityCharge-MakeRepayment.xlsx|Modify Transaction1|Summary|Original Schedule|Repayment Schedule|Transactions|
+	  And I verified the "ChargesTab" details successfully 
+	 			| 5041-CompondingPenalityCharge-MakeRepayment.xlsx|
+	  Then I "MakeRepayment on Late and excatamount" and verified the following tabs
+	 			|5041-CompondingPenalityCharge-MakeRepayment-1stRepayment.xlsx |Modify Transaction|Summary|Original Schedule|Repayment Schedule|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5041-CompondingPenalityCharge-MakeRepayment-1stRepayment-overdues.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5041-CompondingPenalityCharge-MakeRepayment-1stRepayment-overdues.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-1stRepayment-overdues.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-1stRepayment-overdues.xlsx|
+	  Then I "MakeRepayment on Late and less amount" and verified the following tabs
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-2ndRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5041-CompondingPenalityCharge-MakeRepayment-2ndRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5041-CompondingPenalityCharge-MakeRepayment-2ndRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-2ndRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-2ndRepayment.xlsx|
+	  Then I "Waive Charge" and verified the following tabs
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-WaiveCharge.xlsx |Charges|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5041-CompondingPenalityCharge-MakeRepayment-WaiveCharge.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5041-CompondingPenalityCharge-MakeRepayment-WaiveCharge.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-WaiveCharge.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-WaiveCharge.xlsx|
+	  Then I "MakeRepayment on Late and More amount" and verified the following tabs
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5041-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5041-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5041-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx|
+	  And I Navigate to Accounting web page
+  	  And I search with transaction id & verified the accounting entries
+     			| 5041-CompondingPenalityCharge-MakeRepayment-3rdRepayment.xlsx|Acc_Disbursement|Acc_Repayment10|Acc_Repayment|Acc_Repayment3|Acc_Repayment1|Acc_Repayment4|Acc_Repayment5|Acc_Repayment6|Acc_Repayment7|Acc_Repayment8|Acc_Repayment9|Acc_Repayment2|
+
+@RunnerClassClientsSpecific
+Scenario: 5042-CompondingPenalityCharge-Preclose
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5042-CompondingPenalityCharge-Preclose.xlsx |
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5042-CompondingPenalityCharge-Preclose.xlsx|Modify Transaction1|
+      Then I "MakeRepayment on Late and Lessamount" and verified the following tabs
+	 			| 5042-CompondingPenalityCharge-Preclose.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5042-CompondingPenalityCharge-Preclose.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5042-CompondingPenalityCharge-Preclose.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5042-CompondingPenalityCharge-Preclose.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5042-CompondingPenalityCharge-Preclose.xlsx|
+      Then I "Preclose" and verified the following tabs
+	 			| 5042-CompondingPenalityCharge-Preclose-verify.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5042-CompondingPenalityCharge-Preclose-verify.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5042-CompondingPenalityCharge-Preclose-verify.xlsx|Summary|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5042-CompondingPenalityCharge-Preclose-verify.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5042-CompondingPenalityCharge-Preclose-verify.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 5043-CompondingPenalityCharge-writeoff
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5043-CompondingPenalityCharge-writeoff.xlsx |
+	  Then I "MakeRepayment on Late and Moreamount" and verified the following tabs
+	 			| 5043-CompondingPenalityCharge-writeoff.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5043-CompondingPenalityCharge-writeoff.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5043-CompondingPenalityCharge-writeoff.xlsx|Summary|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5043-CompondingPenalityCharge-writeoff.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5043-CompondingPenalityCharge-writeoff.xlsx|
+      Then I "Writeoff" and verified the following tabs
+	 			| 5043-CompondingPenalityCharge-writeoff-verify.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5043-CompondingPenalityCharge-writeoff-verify.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5043-CompondingPenalityCharge-writeoff-verify.xlsx|Summary|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5043-CompondingPenalityCharge-writeoff-verify.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5043-CompondingPenalityCharge-writeoff-verify.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2.xlsx |
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2.xlsx|Modify Transaction1|Summary|Original Schedule|Repayment Schedule|Transactions|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-2ndInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-2ndInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-2ndInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-2ndInstallment.xlsx|
+      And I "WaiveInterest" and verified the following tabs
+	            | 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-WaiveInterest.xlsx|Modify Transaction|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-WaiveInterest.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-WaiveInterest.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-WaiveInterest.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-WaiveInterest.xlsx|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-3rdInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-3rdInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-3rdInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-3rdInstallment.xlsx|
+	  And I "Disburse 2nd tranche" and verified the following tabs
+	            | 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-Disb2ndTranche.xlsx|Modify Transaction|Summary|Original Schedule|Repayment Schedule|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-4thInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-4thInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-4thInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-4thInstallment.xlsx|
+	  And I "UndoDisburse and Disburse" and verified the following tabs
+	            | 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-UndoDisburse.xlsx|Modify Transaction|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-UndoDisburse.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-UndoDisburse.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-UndoDisburse.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5044-CompondingPenalityCharge-MoraoriumOnPrinciple2-UndoDisburse.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod.xlsx |
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod.xlsx|Modify Transaction1|Summary|Original Schedule|Repayment Schedule|Transactions|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-2ndInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-2ndInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-2ndInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-2ndInstallment.xlsx|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-3rdInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-3rdInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-3rdInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-3rdInstallment.xlsx|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-4thInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-4thInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-4thInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-4thInstallment.xlsx|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-5thInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-5thInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-5thInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-5thInstallment.xlsx|
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-6thInstallment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-6thInstallment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-6thInstallment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5045-CompondingPenalityCharge-MoraoriumOnPrinciple2-BeforeAndAfterGracePeriod-6thInstallment.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-MakeRepayment
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-MakeRepayment.xlsx |
+	  Then I "MakeRepayment 1stRepayment" and verified the following tabs
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-MakeRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-MakeRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-MakeRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-MakeRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-MakeRepayment.xlsx|
+	  Then I "MakeRepayment 2ndRepayment" and verified the following tabs
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-2ndRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-2ndRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-2ndRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-2ndRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-2ndRepayment.xlsx|
+	  Then I "MakeRepayment on Exacttime and amount" and verified the following tabs
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-3rdRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-3rdRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-3rdRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-3rdRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-3rdRepayment.xlsx|
+	  Then I "MakeRepayment on Early and Lessamount" and verified the following tabs
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-4thRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-4thRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-4thRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-4thRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-4thRepayment.xlsx|
+	  Then I "MakeRepayment on Late and Moreamount" and verified the following tabs
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-5thRepayment.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-5thRepayment.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-5thRepayment.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-5thRepayment.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-5thRepayment.xlsx|
+	  And I "Disburse 2nd tranche" and verified the following tabs
+	            | 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-Disb2ndTranche.xlsx|Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-Disb2ndTranche.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-Disb2ndTranche.xlsx|Summary|Original Schedule|Repayment Schedule|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5046-CompondingPenalityCharge-MoraoriumOnPrinciple2-Disb2ndTranche.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose.xlsx |
+	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose.xlsx|Modify Transaction1|
+      Then I "MakeRepayment on Late and Lessamount" and verified the following tabs
+	 			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose.xlsx|Summary|Original Schedule|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose.xlsx|
+      Then I "Preclose" and verified the following tabs
+	 			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose-verify.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose-verify.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose-verify.xlsx|Summary|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose-verify.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5047-CompondingPenalityCharge-MoraoriumOnPrinciple2-Preclose-verify.xlsx|
+
+@RunnerClassClientsSpecific
+Scenario: 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+ 	  When I set up the new create loan from "NewLoanInput" sheet
+	 			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff.xlsx |
+	  Then I "MakeRepayment on Late and Moreamount" and verified the following tabs
+	 			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff.xlsx|Summary|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff.xlsx|
+      And I "Disburse 2nd tranche" and verified the following tabs
+	            | 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff-Disb2ndTranche.xlsx|Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff-Disb2ndTranche.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff-Disb2ndTranche.xlsx|Summary|Original Schedule|Repayment Schedule|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff-Disb2ndTranche.xlsx|
+      Then I "Writeoff" and verified the following tabs
+	 			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff-verify.xlsx |Modify Transaction|
+ 	  Given I navigate To "Overdue Charge" Page
+  	  Then I "Run OverDue till Date job" and verified the following tabs
+     			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff-verify.xlsx|Modify Transaction1|
+      Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      Then I verified the following Tabs details successfully
+     			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff-verify.xlsx|Summary|Repayment Schedule|
+      And I verified the "ChargesTab" details successfully 
+	 			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff-verify.xlsx|
+	  Then I verified the "Transactions" details and read the transaction Id 
+	 			| 5048-CompondingPenalityCharge-MoraoriumOnPrinciple2-Writeoff-verify.xlsx|
+    	    		    	          	  	             
