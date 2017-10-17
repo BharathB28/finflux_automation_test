@@ -13,6 +13,7 @@ Background:
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
 				|3000-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
+	  Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
