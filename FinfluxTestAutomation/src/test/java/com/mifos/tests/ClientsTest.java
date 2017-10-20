@@ -6,9 +6,9 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @Cucumber.Options(format = { "pretty", "html:target/Centers/cucumber-html-report",
 		"json-pretty:target/Centers/cucumber-json-report.json" },
-        features = { "src/test/resources/features/test.feature" },
+        features = { "src/test/resources/features/Clients.feature" },
 		glue = { "com.mifos.steps" })
 
-public class CenterTest {
+public class ClientsTest {
 
 }

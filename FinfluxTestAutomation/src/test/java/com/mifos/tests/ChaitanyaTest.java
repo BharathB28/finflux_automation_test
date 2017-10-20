@@ -6,10 +6,9 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @Cucumber.Options(format = { "pretty", "html:target/ClientsSpecific/cucumber-html-report",
 		"json-pretty:target/ClientsSpecific/cucumber-json-report.json" },
-		features = { "src/test/resources/features/" },
-		glue = { "com.mifos.steps" },
-		tags= {"@RunnerClassClientsSpecific" })
+		features = { "src/test/resources/features/Chaitanya.feature" },
+		glue = { "com.mifos.steps" })
 
-public class ClientsSpecificTest {
+public class ChaitanyaTest {
 
 }

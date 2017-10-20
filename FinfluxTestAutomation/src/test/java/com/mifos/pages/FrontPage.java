@@ -2317,38 +2317,35 @@ public class FrontPage extends MifosWebPage {
 
 		DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
 		List<WebElement> applicationCol = null;
-
+		boolean status = false;
 		applicationCol = getWebDriver()
 				.findElements(
 						By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/div[4]/table/tbody/tr[1]/td"));
 
 		for (; accuralRowCount <= excelRowCount; accuralRowCount++) {
+			
 
 			if ((sheet.getRow(accuralRowCount) == null)
-					|| (sheet.getRow(accuralRowCount).getCell(2) == null)) {
-				
+					|| (sheet.getRow(accuralRowCount).getCell(2).getCellType()==3)) {
+				rowToiterate = accuralRowCount - 1;
 				accuralRowCount++;
-				currentRow = accuralRowCount;
-				rowToiterate = accuralRowCount+1;
-				accuralRowCount = accuralRowCount + 2 ;
-				if(accuralRowCount>excelRowCount)
-				{
-					accuralRowCount=1;
-				}
 				break;
+			
 			}
 			else
 			{
-				currentRow = accuralRowCount;
-				rowToiterate = accuralRowCount+1;
-				accuralRowCount = accuralRowCount + 2 ;
-				if(accuralRowCount>excelRowCount)
+				if(!status)
 				{
-					accuralRowCount=1;
+				currentRow = accuralRowCount;
+				status = true;;
 				}
-				break;
+				
 			}
 			
+			if(accuralRowCount==excelRowCount)
+			{
+				rowToiterate = accuralRowCount;
+			}
 			/*switch (sheet.getRow(row).getCell(2).getCellType()) {
 			case Cell.CELL_TYPE_BLANK:
 			

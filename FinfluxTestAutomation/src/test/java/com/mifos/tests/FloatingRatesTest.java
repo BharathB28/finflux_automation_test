@@ -6,8 +6,8 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @Cucumber.Options(format = { "pretty", "html:target/LoanChargesRbi/cucumber-html-report",
 		"json-pretty:target/LoanChargesRbi/cucumber-json-report.json" },
-		features = { "src/test/resources/features/ChargesRBI.feature" },
+		features = { "src/test/resources/features/FloatingRates.feature" },
 		glue = { "com.mifos.steps" })
-public class LoanChargesRbiTest {
+public class FloatingRatesTest {
 
 }

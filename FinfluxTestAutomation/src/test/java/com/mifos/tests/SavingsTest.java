@@ -8,7 +8,6 @@ import cucumber.api.junit.Cucumber;
 		"json-pretty:target//Savings/cucumber-json-report.json" },
 		features = { "src/test/resources/features/Savings.feature" },
 		glue = { "com.mifos.steps" })
-		//tags= {"@RunnerClassWorkingDays" })
 
 
 public class SavingsTest {
