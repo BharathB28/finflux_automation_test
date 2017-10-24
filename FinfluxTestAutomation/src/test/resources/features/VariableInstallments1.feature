@@ -8,6 +8,7 @@ Background:
 
 @RunnerClassVariableInstallment
 	Scenario: 2525-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST  
+ Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
  Then I entered the values into product from "ProductLoanInput" Sheet
@@ -1582,9 +1583,9 @@ Background:
 	| 2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|
  Then I "Edit Date " In Edit Repayment Schedule page
     |2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|Edit Repayment Schedule|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|Modify Transaction1|Summary|Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I disburse loan from "NewLoanInput" sheet
@@ -1606,9 +1607,9 @@ Background:
     |2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan1.xlsx|Edit Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Makerepayment1.xlsx|Input|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Makerepayment1.xlsx|Modify Transaction1|Summary|Repayment Schedule|
  And I disburse loan from "NewLoanInput" sheet
     |2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan2.xlsx|
  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
@@ -1628,14 +1629,14 @@ Background:
     |2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan1.xlsx|Edit Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Makerepayment1.xlsx|Input|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Makerepayment1.xlsx|Modify Transaction1|Summary|Transactions|
  And I disburse loan from "NewLoanInput" sheet
     |2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan2.xlsx|
  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
  Then I verified the following Tabs details successfully 
-	|2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+	|2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan2.xlsx|Summary|Transactions|
 
 @RunnerClassVariableInstallment
  Scenario: 2593-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY  
@@ -1651,9 +1652,9 @@ Background:
     |2593-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Newcreateloan1.xlsx|Edit Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2593-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Makerepayment1.xlsx|Input|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2593-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2593-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Makerepayment1.xlsx|Modify Transaction1|Summary|Repayment Schedule|Transactions|
  And I disburse loan from "NewLoanInput" sheet
     |2593-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Newcreateloan2.xlsx|
  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
@@ -1682,7 +1683,7 @@ Background:
  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
  Then I verified the following Tabs details successfully 
 	|2594-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
-
+ 
 @RunnerClassVariableInstallment
 	Scenario: 2595-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-%INT  
  Given I setup the product loan "Setup"
@@ -1724,9 +1725,9 @@ Background:
     |2596-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Newcreateloan1.xlsx|Edit Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2596-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Makerepayment1.xlsx|Input|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2596-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2596-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Makerepayment1.xlsx|Modify Transaction1|Summary|Repayment Schedule|Transactions|
  And I disburse loan from "NewLoanInput" sheet
     |2596-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Newcreateloan2.xlsx|
  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
@@ -1947,9 +1948,9 @@ Background:
 	| 2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|
  Then I "Edit Date " In Edit Repayment Schedule page
     |2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Edit Repayment Schedule|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Modify Transaction1|Summary|Repayment Schedule|Transactions|
 
 @RunnerClassVariableInstallment
  Scenario: 2610-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE  
@@ -2124,9 +2125,9 @@ Background:
 	| 2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|
  Then I "Edit Date " In Edit Repayment Schedule page
     |2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|Edit Repayment Schedule|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|Modify Transaction1|Summary|Repayment Schedule|Transactions|
  Then I make repayment and verified the following tabs
     |2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Makerepayment1.xlsx|Input|
  And I disburse loan from "NewLoanInput" sheet
@@ -2148,9 +2149,9 @@ Background:
     |2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan1.xlsx|Edit Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Makerepayment1.xlsx|Input|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Makerepayment1.xlsx|Modify Transaction1|Summary|Repayment Schedule|Transactions|
  And I disburse loan from "NewLoanInput" sheet
     |2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan2.xlsx|
  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
@@ -2170,9 +2171,9 @@ Background:
     |2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan1.xlsx|Edit Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Makerepayment1.xlsx|Input|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Makerepayment1.xlsx|Modify Transaction1|Summary|Repayment Schedule|Transactions|
  And I disburse loan from "NewLoanInput" sheet
     |2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan2.xlsx|
  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
@@ -2193,9 +2194,9 @@ Background:
     |2623-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Newcreateloan1.xlsx|Edit Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2623-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Makerepayment1.xlsx|Input|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2623-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2623-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Makerepayment1.xlsx|Modify Transaction1|Summary|Repayment Schedule|Transactions|
  And I disburse loan from "NewLoanInput" sheet
     |2623-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Newcreateloan2.xlsx|
  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
@@ -2203,7 +2204,7 @@ Background:
 	|2623-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-EARLY-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 	
 @RunnerClassVariableInstallment
- Scenario: 2624-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY  
+Scenario: 2624-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY  
  
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2216,9 +2217,9 @@ Background:
     |2624-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY-Newcreateloan1.xlsx|Edit Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2624-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY-Makerepayment1.xlsx|Input|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2624-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2624-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY-Makerepayment1.xlsx|Modify Transaction1|Summary|Repayment Schedule|Transactions|
  And I disburse loan from "NewLoanInput" sheet
     |2624-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-EARLY-Newcreateloan2.xlsx|
  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
@@ -2266,9 +2267,9 @@ Background:
     |2626-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Newcreateloan1.xlsx|Edit Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2626-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Makerepayment1.xlsx|Input|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2626-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2626-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Makerepayment1.xlsx|Modify Transaction1|Summary|Repayment Schedule|Transactions|
  And I disburse loan from "NewLoanInput" sheet
     |2626-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Newcreateloan2.xlsx|
  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
@@ -2459,7 +2460,7 @@ Background:
     |2637-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF-Newcreateloan1.xlsx|Edit Repayment Schedule|
  Then I "WRITEOFF" and verified the following tabs
 	|2637-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
-
+ 
 @RunnerClassVariableInstallment
  Scenario: 2638-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2  
  
@@ -2490,9 +2491,9 @@ Background:
 	| 2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|
  Then I "Edit Date " In Edit Repayment Schedule page
     |2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Edit Repayment Schedule|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I verified the following Tabs details successfully 
-	|2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Modify Transaction1|Summary|Repayment Schedule|Transactions|
 
 @RunnerClassVariableInstallment
  Scenario: 2640-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE  

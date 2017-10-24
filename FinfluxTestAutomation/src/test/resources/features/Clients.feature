@@ -608,6 +608,7 @@ Scenario: 4935-RBI-EI-DB-DL-RECAL-COMP-DL-1
 
 @RunnerClassClientsSpecific
 Scenario: 4936-Mifos-EI-FL-SAR-Charges
+  Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
   Given I setup the clients
   When I entered the values into client from "Input" sheet
 	 |Createclient.xlsx|

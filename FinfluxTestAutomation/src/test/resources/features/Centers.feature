@@ -8,6 +8,7 @@ Background:
 	
 @RunnerClassLoanCharges
 Scenario:4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate
+	 Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
 	 Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
 	 Then I entered the values into product from "ProductLoanInput" Sheet
@@ -755,7 +756,10 @@ Scenario:4491-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFE
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4491-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to scheduler job & execute "Periodic & penalty to overdue loans"
+	 Given I navigate To "Overdue Charge" Page
+  	 Then I "Run OverDue till Date job" and verified the following tabs
+     |4491-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|Modify Transaction1|
+	 Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
 	 Then I navigate to collection Sheet
 	 Then I Make Repayment Through "Collection" sheet
 	 |4491-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|
@@ -794,7 +798,10 @@ Scenario:4493-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTI
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4493-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to scheduler job & execute "Periodic & penalty to overdue loans"
+	 Given I navigate To "Overdue Charge" Page
+  	 Then I "Run OverDue till Date job" and verified the following tabs
+     |4493-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|Modify Transaction1|
+	 Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
 	 Then I make repayment and verified the following tabs
      |4493-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|Repay1|
 	 Then I navigate to collection Sheet
@@ -1206,6 +1213,10 @@ Scenario:4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEE
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|
 	 Then I navigate to scheduler job & execute "Periodic & penalty to overdue loans"
+	 Given I navigate To "Overdue Charge" Page
+  	 Then I "Run OverDue till Date job" and verified the following tabs
+     |4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|Modify Transaction1|
+	 Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
 	 Then I navigate to collection Sheet
 	 Then I Make Repayment Through "Collection" sheet
 	 |4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|
@@ -1244,7 +1255,10 @@ Scenario:4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIM
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to scheduler job & execute "Periodic & penalty to overdue loans"
+	 Given I navigate To "Overdue Charge" Page
+  	 Then I "Run OverDue till Date job" and verified the following tabs
+     |4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|Modify Transaction1|
+	 Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
 	 Then I make repayment and verified the following tabs
      |4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|Repay1|
 	 Then I navigate to collection Sheet
@@ -2125,7 +2139,10 @@ Scenario:4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-les
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
- 	 Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ 	 Given I navigate To "Overdue Charge" Page
+  	 Then I "Run OverDue till Date job" and verified the following tabs
+     |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Modify Transaction1|
+	 Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
 	 Then I make repayment and verified the following tabs
      |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Repay1|
  	 Then I navigate to collection Sheet
@@ -2219,7 +2236,10 @@ Scenario:4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-less
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
- 	 Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ 	 Given I navigate To "Overdue Charge" Page
+  	 Then I "Run OverDue till Date job" and verified the following tabs
+     |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Modify Transaction1|
+	 Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
 	 Then I make repayment and verified the following tabs
      |4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Repay1|
  	 Then I navigate to collection Sheet

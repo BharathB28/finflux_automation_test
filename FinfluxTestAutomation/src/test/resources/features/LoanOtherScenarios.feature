@@ -9,6 +9,7 @@ Background:
 @scenario1-3500-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Reg-PERIODIC	   
 	  Scenario: 3500-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Reg-PERIODIC  
 	  
+	  Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
 	  Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
@@ -346,7 +347,10 @@ Background:
 	  			|Createclient.xlsx|	
  When I set up the new create loan from "NewLoanInput" sheet
 	|3515-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PERIODIC-OVERDUE-FEE-FLAT-PENALTY-FRE-1-Newcreateloan.xlsx|
- Then I navigate to scheduler job & execute "Periodic & penalty to overdue loans"
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |3515-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PERIODIC-OVERDUE-FEE-FLAT-PENALTY-FRE-1-Newcreateloan.xlsx|Modify Transaction1|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
  Then I verified the "Summary" details successfully 
 	|3515-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PERIODIC-OVERDUE-FEE-FLAT-PENALTY-FRE-1-Newcreateloan.xlsx|
  And I verified the "Repayment Schedule" details successfully 
@@ -980,7 +984,9 @@ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|
  And I create Account Closures Entry from "CreateAccountClosures" sheet
  	|2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Given I navigate To "Overdue Charge" Page
+ Then I "Run OverDue till Date job" and verified the following tabs
+    |2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Modify Transaction1|
  Then I verified the "Summary" details successfully 
 	|2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|
   	 	 	

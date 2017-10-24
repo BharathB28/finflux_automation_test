@@ -8,6 +8,7 @@ Background:
 	
 @RunnerClassVariableInstallment
 	  Scenario: 2425-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST  
+ Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
  Then I entered the values into product from "ProductLoanInput" Sheet

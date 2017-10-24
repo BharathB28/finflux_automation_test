@@ -10,6 +10,7 @@ Background:
 	
 #	Given I Define floating rates for loan products from "FloatingRates" Sheet
 #		|2350-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-BLR-EARLY-CASH-Loanproduct.xlsx|
+	Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
 	Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
 	Then I entered the values into product from "ProductLoanInput" Sheet
@@ -541,7 +542,7 @@ Background:
 	  			|2373-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-BLR-Newcreateloan1.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
 	  			
 @RunnerClassLoanRBI
-	  Scenario: 2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR  
+Scenario: 2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR  
 
 	 Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
@@ -555,8 +556,10 @@ Background:
 		|Createclient.xlsx|
 	 When I set up the new create loan from "NewLoanInput" sheet
 		| 2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR-Newcreateloan1.xlsx|
-	 Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
-	 Then I verified the "Summary" details successfully 
+	 Given I navigate To "Overdue Charge" Page
+	 Then I "Run OverDue till Date job" and verified the following tabs
+        | 2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR-Newcreateloan1.xlsx|Modify Transaction1|
+      Then I verified the "Summary" details successfully 
 		| 2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR-Newcreateloan1.xlsx|
 	 And I verified the "Repayment Schedule" details successfully 
 		| 2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR-Newcreateloan1.xlsx|
@@ -782,7 +785,7 @@ Background:
 	  			|2386-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-DLR-Newcreateloan1.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
 	  			
 @RunnerClassLoanRBI
-	  Scenario: 2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR  
+Scenario: 2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR  
 
 	 Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
@@ -796,8 +799,10 @@ Background:
 		|Createclient.xlsx|
 	 When I set up the new create loan from "NewLoanInput" sheet
 		| 2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR-Newcreateloan1.xlsx|
-	 Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
-	 Then I verified the "Summary" details successfully 
+	 Given I navigate To "Overdue Charge" Page
+     Then I "Run OverDue till Date job" and verified the following tabs
+        | 2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR-Newcreateloan1.xlsx|Modify Transaction1|
+     Then I verified the "Summary" details successfully 
 		| 2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR-Newcreateloan1.xlsx|
 	 And I verified the "Repayment Schedule" details successfully 
 		| 2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR-Newcreateloan1.xlsx|

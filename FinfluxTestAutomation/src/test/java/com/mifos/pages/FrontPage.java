@@ -2325,8 +2325,7 @@ public class FrontPage extends MifosWebPage {
 		for (; accuralRowCount <= excelRowCount; accuralRowCount++) {
 			
 
-			if ((sheet.getRow(accuralRowCount) == null)
-					|| (sheet.getRow(accuralRowCount).getCell(2).getCellType()==3)) {
+			if ((sheet.getRow(accuralRowCount).getCell(2).getCellType()==3)) {
 				rowToiterate = accuralRowCount - 1;
 				accuralRowCount++;
 				break;

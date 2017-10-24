@@ -8,6 +8,7 @@ Background:
 
 @4130-RBI-EI-DB-DL-NOREC-MOREREPAY
 Scenario:4130-RBI-EI-DB-DL-NOREC-MOREREPAY
+     Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
 	 Then I entered the values into product from "ProductLoanInput" Sheet
