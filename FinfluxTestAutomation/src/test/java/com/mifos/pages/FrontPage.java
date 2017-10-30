@@ -922,6 +922,7 @@ public class FrontPage extends MifosWebPage {
 						|| sheetname.equals("Acc_Periodic")
 						|| sheetname.equals("Acc_Suspenses")
 						|| sheetname.equals("Acc_SuspenseReversal")
+						|| sheetname.equals("Acc_Upfront")
 						|| sheetname.contains("Interst_Posting")
 						|| sheetname.contains("Deposit")
 						|| sheetname.contains("Withdraw")
@@ -2324,7 +2325,7 @@ public class FrontPage extends MifosWebPage {
 		for (; accuralRowCount <= excelRowCount; accuralRowCount++) {
 			
 
-			if (sheet.getRow(accuralRowCount) == null) {
+			if ((sheet.getRow(accuralRowCount).getCell(2).getCellType()==3)) {
 				rowToiterate = accuralRowCount - 1;
 				accuralRowCount++;
 				break;
