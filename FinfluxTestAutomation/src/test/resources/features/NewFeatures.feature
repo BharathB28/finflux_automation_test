@@ -7,7 +7,64 @@ Background:
 	Then I should see logged in successfully
 
 
+############################################ 	BulkCollection Upload   ######################################################
 
+
+@RunnerClassClientsSpecific
+Scenario: 5074-BulkCollection-FileUpload
+    Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|5074-BulkCollection-FileUpload.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+      | 5074-BulkCollection-FileUpload.xlsx |
+    Given I navigate To "Bulkcollection" Page
+    Then I "Upload file" and verified the following tabs
+      | 5074-BulkCollection-FileUpload.xlsx | Modify Transaction |
+     Then I navigate To Loan Account Page 
+     Then I verified the following Tabs details successfully
+	   			|5074-BulkCollection-FileUpload.xlsx|Summary|Repayment Schedule|Transactions|
+	   And I verified the "Transactions" details and read the transaction Id
+      | 5074-BulkCollection-FileUpload.xlsx |
+    And I Navigate to Accounting web page
+    And I search with transaction id & verified the accounting entries
+      | 5074-BulkCollection-FileUpload.xlsx | Acc_Disbursement | Acc_Repayment |
+	   Then I navigate To Saving Account Page
+	   And I verified the "Saving Transaction" details successfully
+      | 5074-BulkCollection-FileUpload.xlsx |
+     And I verified the "Saving Transaction & TransID" details successfully
+      | 5074-BulkCollection-FileUpload.xlsx |
+    And I Navigate to Accounting web page
+     Then I search with transaction id & verified the accounting entries
+      | 5074-BulkCollection-FileUpload.xlsx | Deposit1 |
+	
+	
+	@RunnerClassClientsSpecific
+  Scenario: 5075-BankReconcilation-FileUpload
+    Given I setup the group
+    When I entered the values into group from "Group" sheet
+      | 5075-BankReconcilation-FileUpload.xlsx |
+    When I entered the values into client from "Input1" sheet
+      | 4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx |
+    When I entered the values into client from "Input2" sheet
+      | 4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx |
+    When I entered the values into client from "Input3" sheet
+      | 4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx |
+    When I entered the values into client from "Input4" sheet
+      | 4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx |
+    When I entered the values into client from "Input5" sheet
+      | 4992-GlimLoan-Disburse-MakeRepayment-waiveIterest-VerifyTabs.xlsx |
+    When I set up the new create loan from "GlimLoanInput" sheet
+      | 4997-GlimLoan-Disburse-Writeoff-Repayment.xlsx |
+    Then I "MakeRepayment" and verified the following tabs
+      | 5075-BankReconcilation-FileUpload.xlsx | Modify Transaction1 | Modify Transaction2 | Modify Transaction3 | Modify Transaction4 |
+ #  Given I navigate To "BankStatements" Page
+ #  Then I "Upload file" and verified the following tabs
+ #     | 5074-BulkCollection-FileUpload.xlsx | Modify Transaction |    
 
 ################################################### 	TOP-UP   #############################################################
 

@@ -62,8 +62,8 @@
 							</goals>
 							<configuration>
 								<projectName>${project.name}</projectName>
-								<outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
-								<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+								<outputDirectory>/root/Desktop/report/target/cucumber-html-reports</outputDirectory>
+								<cucumberOutput>/root/Desktop/report/target/cucumber.json</cucumberOutput>
 								<enableFlashCharts>true</enableFlashCharts>
 							</configuration>
 						</execution>

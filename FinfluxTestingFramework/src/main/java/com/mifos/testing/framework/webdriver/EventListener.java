@@ -24,7 +24,6 @@ import java.io.IOException;
 public class EventListener implements WebDriverEventListener {
 
 	
-	@Override
 	public void afterChangeValueOf(WebElement arg0, WebDriver arg1) {
 		// TODO Auto-generated method stub
 
@@ -107,7 +106,6 @@ public class EventListener implements WebDriverEventListener {
 	 * org.openqa.selenium.support.events.WebDriverEventListener#beforeChangeValueOf
 	 * (org.openqa.selenium.WebElement, org.openqa.selenium.WebDriver)
 	 */
-	@Override
 	public void beforeChangeValueOf(WebElement arg0, WebDriver arg1) {
 		// TODO Auto-generated method stub
 
@@ -221,6 +219,46 @@ public class EventListener implements WebDriverEventListener {
 
 		System.setProperty("screenshottaken", "true");
 
+	}
+
+	public void beforeNavigateRefresh(WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void afterNavigateRefresh(WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void afterAlertAccept(WebDriver arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void afterAlertDismiss(WebDriver arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void afterChangeValueOf(WebElement arg0, WebDriver arg1, CharSequence[] arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeAlertAccept(WebDriver arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeAlertDismiss(WebDriver arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeChangeValueOf(WebElement arg0, WebDriver arg1, CharSequence[] arg2) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

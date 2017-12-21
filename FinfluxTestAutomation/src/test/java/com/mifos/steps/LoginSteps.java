@@ -58,4 +58,13 @@ public class LoginSteps extends WebDriverAwareWebPage{
 		varFrontPage.verifyPartialSuccessMessage("frontend.logged.successfully",
 				"Welcome,", "css");
 	}
+	
+	@Given("^I logout from mifos site$")
+	public void I_should_logout_successfully() throws Throwable {
+		getWebDriver().findElement(By.id("user-dropdown")).click();
+		Thread.sleep(2000);
+		getWebDriver().findElement(By.id("logout")).click();
+		Thread.sleep(2000);
+		
+	}
 }

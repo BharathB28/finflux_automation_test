@@ -105,11 +105,11 @@ public class ChromeDriverFactory implements WebDriverFactory {
 						chromeOptions);
 
 				System.setProperty("webdriver.chrome.driver",
-						"c:\\ChromeDriver\\chromedriver.exe");
+						"C:\\ChromeDriver\\chromedriver_win32\\chromedriver.exe");
 				System.setProperty("webdriver.factory.class.name",
 						"com.mifos.testing.framework.webdriver.ChromeDriverFactory");
 				System.setProperty("resources.file.path",
-						"/root/Desktop/mifosx-e2e-testing/MifosTestAutomation/src/test/resources/mifos.properties");
+						"C:/finflux_automation_test/FinfluxTestAutomation/src/test/resources/mifos.properties");
 				System.setProperty("testing.framework.testdata.metadata",
 						"mifos-test-metadata.properties");
 

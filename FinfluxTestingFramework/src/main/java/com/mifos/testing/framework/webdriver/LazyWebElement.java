@@ -11,6 +11,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -323,6 +324,14 @@ public class LazyWebElement implements WebElement {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Rectangle getRect() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 }
