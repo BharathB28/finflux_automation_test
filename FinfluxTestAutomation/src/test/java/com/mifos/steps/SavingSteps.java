@@ -10,8 +10,8 @@ import cucumber.api.java.en.When;
 
 public class SavingSteps {
 
-	final public FrontPage varFrontPage = new FrontPage();
-	public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
+	public FrontPage varFrontPage = FrontPage.getInstance();
+    public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
 
 
 	@When("^I set up the new create saving account from \"([^\"]*)\" sheet$")

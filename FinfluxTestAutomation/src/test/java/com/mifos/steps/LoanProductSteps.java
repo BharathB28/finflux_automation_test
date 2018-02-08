@@ -10,8 +10,8 @@ import cucumber.api.java.en.Then;
 
 public class LoanProductSteps {
 
-	final public FrontPage varFrontPage = new FrontPage();
-	public String ExcelSheetPath = varFrontPage.getProductExcelSheetPath();
+	final public FrontPage varFrontPage = FrontPage.getInstance();
+    public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
 	
 	@Given("^I setup the product loan \"([^\"]*)\"$")
 	public void I_setup_the_product_loan(String sheetName,

@@ -12,8 +12,8 @@ import cucumber.api.java.en.When;
 
 public class GenericSteps {
 
-	final public FrontPage varFrontPage = new FrontPage();
-	public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
+	public FrontPage varFrontPage = FrontPage.getInstance();
+    public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
 
 
 	@Given("^I navigate to Teller/Cashier Management Sheet$")
@@ -79,9 +79,9 @@ public class GenericSteps {
 		}
 	}
 
-	/*
-	 * Then I Modify Transaction
-	 */
+	
+	// * Then I Modify Transaction
+	 
 	@Then("^I Modify Transaction$")
 	public void I_Modify_Transaction(List<List<String>> excelSheet) throws Throwable {
 

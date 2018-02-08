@@ -10,8 +10,8 @@ import cucumber.api.java.en.When;
 
 public class LoanSteps {
 
-	final public FrontPage varFrontPage = new FrontPage();
-	public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
+	public FrontPage varFrontPage = FrontPage.getInstance();
+    public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
 
 	@When("^I set up the new create loan from \"([^\"]*)\" sheet$")
 	public void I_set_up_the_new_create_loan_from_sheet(String sheetName, List<String> excelSheet) throws Throwable {
@@ -54,10 +54,10 @@ public class LoanSteps {
 			}
 		}
 	}
-	/*
-	 * Then I verified the following Tabs details successfully Summary|Repayment
-	 * Schedule|Transactions
-	 */
+	
+	// * Then I verified the following Tabs details successfully Summary|Repayment
+	// * Schedule|Transactions
+	 
 	@Then("^I verified the following Tabs details successfully$")
 	public void I_verified_the_following_Tabs_details_successfully(List<List<String>> excel) throws Throwable {
 
@@ -88,9 +88,9 @@ public class LoanSteps {
 		varFrontPage.undoDisbursal();
 	}
 	
-	/*
-	 * Then I "Edit Date " In Edit Repayment Schedule page
-	 */
+	
+	// * Then I "Edit Date " In Edit Repayment Schedule page
+	 
 	@Then("^I \"([^\"]*)\" In Edit Repayment Schedule page$")
 	public void I_In_Edit_Repayment_Schedule_page(String arg1, List<List<String>> excelSheet) throws Throwable {
 		for (List<String> option : excelSheet) {

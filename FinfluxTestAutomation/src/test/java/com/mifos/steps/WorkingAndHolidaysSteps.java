@@ -10,8 +10,8 @@ import cucumber.api.java.en.Then;
 
 public class WorkingAndHolidaysSteps {
 
-	final public FrontPage varFrontPage = new FrontPage();
-	public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
+	public FrontPage varFrontPage = FrontPage.getInstance();
+    public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
 	
 	
 	@Then("^I \"([^\"]*)\" holiday$")

@@ -11,8 +11,8 @@ import cucumber.api.java.en.When;
 
 public class CenterGroupSteps {
 
-	final public FrontPage varFrontPage = new FrontPage();
-	public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
+	public FrontPage varFrontPage = FrontPage.getInstance();
+    public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
 	
 	@Given("^I setup the group$")
 	public void I_setup_the_group() throws Throwable {

@@ -1,31 +1,28 @@
 Feature:RBI
 
 Background:
-	Given I navigate to mifos using "default#/"
+	Given I navigate to mifos using ":7443/?tenantIdentifier=chaitanya#/"
 	And I login into mifos site using "Login" excel sheet
 		|Login.xlsx|
 	Then I should see logged in successfully
 
 
-@RunnerClassClientsSpecific
-Scenario: 4200-RBI-EI-DB-DL-REC-FEE-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC
-    Given I setup the product loan "Setup"
-      | Productloannavigation.xlsx |
-    Then I entered the values into product from "ProductLoanInput" Sheet
-      | 4200-RBI-EI-DB-DL-REC-FEE-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC-Loanproduct.xlsx |
-    Given I setup the group
-    When I entered the values into group from "Input" sheet
-      | 4200-RBI-EI-DB-DL-REC-FEE-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC-Newcreateloan1.xlsx |
+@RunnerClassChaitanyaSpecific
+  Scenario: 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date
+    Given I setup the center
+    When I entered the values into center from "Center" sheet
+      | 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date.xlsx |
+    Then I entered the values into group from "Group" sheet
+      | 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date.xlsx |
     Then I entered the values into client from "Input" sheet
-      | Createclient.xlsx |
+      | CreateChaitanyaclient.xlsx |
     When I set up the new create loan from "NewLoanInput" sheet
-      | 4200-RBI-EI-DB-DL-REC-FEE-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC-Newcreateloan1.xlsx |
-    Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+      | 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date.xlsx |
     Then I verified the following Tabs details successfully
-      | 4200-RBI-EI-DB-DL-REC-FEE-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC-Newcreateloan1.xlsx | Summary | Repayment Schedule | Transactions |
-    Then I make repayment and verified the following tabs
-      | 4200-RBI-EI-DB-DL-REC-FEE-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC-Makerepayment1.xlsx | Input | Summary | Repayment Schedule | Transactions |
-    And I Navigate to Accounting web page
-    And I search with transaction id & verified the accounting entries
-      | 4200-RBI-EI-DB-DL-REC-FEE-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC-Makerepayment1.xlsx | Acc_Disbursement | Acc_Repayment | Acc_Periodic |
+      | 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date.xlsx | Summary | Repayment Schedule | Transactions |
+    And I "MakeRepayment&waiveInterest" and verified the following tabs
+      | 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date-MakeRepayment.xlsx | Modify Transaction | Modify Transaction1 | Modify Transaction2 | Summary | Repayment Schedule | Transactions |
+    And I "Disburse2ndTranche&ReschRepayDate" and verified the following tabs
+      | 4939-Minimum-Days-Between-Disbursal-And-First-Repayment-Date-Disb2ndTranche.xlsx | Modify Transaction | Summary | Repayment Schedule | Transactions |
+
       

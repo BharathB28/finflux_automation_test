@@ -62,17 +62,17 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public static final String WPS_BASE_URL = Resources.getInstance().get("wps.site.base-url");
 	/** The Constant BASE_URL. */
 	public static final String HOME_URL = BASE_URL + Resources.getInstance().get("homepage.url");
-	public static String rowval;
-	public static String currentJlgLoanUrl;
-	public static String currentNewLoanUrl;
-	public static String currentCenterUrl;
-	public static String RememberTopupUrl;
-	public static String RememberPreviousUrl;
-	public static String CurrentSavingAccounturl;
-	public static String currentShareUrl;
+	public String rowval;
+	public String currentJlgLoanUrl;
+	public String currentNewLoanUrl;
+	public String currentCenterUrl;
+	public String RememberTopupUrl;
+	public String RememberPreviousUrl;
+	public String CurrentSavingAccounturl;
+	public String currentShareUrl;
 	public static String currentClientUrl;
-	public static String CheckforAccounting = "";
-	public static Set<String> SavingLoanAccountID = new LinkedHashSet<String>();
+	public String CheckforAccounting = "";
+	public Set<String> SavingLoanAccountID = new LinkedHashSet<String>();
 
 	/**
 	 * Gets the resource.
@@ -730,6 +730,16 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 
 			}
+		/*	if (key.equals("NewJLGViewDisburseAccount"))
+            {
+                clickButton(getLocator(getResource("ClickOnAccounts")));
+
+            }*/
+
+			if (key.equals("submitclient")) {
+				Select select = new Select(getWebDriver().findElement(getLocator(getResource("MaritalStatusId"))));
+				select.selectByVisibleText("Married");
+			}
 			if (key.equals("ViewClientName")) {
 				RememberTopupUrl = getWebDriver().getCurrentUrl();
 			}
@@ -784,7 +794,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 		case "Navigate":
 
-			FrontPage url = new FrontPage();
+			FrontPage url = FrontPage.getInstance();
 			String curUrl = url.currentUrl;
 			if (curUrl != "") {
 				MifosWebPage.navigateToUrl(curUrl);
@@ -917,8 +927,11 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				if (check.isSelected() != checked) {
 					clickButton(getLocator(getResource(key)));
 				}
+						
 				if (key.equals("enablemultipledisbursals")) {
+					
 					clickButton(getLocator(getResource("enablemultipledisbursalsLimit")));
+				
 				}
 			}
 

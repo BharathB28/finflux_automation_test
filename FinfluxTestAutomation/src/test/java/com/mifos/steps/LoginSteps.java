@@ -18,7 +18,7 @@ import cucumber.api.java.en.Then;
 
 public class LoginSteps extends WebDriverAwareWebPage{
 
-	final public FrontPage varFrontPage = new FrontPage();
+	final public FrontPage varFrontPage = FrontPage.getInstance();
 	public String excelSheetPath = null;
 	
 	@Given("^I navigate to mifos using \"([^\"]*)\"$")

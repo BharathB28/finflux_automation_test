@@ -1,7 +1,7 @@
 Feature: JLGLoan
 
   Background: 
-    Given I navigate to mifos using "default6#/"
+    Given I navigate to mifos using "/?tenantIdentifier=default6#/"
     And I login into mifos site using "Login" excel sheet
       | Login.xlsx |
     Then I should see logged in successfully

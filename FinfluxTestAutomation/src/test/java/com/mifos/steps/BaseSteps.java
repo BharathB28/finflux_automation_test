@@ -15,6 +15,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
 
+import com.mifos.pages.FrontPage;
 import com.mifos.testing.framework.webdriver.WebDriverAwareWebPage;
 
 import cucumber.api.Scenario;
@@ -125,6 +126,8 @@ public class BaseSteps {
 			scenario.embed(screenshotbytes, "image/png");
 
 			}
+		FrontPage varFrontPage = FrontPage.getInstance();
+		varFrontPage.clearTestData();
 		try {
 			if (WebDriverAwareWebPage.isWebDriverInitialised()) {
 				WebDriverAwareWebPage.uninitialiseWebDriver();

@@ -28,7 +28,7 @@ public class Resources {
 	private Resources() {
 		/*final String resourceFilePath = System
 				.getProperty(SYS_PROP_RES_FILE_PATH);
-		*/final String resourceFilePath = "C:/finflux_automation_test/FinfluxTestAutomation/src/test/resources/mifos.properties";
+		*/final String resourceFilePath = "/root/Desktop/finflux_automation_test/FinfluxTestAutomation/src/test/resources/mifos.properties";
 		
 		if (resourceFilePath != null) {
 			try {

@@ -15,9 +15,9 @@ import cucumber.api.java.en.When;
 
 public class ClientSteps {
 
-	public FrontPage varFrontPage = new FrontPage();
+	final public FrontPage varFrontPage = FrontPage.getInstance();
+    public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
 	public MifosWebPage webpage = new MifosWebPage();
-	public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
 
 	@Given("^I setup the clients$")
 	public void I_setup_the_clients() throws Throwable {
@@ -63,6 +63,7 @@ public class ClientSteps {
 	public void I_search_with_on_mifos(String user) throws Throwable {
 		varFrontPage.searchUser(user);
 	}
+
 
 	/*
 	 * @Then("^I \"([^\"]*)\" trance from trache tab and verified the following tabs$"

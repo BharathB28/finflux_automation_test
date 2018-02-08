@@ -99,8 +99,17 @@ public class FirefoxDriverFactory implements WebDriverFactory {
 				proxy.setNoProxy("localhost, 127.0.0.1, www.devwowcher.co.uk, api.devwowcher.co.uk, secure.devwowcher.co.uk, www.intwowcher.co.uk");
 				capabilities.setCapability(CapabilityType.PROXY, proxy);
 				capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS,true);
-				WebDriver driver = new FirefoxDriver(capabilities);
-				return driver;
+				final WebDriver driver = new FirefoxDriver(capabilities);
+				ThreadLocal<WebDriver> driver1 = new ThreadLocal<WebDriver>()
+						{
+					@Override
+					protected WebDriver initialValue()
+					{
+						return driver;
+					}
+						};
+						
+				return driver1.get();
 
 			} catch (Exception e) {
 				throw new Error(

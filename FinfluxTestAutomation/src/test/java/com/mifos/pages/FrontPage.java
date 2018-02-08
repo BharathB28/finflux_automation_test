@@ -39,6 +39,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -53,26 +54,56 @@ import com.mifos.testing.framework.webdriver.LazyWebElement;
 
 public class FrontPage extends MifosWebPage {
 
-	public static Set<String> setAccuralTransactionID = new LinkedHashSet<String>();
-	public static Set<String> setAccuralTransactionType = new LinkedHashSet<String>();
-	public static Set<String> setAccuralSuspenseTransactionType = new LinkedHashSet<String>();
-	public static Set<String> setAccuralSuspenseReversalTransactionType = new LinkedHashSet<String>();
-	public static Set<String> setSavingTransactionID = new LinkedHashSet<String>();
-	public static String ClientChargeID = "";
-	public static String LoanProvisioningId = "";
-	static String value = "";
-	public static boolean ishideAccuralsChecked = true;
-	boolean isTransactionTabSelected;
-	public static boolean isaccuralsTypeTransaction = true;
-	int transactionIDIndex = 0;
-	public static String currentUrl ="";
-	public static String currentJlgLoanUrl ="";
-	public static String ProductCreatedURL="";
-	public static String DataTableCreatedURL="";
+	Set<String> setAccuralTransactionID = new LinkedHashSet<String>();
+    Set<String> setAccuralTransactionType = new LinkedHashSet<String>();
+    Set<String> setAccuralSuspenseTransactionType = new LinkedHashSet<String>();
+    Set<String> setAccuralSuspenseReversalTransactionType = new LinkedHashSet<String>();
+    Set<String> setSavingTransactionID = new LinkedHashSet<String>();
+    public String ClientChargeID = "";
+    public static String LoanProvisioningId = "";
+    static String value = "";
+    public boolean ishideAccuralsChecked = true;
+    boolean isTransactionTabSelected;
+    public boolean isaccuralsTypeTransaction = true;
+    int transactionIDIndex = 0;
+    public String currentUrl ="";
+    public String currentJlgLoanUrl ="";
+    public static String ProductCreatedURL="";
+    public static String DataTableCreatedURL="";
     private boolean istransactionIdIndexAssigned = true;
-	public static String sheetName="";
+    public static String sheetName="";
     public int accuralRowCount=1;
 
+    // WebDriver driver = new ChromeDriver();
+   
+   
+  
+    private static FrontPage single_instance = null;
+   
+    // variable of type String
+    public String s;
+ 
+    // private constructor restricted to this class itself
+    private FrontPage()
+    {
+    }
+ 
+    // static method to create instance of Singleton class
+    public static FrontPage getInstance()
+    {
+        if (single_instance == null)
+            single_instance = new FrontPage();
+ 
+        return single_instance;
+    }
+    
+    public void clearTestData()
+    {
+            single_instance = null;
+ 
+    }
+    
+    
 	// WebDriver driver = new ChromeDriver();
 
 	/**
@@ -1079,6 +1110,13 @@ public class FrontPage extends MifosWebPage {
 			new WebDriverWait(getWebDriver(), 120)
 					.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'GLIM')]"))).click();
 
+			 WebElement element = getWebDriver().findElement(By.xpath("(//button[contains(.,'View Repayment Schedule ')])[" + Client + "]"));
+			 
+			 ((JavascriptExecutor) getWebDriver()).executeScript("window.scrollTo(0," + (element.getLocation().y - 100) + ")");
+			 Actions builder = new Actions(getWebDriver());            
+			 builder.moveToElement(getWebDriver().findElement(By.xpath("(//button[contains(.,'View Repayment Schedule ')])[" + Client + "]"))).build().perform();
+			 
+			 
 			new WebDriverWait(getWebDriver(), 120).until(ExpectedConditions.elementToBeClickable(
 					By.xpath("(//button[contains(.,'View Repayment Schedule ')])[" + Client + "]"))).click();
 
@@ -1266,10 +1304,10 @@ public class FrontPage extends MifosWebPage {
 						applicationCol = getWebDriver().findElements(By.xpath(FullXpath));
 
 						if (!(applicationCol.get(1).getText().equals(dateFormat.format((Date) xlRow.get(0).value))
-								&& applicationCol.get(2).getText().equals((String) xlRow.get(1).value)
-								&& applicationCol.get(3).getText().equals((String) xlRow.get(2).value)
-								&& isDataEquals(applicationCol.get(4).getText(), (String) xlRow.get(3).value)
-								&& isDataEquals(applicationCol.get(5).getText(), (String) xlRow.get(4).value)))
+								&& applicationCol.get(3).getText().equals((String) xlRow.get(1).value)
+								&& isDataEquals(applicationCol.get(4).getText(),(String) xlRow.get(2).value)
+								&& isDataEquals(applicationCol.get(5).getText(), (String) xlRow.get(3).value)
+								&& isDataEquals(applicationCol.get(6).getText(), (String) xlRow.get(4).value)))
 
 						{
 							rowMatchSuccess = false;
@@ -1279,7 +1317,12 @@ public class FrontPage extends MifosWebPage {
 						rowMatchSuccess = true;
 						for (int xlColl = 2; xlColl < applicationCol.size(); xlColl++) {
 
-							int xlCol = xlColl - 1;
+							if(xlColl == 2)
+							{
+								continue;
+							}
+							
+							int xlCol = xlColl - 2;
 							String textVal = applicationCol.get(xlColl).getText();
 
 							switch (xlRow.get(xlCol).type) {
@@ -1527,7 +1570,7 @@ public class FrontPage extends MifosWebPage {
 
 			 MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl() +
 			 "listguarantors/"
-			 + MifosWebPage.currentNewLoanUrl.split("#/viewloanaccount/")[1]);
+			 + currentNewLoanUrl.split("#/viewloanaccount/")[1]);
 
 			FileInputStream file = new FileInputStream(new File(clientExcelSheetPath + "/" + excelSheetName));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);

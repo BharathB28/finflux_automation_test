@@ -11,8 +11,10 @@ import cucumber.api.java.en.Then;
 
 public class AccountingAndAccrualsSteps{
 
-	final public FrontPage varFrontPage = new FrontPage();
-	public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
+	public FrontPage varFrontPage = FrontPage.getInstance();
+    public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
+	
+	
 	
 	@Then("^I Navigate to Accounting web page$")
 	public void I_Navigate_to_Accounting() throws Throwable {
@@ -43,27 +45,27 @@ public class AccountingAndAccrualsSteps{
 
 	}
 
-	/*
-	 * And I create Account Closures Entry from "CreateAccountClosures" sheet
-	 */
+	
+	// * And I create Account Closures Entry from "CreateAccountClosures" sheet
+	 
 	@Then("^I create Account Closures Entry from \"([^\"]*)\" sheet$")
 	public void I_create_Account_Closures_Entry_from_sheet(String sheetName, List<String> excelSheet) throws Throwable {
 		String excelSheetName = excelSheet.get(0).toString();
 		varFrontPage.createAccountClosuresEntry(ExcelSheetPath, excelSheetName, sheetName);
 	}
 
-	/*
-	 * I Delete Account Closures Entry from "DeleteAccountClosures" sheet
-	 */
+	
+	 //* I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+	 
 	@Then("^I Delete Account Closures Entry from \"([^\"]*)\" sheet$")
 	public void I_Delete_Account_Closures_Entry_from_sheet(String sheetName, List<String> excelSheet) throws Throwable {
 		String excelSheetName = excelSheet.get(0).toString();
 		varFrontPage.deleteAccountClosuresEntry(ExcelSheetPath, excelSheetName, sheetName);
 	}
 
-	/*
-	 * Then I Execute Periodic Accrual Accounting
-	 */
+	
+	// * Then I Execute Periodic Accrual Accounting
+	 
 	@Then("^I Execute Periodic Accrual Accounting$")
 	public void I_Execute_Periodic_Accrual_Accounting(List<List<String>> excel) throws Throwable {
 

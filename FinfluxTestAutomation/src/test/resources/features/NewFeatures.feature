@@ -1,7 +1,7 @@
-Feature:TopUp/SlabBased/LoanLossProvisioning
+Feature:NewFeatures
 
 Background:
-	Given I navigate to mifos using "default12#/"
+	Given I navigate to mifos using "/?tenantIdentifier=default12#/"
 	And I login into mifos site using "Login" excel sheet
 		| Login.xlsx  |
 	Then I should see logged in successfully
@@ -10,7 +10,7 @@ Background:
 ############################################ 	BulkCollection Upload   ######################################################
 
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario: 5074-BulkCollection-FileUpload
     Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -43,7 +43,7 @@ Scenario: 5074-BulkCollection-FileUpload
       | 5074-BulkCollection-FileUpload.xlsx | Deposit1 |
 	
 	
-	@RunnerClassClientsSpecific
+	@RunnerClassNewFeaturesSpecific
   Scenario: 5075-BankReconcilation-FileUpload
     Given I setup the group
     When I entered the values into group from "Group" sheet
@@ -69,7 +69,7 @@ Scenario: 5074-BulkCollection-FileUpload
 ################################################### 	TOP-UP   #############################################################
 
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario:5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -101,7 +101,7 @@ Scenario:5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015
                 |5003-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Repayment|
 	  
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario:5004-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -113,7 +113,7 @@ Scenario:5004-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015
 	  Then i validate and Verify from "error" sheet
 	 			|5004-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario:5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -146,7 +146,7 @@ Scenario:5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-1000
 	  And I search with transaction id & verified the accounting entries
                 |5005-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario:5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -171,7 +171,7 @@ Scenario:5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify
 	  And I search with transaction id & verified the accounting entries
                 |5006-DISB01JAN2015-EARLYREPAY--DISBTOPUP-UndoTopUP-Verify.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Repayment1|
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario:5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -217,7 +217,7 @@ Scenario:5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DIS
                 |5007-DISB01JAN2015-EARLYREPAY-DISBTOPUP-UndoTopUP-ChangeLoanAccount-DISBTOPUP-Verify-newtopup.xlsx|Acc_Disbursement|Acc_Disbursement1|Acc_Repayment|
 
 
-@RunnerClassClientsSpecific 
+@RunnerClassNewFeaturesSpecific 
 Scenario:5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -231,7 +231,7 @@ Scenario:5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify
 	  And I verified the following Tabs details successfully 
 	 			|5008-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassClientsSpecific	
+@RunnerClassNewFeaturesSpecific	
 Scenario:5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -245,7 +245,7 @@ Scenario:5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-V
 	 Then i validate and Verify from "error" sheet
 	 			|5009-WithoutInterestRecalculation-DISB1stTranche-EARLYREPAY-DISBTOPUP-Verify.xlsx|
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario:5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -277,7 +277,7 @@ Scenario:5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-V
 	  And I search with transaction id & verified the accounting entries
                 |5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-Verify-OldLoan.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
 
-#@RunnerClassClientsSpecific
+#@RunnerClassNewFeaturesSpecific
 #Scenario:5011-DisbLoan-AproveTOPUP-CloseOldLoan-DisburseTopup-Verify
 #      Given I setup the clients
 #	  When I entered the values into client from "Input" sheet
@@ -299,7 +299,7 @@ Scenario:5010-WithoutInterestRecalculation-DisbAllTranche-EARLYREPAY-DISBTOPUP-V
  
 ###################################################  Slab Based  #############################################################
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario:5018-CreateAndEdit-SlabBased-Charges
       Given I navigate To "Charge Page" Page
       Then I "Create charge and Edit Created charge" and verified the following tabs
@@ -314,7 +314,7 @@ Scenario:5018-CreateAndEdit-SlabBased-Charges
 	  Then I "Create Another charge" and verified the following tabs
 	 			|5018-CreateAndEdit-SlabBased-Charges.xlsx |Modify Transaction4|
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario:5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -369,7 +369,7 @@ Scenario:5019-SubmitLoan-Add-SlabBasedCharges-DisburseLoan-verify
 #	  And I search with transaction id & verified the accounting entries
  #               |5020-SubmitLoan-Add-SlabBased-InstallmentNumberCharges-DisburseLoan-verify.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Disbursement1|
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario:5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -395,7 +395,7 @@ Scenario:5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-
 	  And I "WaiveCharge&Reapyment" and verified the following tabs
 	            |5021-SubmitLoan-Add-SubSlabBased-InstallmentAmountCharges-DisburseLoan-verify-undoDisb-waiveCharge.xlsx|Charges|Modify Transaction|Summary|Repayment Schedule|Transactions|
 
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario:5022-SubmitLoan-Add-SubSlabBased-InstallmentNumberCharges-DisburseLoan-verify
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -464,7 +464,7 @@ Scenario: 5026-DISBURSELOANon01JAN2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-01M
 	  And I search with transaction id & verified the accounting entries
                 |5026-DISBURSELOANon01JAN2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-01MAR2015.xlsx|LoanProvisioningAccural|
 	  
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario: 5027-DISBURSESimpleLoan-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-02MAR2015
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -495,7 +495,7 @@ Scenario: 5027-DISBURSESimpleLoan-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-02MAR201
 	  And I search with transaction id & verified the accounting entries
                 |5027-DISBURSESimpleLoan-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-02MAR2015.xlsx|LoanProvisioningAccural|
 	  
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario: 5028-DISBURSESimpleLoan-UndoRepayment-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-03MAR2015
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -520,7 +520,7 @@ Scenario: 5028-DISBURSESimpleLoan-UndoRepayment-RUNSCHEDULERJOB-VIEWJOURNALENTRI
 	  And I search with transaction id & verified the accounting entries
                 |5028-DISBURSESimpleLoan-UndoRepayment-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-03MAR2015.xlsx|LoanProvisioningAccural|
 	  
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario: 5029-DISBURSESimpleLoan-EarlyRepay-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-05MAR2015
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -539,7 +539,7 @@ Scenario: 5029-DISBURSESimpleLoan-EarlyRepay-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-
 	  And I search with transaction id & verified the accounting entries
                 |5029-DISBURSESimpleLoan-EarlyRepay-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-05MAR2015.xlsx|LoanProvisioningAccura|
 	  
-@RunnerClassClientsSpecific
+@RunnerClassNewFeaturesSpecific
 Scenario: 5030-DISBURSEInterestRecalLoan-VIEWJOURNALENTRIES-ON-06MAR2015-PrepayLoan-VIEWJOURNALENTRIES-ON-01APR2015
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
