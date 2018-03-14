@@ -1,7 +1,7 @@
 Feature:Centers
 
 Background:
-	Given I navigate to mifos using "/?tenantIdentifier=default7#/"
+	Given I navigate to mifos using ":8443/?tenantIdentifier=default7#/"
 	And I login into mifos site using "Login" excel sheet
 		|Login.xlsx|
 	Then I should see logged in successfully

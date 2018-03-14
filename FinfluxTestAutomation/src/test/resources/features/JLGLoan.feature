@@ -1,7 +1,7 @@
 Feature: JLGLoan
 
   Background: 
-    Given I navigate to mifos using "/?tenantIdentifier=default6#/"
+    Given I navigate to mifos using ":8443/?tenantIdentifier=default6#/"
     And I login into mifos site using "Login" excel sheet
       | Login.xlsx |
     Then I should see logged in successfully
@@ -27,6 +27,7 @@ Feature: JLGLoan
 
   @4131-RBI-EI-FL-DL-NOREC-MOREREPAY
   Scenario: 4131-RBI-EI-FL-DL-NOREC-MOREREPAY
+   Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
     Given I setup the product loan "Setup"
       | Productloannavigation.xlsx |
     Then I entered the values into product from "ProductLoanInput" Sheet
@@ -45,6 +46,7 @@ Feature: JLGLoan
 
   @4132-RBI-EPP-DB-DL-NOREC-MOREREPAY
   Scenario: 4132-RBI-EPP-DB-DL-NOREC-MOREREPAY
+   Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
     Given I setup the product loan "Setup"
       | Productloannavigation.xlsx |
     Then I entered the values into product from "ProductLoanInput" Sheet

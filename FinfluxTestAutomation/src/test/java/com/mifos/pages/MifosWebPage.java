@@ -730,11 +730,11 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 
 			}
-		/*	if (key.equals("NewJLGViewDisburseAccount"))
+			if (key.equals("NewJLGViewDisburseAccount"))
             {
                 clickButton(getLocator(getResource("ClickOnAccounts")));
 
-            }*/
+            }
 
 			if (key.equals("submitclient")) {
 				Select select = new Select(getWebDriver().findElement(getLocator(getResource("MaritalStatusId"))));
@@ -981,6 +981,12 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			}
 			if (key.equals("repaymentstrategy")) {
 				getWebDriver().findElement(By.id("overdueDaysForNPA")).sendKeys("200");
+			}
+			if (getWebDriver().getCurrentUrl().contains("disburseloanapplicationreference") && key.equals("Paymenttype")) {
+				LazyWebElement selectelement = getElement(getResource("DisbursementMode"));
+
+				Select statusselect = new Select(selectelement);
+				statusselect.selectByVisibleText("Manual");
 			}
 			try {
 				LazyWebElement selectelement = getElement(getResource(key));

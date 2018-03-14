@@ -926,7 +926,7 @@ public class FrontPage extends MifosWebPage {
 
 						} while (applicationCol.isEmpty() && counter < 25);
 
-						if (!(applicationCol.get(5).getText().equals((String) xlRow.get(0).value))) {
+						if (!(applicationCol.get(5).getText().replace(" ","").equals((String) xlRow.get(0).value.toString().replace(" ","")))) {
 							rowMatchSuccess = false;
 							continue;
 
@@ -1303,12 +1303,12 @@ public class FrontPage extends MifosWebPage {
 						String FullXpath = Xpath1 + appRow + Xpath2;
 						applicationCol = getWebDriver().findElements(By.xpath(FullXpath));
 
-						if (!(applicationCol.get(1).getText().equals(dateFormat.format((Date) xlRow.get(0).value))
+   					if (!(applicationCol.get(1).getText().equals(dateFormat.format((Date) xlRow.get(0).value))
 								&& applicationCol.get(3).getText().equals((String) xlRow.get(1).value)
 								&& isDataEquals(applicationCol.get(4).getText(),(String) xlRow.get(2).value)
 								&& isDataEquals(applicationCol.get(5).getText(), (String) xlRow.get(3).value)
 								&& isDataEquals(applicationCol.get(6).getText(), (String) xlRow.get(4).value)))
-
+   	
 						{
 							rowMatchSuccess = false;
 							continue;

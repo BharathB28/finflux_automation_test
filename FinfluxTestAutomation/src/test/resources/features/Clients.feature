@@ -1,7 +1,7 @@
 Feature: ClientSpecific-SanityTestScenarios
 
   Background: 
-    Given I navigate to mifos using "/?tenantIdentifier=default9#/"
+    Given I navigate to mifos using ":8443/?tenantIdentifier=default9#/"
     And I login into mifos site using "Login" excel sheet
       | Login.xlsx |
     Then I should see logged in successfully

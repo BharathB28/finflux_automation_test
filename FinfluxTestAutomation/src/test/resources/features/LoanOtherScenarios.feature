@@ -1,7 +1,7 @@
 Feature:LoanOtherScenarios
 
 Background:
-	Given I navigate to mifos using "/?tenantIdentifier=default3#/"
+	Given I navigate to mifos using ":8443/?tenantIdentifier=default3#/"
 	And I login into mifos site using "Login" excel sheet
 		| Login.xlsx  |
 	Then I should see logged in successfully
@@ -30,7 +30,7 @@ Background:
 
 @scenario2-3501-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Reg-PERIODIC	   
 	  Scenario: 3501-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Reg-PERIODIC  
-	  
+	  Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
 	  Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
@@ -53,7 +53,7 @@ Background:
 
 @scenario3-3502-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Reg-PERIODIC
 	  Scenario: 3502-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Reg-PERIODIC  
-
+Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
       Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
@@ -74,7 +74,7 @@ Background:
 	 			
 @scenario4-3503-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Reg-PERIODIC
 	  Scenario: 3503-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Reg-PERIODIC  
-
+Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
       Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet

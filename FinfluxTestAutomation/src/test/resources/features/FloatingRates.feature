@@ -1,7 +1,7 @@
 Feature: FloatingRates
 
   Background: 
-    Given I navigate to mifos using "/?tenantIdentifier=default#/"
+    Given I navigate to mifos using ":8443/?tenantIdentifier=default#/"
     And I login into mifos site using "Login" excel sheet
       | Login.xlsx |
     Then I should see logged in successfully
@@ -33,6 +33,7 @@ Feature: FloatingRates
   #				| 2350-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-BLR-EARLY-CASH-Newcreateloan1.xlsx|
   @RunnerClassLoanRBI
   Scenario: 2351-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DLR-LATE-CASH
+  Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
     Given I setup the product loan "Setup"
       | Productloannavigation.xlsx |
     Then I entered the values into product from "ProductLoanInput" Sheet
@@ -53,6 +54,7 @@ Feature: FloatingRates
 
   @RunnerClassLoanRBI
   Scenario: 2352-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-DLR-CASH
+  Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
     Given I setup the product loan "Setup"
       | Productloannavigation.xlsx |
     Then I entered the values into product from "ProductLoanInput" Sheet
@@ -71,6 +73,7 @@ Feature: FloatingRates
 
   @RunnerClassLoanRBI
   Scenario: 2353-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ONTIME-BLR-CASH
+  Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
     Given I setup the product loan "Setup"
       | Productloannavigation.xlsx |
     Then I entered the values into product from "ProductLoanInput" Sheet

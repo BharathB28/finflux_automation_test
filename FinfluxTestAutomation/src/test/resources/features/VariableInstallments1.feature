@@ -1,7 +1,7 @@
 Feature:VariableInstallment1
 
 Background:
-	Given I navigate to mifos using "/?tenantIdentifier=default4#/"
+	Given I navigate to mifos using ":8443/?tenantIdentifier=default4#/"
 	And I login into mifos site using "Login" excel sheet
 		| Login.xlsx  |
 	Then I should see logged in successfully
@@ -31,6 +31,7 @@ Background:
  	
 @RunnerClassVariableInstallment
 	Scenario: 2526-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-AMT-VAR-INST  
+	Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
 	|Createclient.xlsx|
@@ -48,7 +49,8 @@ Background:
  	|2526-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-AMT-VAR-INST-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  	
 @RunnerClassVariableInstallment
-	Scenario: 2527-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DELETE-VAR-INST  
+	Scenario: 2527-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DELETE-VAR-INST 
+	Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods" 
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
 	|Createclient.xlsx|
@@ -67,6 +69,7 @@ Background:
 
 @RunnerClassVariableInstallment
 	Scenario: 2528-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ADD-VAR-INST  
+	Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
 	|Createclient.xlsx|

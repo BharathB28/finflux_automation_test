@@ -1,7 +1,7 @@
 Feature:Charges-RBI-FINFLUX
 
 Background:
-	Given I navigate to mifos using "?tenantIdentifier=default1#/"
+	Given I navigate to mifos using ":8443/?tenantIdentifier=default1#/"
 	And I login into mifos site using "Login" excel sheet
 		| Login.xlsx  |
 	Then I should see logged in successfully
@@ -34,6 +34,7 @@ Background:
 @RunnerClassLoanCharges 
 	  Scenario: 3001-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-CASH  
 
+Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
    	  Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
@@ -58,6 +59,7 @@ Background:
 @RunnerClassLoanCharges 
 	  Scenario: 3002-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-CASH
 
+Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
    	  Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
@@ -81,7 +83,7 @@ Background:
 
 @RunnerClassLoanCharges  
 	  Scenario: 3003-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-CASH  
-
+Then I navigate to scheduler job & execute "Apply Penalty For Broken Periods"
    	  Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
 	  Then I entered the values into product from "ProductLoanInput" Sheet
